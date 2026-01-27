@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" href="logo.png" type="image/png">
+    <title>Hội Nghị Khoa Học Thường Niên 2026 - VAAE</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] },
+                    colors: {
+                        brand: { 
+                            900: '#0f172a', 
+                            800: '#1e3a8a', 
+                            700: '#1d4ed8', 
+                            gold: '#b45309', 
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-pattern { background-color: #f8fafc; background-image: url("https://www.transparenttextures.com/patterns/cubes.png"); }
+        input[type="file"]::file-selector-button {
+            margin-right: 10px; padding: 8px 16px; border-radius: 4px; border: none;
+            background-color: #1e3a8a; color: white; cursor: pointer;
+        }
+        .custom-checkbox { width: 1.2rem; height: 1.2rem; cursor: pointer; accent-color: #1e3a8a; }
+        /* Timeline styling */
+        .timeline-row { border-bottom: 1px solid #e2e8f0; padding-bottom: 1rem; margin-bottom: 1rem; }
+        .timeline-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .discussion-row { background-color: #fefce8; padding: 10px; border-radius: 6px; border-left: 3px solid #b45309; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <nav class="bg-white/95 backdrop-blur-md shadow-sm fixed w-full z-50 border-b border-gray-100">
+        <div class="container mx-auto px-4 lg:px-8 py-3 flex justify-between items-center">
+            <a href="https://hoichongdongkinhvietnam.vn" target="_blank" class="flex items-center gap-3 group" title="Về trang chủ Hội">
+                <img src="logo.png" alt="Logo VAAE" class="w-12 h-12 object-contain group-hover:scale-105 transition">
+                <div class="hidden md:block">
+                    <p class="text-[10px] text-gray-500 font-bold tracking-[0.2em] uppercase">Hội Chống Động Kinh</p>
+                    <p class="text-brand-900 font-serif font-bold text-lg leading-none group-hover:text-brand-700 transition">VIỆT NAM (VAAE)</p>
+                </div>
+            </a>
+            <div class="hidden lg:flex items-center space-x-6 text-sm font-semibold text-gray-600 uppercase tracking-wide">
+                <a href="https://hoichongdongkinhvietnam.vn" target="_blank" class="text-brand-gold hover:text-brand-800 border border-brand-gold/30 px-3 py-1 rounded hover:bg-brand-gold/10 transition">
+                    <i class="fas fa-globe mr-1"></i> Web Hội
+                </a>
+                <a href="#agenda" class="hover:text-brand-800 transition">Chương trình</a>
+                <a href="#speakers" class="hover:text-brand-800 transition">Diễn giả</a>
+            </div>
+            <a href="#register" class="bg-brand-800 text-white px-6 py-2.5 rounded shadow-lg hover:bg-brand-900 transition font-bold text-sm tracking-wide uppercase">
+                Đăng Ký Tham Dự
+            </a>
+        </div>
+    </nav>
+
+    <header class="hero-pattern min-h-screen flex items-center pt-28 pb-12">
+        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div class="order-2 lg:order-1">
+                <div class="inline-flex items-center gap-2 px-3 py-1 mb-6 border border-brand-gold/50 rounded-full bg-orange-50 animate-pulse">
+                    <i class="fas fa-certificate text-brand-gold"></i>
+                    <span class="text-xs font-bold tracking-widest uppercase text-brand-gold">Cấp Chứng Chỉ CME</span>
+                </div>
+                
+                <h3 class="font-sans font-bold text-sm text-brand-800 uppercase tracking-widest mb-2">
+                    CHƯƠNG TRÌNH HỘI NGHỊ KHOA HỌC THƯỜNG NIÊN
+                </h3>
+                <h2 class="font-sans font-black text-xl text-gray-500 uppercase mb-6 leading-tight">
+                    HỘI CHỐNG ĐỘNG KINH VIỆT NAM, NĂM 2026
+                </h2>
+                
+                <h1 class="font-serif font-bold text-3xl lg:text-4xl text-brand-900 leading-snug mb-8 shadow-sm">
+                    CHỦ ĐỀ: “CẬP NHẬT NHỮNG TIẾN BỘ TRONG <br>
+                    <span class="text-brand-800 font-black underline decoration-brand-gold/40 decoration-4">CHẨN ĐOÁN & ĐIỀU TRỊ ĐỘNG KINH</span> TẠI VIỆT NAM”
+                </h1>
+                
+                <div class="flex flex-col sm:flex-row gap-6 mb-10">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded bg-brand-800 text-white flex items-center justify-center"><i class="far fa-calendar-alt"></i></div>
+                        <div><p class="text-xs text-gray-500 uppercase font-bold">Thời gian</p><p class="font-bold text-brand-900">11-12/04/2026</p></div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded bg-brand-gold text-white flex items-center justify-center"><i class="fas fa-map-marker-alt"></i></div>
+                        <div><p class="text-xs text-gray-500 uppercase font-bold">Địa điểm</p><p class="font-bold text-brand-900">Sở Y tế Nghệ An</p></div>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <a href="#agenda" class="inline-flex items-center gap-2 bg-brand-900 text-white px-6 py-3 rounded hover:bg-brand-800 transition font-bold tracking-wide shadow-xl">
+                        Xem Chi Tiết Lịch Trình <i class="fas fa-arrow-down"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative order-1 lg:order-2 hidden lg:block">
+                <div class="absolute -top-10 -right-10 w-72 h-72 bg-brand-gold/10 rounded-full blur-3xl"></div>
+                <div class="grid grid-cols-2 gap-4 relative z-10">
+                    <div class="transform translate-y-8">
+                        <img src="gs-lim.jpg" class="w-full h-64 object-cover rounded-lg shadow-2xl object-top border-4 border-white" alt="GS Lim">
+                        <div class="bg-brand-900 text-white text-center py-2 mt-2 rounded shadow text-sm font-bold">GS. Lim Kheng Seang</div>
+                    </div>
+                    <div>
+                        <img src="gs-cuong.jpg" class="w-full h-48 object-cover rounded-lg shadow-xl object-top border-4 border-white" alt="GS Cuong">
+                        <div class="bg-brand-800 p-4 mt-4 rounded-lg text-white shadow-xl text-center">
+                            <p class="font-serif text-3xl font-bold">200+</p>
+                            <p class="text-xs text-gray-300 uppercase">Đại biểu tham dự</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="agenda" class="py-20 bg-white">
+        <div class="container mx-auto px-4 lg:px-6">
+            <div class="text-center mb-16">
+                <h3 class="font-serif text-3xl font-bold text-brand-900 mb-3">Chương Trình Chi Tiết</h3>
+                <p class="text-gray-500">Thông tin chính thức từ Ban Tổ Chức</p>
+                <div class="w-20 h-1 bg-brand-gold mx-auto mt-4"></div>
+            </div>
+
+            <div class="flex justify-center gap-4 mb-12">
+                <button onclick="document.getElementById('sat-content').scrollIntoView({behavior: 'smooth'})" class="bg-brand-900 text-white px-6 py-3 rounded-lg shadow-lg font-bold hover:bg-brand-800 transition">
+                    Thứ Bảy, 11/04/2026
+                </button>
+                <button onclick="document.getElementById('sun-content').scrollIntoView({behavior: 'smooth'})" class="bg-white text-brand-800 border border-brand-200 px-6 py-3 rounded-lg font-bold hover:bg-gray-50 transition">
+                    Chủ nhật, 12/04
+                </button>
+            </div>
+
+            <div class="max-w-6xl mx-auto space-y-10" id="sat-content">
+                
+                <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-gray-400 flex flex-col md:flex-row md:items-center gap-6">
+                    <div class="w-32 font-bold text-gray-600 text-lg flex-shrink-0">07:30 – 08:30</div>
+                    <div><div class="font-bold text-brand-900 text-lg uppercase">Đón tiếp đại biểu & Khai mạc</div></div>
+                </div>
+
+                <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-brand-800 shadow-sm">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="w-32 font-bold text-brand-800 text-xl flex-shrink-0">08:30 - 10:00</div>
+                        <div class="w-full">
+                            <h4 class="font-bold text-brand-900 text-xl mb-2 uppercase">PHIÊN TOÀN THỂ 1</h4>
+                            <p class="text-sm text-gray-700 mb-4 bg-white p-3 rounded border border-blue-100">
+                                <strong>Chủ tọa:</strong> GS.TS.BS Lê Quang Cường, PGS.TS.BS Phan Việt Nga, PGS.TS.BS Dương Đình Chỉnh, TS.BS Lê Văn Tuấn
+                            </p>
+                            <div class="space-y-4">
+                                <div class="timeline-row flex gap-4">
+                                    <span class="font-bold text-brand-gold w-24 flex-shrink-0">08:30 – 09:00</span>
+                                    <div>
+                                        <p class="font-bold text-brand-900 text-lg">Những tiến bộ trong chẩn đoán và điều trị động kinh trong khu vực Đông Nam Á</p>
+                                        <p class="text-brand-800 font-bold mt-1">Prof. Lim Kheng Seang (Malaysia)</p>
+                                        <p class="text-sm text-gray-600 italic">Chủ tịch Hội Thần kinh ASEAN, Chủ tịch ILAE-AO</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-row flex gap-4">
+                                    <span class="font-bold text-brand-gold w-24 flex-shrink-0">09:00 – 09:30</span>
+                                    <div>
+                                        <p class="font-bold text-brand-900 text-lg">Căn nguyên viêm trong động kinh trẻ em</p>
+                                        <p class="text-brand-800 font-bold mt-1">Prof. Derrick Chan Wei Shih (Singapore)</p>
+                                        <p class="text-sm text-gray-600 italic">Duke-NUS Medical School</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-row flex gap-4">
+                                    <span class="font-bold text-brand-gold w-24 flex-shrink-0">09:30 – 09:50</span>
+                                    <div>
+                                        <p class="font-bold text-brand-900 text-lg">Cập nhật hướng dẫn điều trị động kinh: xu hướng lựa chọn thuốc thế hệ mới</p>
+                                        <p class="text-brand-800 font-bold mt-1">ThS.BS Lê Thụy Minh An</p>
+                                        <p class="text-sm text-gray-600 italic">Bộ môn Thần kinh, Đại học Y Dược TP.HCM</p>
+                                    </div>
+                                </div>
+                                <div class="discussion-row flex gap-4 items-center">
+                                    <span class="font-bold text-brand-gold w-24 flex-shrink-0">09:50 – 10:00</span>
+                                    <p class="font-bold text-brand-900 uppercase">Thảo luận (Q&A)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-center"><span class="bg-orange-100 text-orange-800 px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wide">10:00 - 10:20: Giải lao (Tea Break)</span></div>
+
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <div class="bg-white border border-gray-200 p-6 rounded-lg shadow-sm">
+                        <div class="border-b-2 border-brand-800 pb-3 mb-4">
+                            <h5 class="text-brand-800 font-bold uppercase text-lg"><i class="fas fa-child mr-2"></i> HỘI TRƯỜNG 1: ĐỘNG KINH NHI</h5>
+                            <p class="text-xs text-gray-500 mt-1">Chủ tọa: TS.BS Cao Vũ Hùng, TS.BS Hồ Đăng Mười, PGS.TS.BS Nguyễn Lê Trung Hiếu</p>
+                        </div>
+                        <div class="space-y-4 text-sm">
+                            <div class="timeline-row">
+                                <span class="font-bold text-brand-700 block mb-1">10:20 – 10:35</span>
+                                <p class="font-bold text-gray-900">Phổ kiểu gen động kinh kháng thuốc: kết quả từ nghiên cứu đa trung tâm trên trẻ em Việt Nam</p>
+                                <p class="text-brand-800 font-bold mt-1">TS.BS Hoàng Kim Tuấn</p>
+                                <p class="text-xs text-gray-500 italic">Trưởng phòng Quản lý Đào tạo, Trường Đại học Y Khoa Vinh</p>
+                            </div>
+                            <div class="timeline-row">
+                                <span class="font-bold text-brand-700 block mb-1">10:35 – 10:55</span>
+                                <p class="font-bold text-gray-900">Chế độ ăn Keto cho trẻ mắc bệnh động kinh kháng thuốc tại Bệnh viện Nhi Trung ương</p>
+                                <p class="text-brand-800 font-bold mt-1">ThS.BS Doãn Ngọc Ánh</p>
+                                <p class="text-xs text-gray-500 italic">Trung tâm Thần kinh, Bệnh viện Nhi Trung ương</p>
+                            </div>
+                            <div class="timeline-row">
+                                <span class="font-bold text-brand-700 block mb-1">10:55 – 11:15</span>
+                                <p class="font-bold text-gray-900">Cập nhật chẩn đoán và điều trị một số hội chứng động kinh ở trẻ em</p>
+                                <p class="text-brand-800 font-bold mt-1">BSCK2 Nguyễn Thị Bích Vân</p>
+                                <p class="text-xs text-gray-500 italic">Trưởng khoa Khám bệnh Đa khoa, Bệnh viện Nhi Trung ương</p>
+                            </div>
+                            <div class="timeline-row">
+                                <span class="font-bold text-brand-700 block mb-1">11:15 – 11:30</span>
+                                <p class="font-bold text-gray-900">Tiên lượng động kinh ở trẻ sốt co giật: kết quả từ nghiên cứu đoàn hệ tại Việt Nam</p>
+                                <p class="text-brand-800 font-bold mt-1">ThS.BS Bùi Hiếu Anh</p>
+                                <p class="text-xs text-gray-500 italic">Bộ môn Thần kinh, Trường Đại học Y khoa Phạm Ngọc Thạch</p>
+                            </div>
+                            <div class="timeline-row">
+                                <span class="font-bold text-brand-700 block mb-1">11:30 – 11:50</span>
+                                <p class="font-bold text-gray-900">Vai trò của thuốc thế hệ mới trong kiểm soát động kinh trẻ em: từ cơ chế đến thực hành</p>
+                                <p class="text-brand-800 font-bold mt-1">PGS.TS.BS Nguyễn Lê Trung Hiếu</p>
+                                <p class="text-xs text-gray-500 italic">Giảng viên Bộ môn Thần kinh, Đại học Y Dược TP HCM</p>
+                            </div>
+                            <div class="discussion-row text-center font-bold text-brand-900">
+                                11:50 – 12:00: Thảo luận (Q&A)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-gray-200 p-6 rounded-lg shadow-sm">
+                        <div class="border-b-2 border-brand-gold pb-3 mb-4">
+                            <h5 class="text-brand-gold font-bold uppercase text-lg"><i class="fas fa-brain mr-2"></i> HỘI TRƯỜNG 2: PHẪU THUẬT</h5>
+                            <p class="text-xs text-gray-500 mt-1">Chủ tọa: PGS.TS.BS Nguyễn Đình Toàn, TS.BS Nguyễn Anh Tuấn, TS.BS Hoàng Kim Tuấn</p>
+                        </div>
+                        <div class="space-y-4 text-sm">
+                            <div class="timeline-row">
+                                <span class="font-bold text-brand-gold block mb-1">10:20 – 10:35</span>
+                                <p class="font-bold text-gray-900">Định khu vùng sinh động kinh bằng điện não đồ nội sọ trong đánh giá phẫu thuật động kinh kháng thuốc</p>
+                                <p class="text-brand-800 font-bold mt-1">ThS.BS Tạ Hồng Nhung</p>
+                                <p class="text-xs text-gray-500 italic">Khoa Nội hồi sức thần kinh, Bệnh viện Hữu nghị Việt Đức</p>
+                            </div>
+                            <div class="timeline-row">
+                                <span class="font-bold text-brand-gold block mb-1">10:35 – 10:55</span>
+                                <p class="font-bold text-gray-900">Động kinh thùy trán hay động kinh thùy thái dương: nhân một trường hợp sử dụng SEEG và hình ảnh học nâng cao</p>
+                                <p class="text-brand-800 font-bold mt-1">ThS.BS Võ Thế Nhân</p>
+                                <p class="text-xs text-gray-500 italic">Viện Thần kinh, Bệnh viện Bạch Mai</p>
+                            </div>
+                            <div class="timeline-row">
+                                <span class="font-bold text-brand-gold block mb-1">10:55 – 11:15</span>
+                                <p class="font-bold text-gray-900">Phẫu thuật động kinh thái dương: Cắt chọn lọc hay cắt thái dương trước?</p>
+                                <p class="text-brand-800 font-bold mt-1">TS.BS Trần Đình Văn</p>
+                                <p class="text-xs text-gray-500 italic">Phó trưởng khoa Phẫu thuật Thần kinh I, Bệnh viện Hữu nghị Việt Đức</p>
+                            </div>
+                            <div class="timeline-row">
+                                <span class="font-bold text-brand-gold block mb-1">11:15 – 11:30</span>
+                                <p class="font-bold text-gray-900">Ứng dụng điện não đồ giám sát dưới màng cứng và điện cực não sâu trong phẫu thuật động kinh cục bộ ở trẻ em – loạt ca bệnh</p>
+                                <p class="text-brand-800 font-bold mt-1">BSCK2 Lê Nam Thắng</p>
+                                <p class="text-xs text-gray-500 italic">Trưởng khoa Ngoại Thần kinh, Trung tâm Thần kinh, Bệnh viện Nhi Trung ương</p>
+                            </div>
+                            <div class="timeline-row">
+                                <span class="font-bold text-brand-gold block mb-1">11:30 – 11:50</span>
+                                <p class="font-bold text-gray-900">Kết quả phẫu thuật động kinh cục bộ kháng thuốc có áp dụng điện vỏ não (ECoG) tại Bệnh viện Nhi Trung ương</p>
+                                <p class="text-brand-800 font-bold mt-1">BSCK2 Nguyễn Thị Thảo</p>
+                                <p class="text-xs text-gray-500 italic">Khoa Ngoại thần kinh, Trung tâm Thần kinh, Bệnh viện Nhi Trung ương</p>
+                            </div>
+                            <div class="discussion-row text-center font-bold text-brand-900">
+                                11:50 – 12:00: Thảo luận (Q&A)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-center"><span class="bg-green-100 text-green-800 px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wide">12:00 - 13:30: Ăn trưa (Lunch Break)</span></div>
+
+                <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-brand-800 shadow-sm">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="w-32 font-bold text-brand-800 text-xl flex-shrink-0">13:30 - 15:00</div>
+                        <div class="w-full">
+                            <h4 class="font-bold text-brand-900 text-xl mb-2 uppercase">PHIÊN TOÀN THỂ CHIỀU</h4>
+                            <p class="text-sm text-gray-700 mb-4 bg-white p-3 rounded border border-blue-100">
+                                <strong>Chủ tọa:</strong> GS.TS.BS Cao Tiến Đức, PGS.TS.BS Nguyễn Văn Liệu, PGS.TS.BS Trần Viết Lực, PGS.TS.BS Võ Hồng Khôi
+                            </p>
+                            <div class="space-y-4">
+                                <div class="timeline-row flex gap-4">
+                                    <span class="font-bold text-brand-gold w-24 flex-shrink-0">13:30 – 13:50</span>
+                                    <div>
+                                        <p class="font-bold text-brand-900 text-lg">Ứng dụng điều biến thần kinh trong điều trị động kinh kháng thuốc</p>
+                                        <p class="text-brand-800 font-bold mt-1">Dr. Chan Fu Lin (Taiwan)</p>
+                                        <p class="text-sm text-gray-600 italic">Taipei Veteran General Hospital</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-row flex gap-4">
+                                    <span class="font-bold text-brand-gold w-24 flex-shrink-0">13:50 – 14:10</span>
+                                    <div>
+                                        <p class="font-bold text-brand-900 text-lg">Phương pháp điều trị động kinh kháng trị bằng chế độ keto trên thế giới và Việt Nam</p>
+                                        <p class="text-brand-800 font-bold mt-1">TS.BS Nguyễn Thị Thu Hậu</p>
+                                        <p class="text-sm text-gray-600 italic">Trưởng khoa Dinh dưỡng, Bệnh viện Nhi đồng 2</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-row flex gap-4">
+                                    <span class="font-bold text-brand-gold w-24 flex-shrink-0">14:10 – 14:30</span>
+                                    <div>
+                                        <p class="font-bold text-brand-900 text-lg">Những tiến bộ trong phẫu thuật động kinh kháng thuốc và vai trò của kích thích thần kinh phế vị (VNS)</p>
+                                        <p class="text-brand-800 font-bold mt-1">ThS.BS Nguyễn Phan Thanh Tú</p>
+                                        <p class="text-sm text-gray-600 italic">Khoa Ngoại Thần kinh, Bệnh viện Đại học Y Dược TP. HCM</p>
+                                    </div>
+                                </div>
+                                <div class="discussion-row flex gap-4 items-center">
+                                    <span class="font-bold text-brand-gold w-24 flex-shrink-0">14:30 – 15:00</span>
+                                    <p class="font-bold text-brand-900 uppercase">Thảo luận (Q&A)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-center"><span class="bg-orange-100 text-orange-800 px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wide">14:40 - 15:00: Giải lao</span></div>
+
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <div class="bg-white border border-gray-200 p-6 rounded-lg shadow-sm">
+                        <div class="border-b-2 border-brand-800 pb-3 mb-4">
+                            <h5 class="text-brand-800 font-bold uppercase text-lg"><i class="fas fa-heartbeat mr-2"></i> HT1: ĐỘNG KINH & BỆNH LÝ LIÊN QUAN</h5>
+                            <p class="text-xs text-gray-500 mt-1">Chủ tọa: PGS.TS Nguyễn Văn Hướng, PGS.TS Trần Văn Tuấn, TS.BS Nguyễn Ngọc Hòa</p>
+                        </div>
+                        <div class="space-y-4 text-sm">
+                            <div class="timeline-row">
+                                <span class="font-bold text-brand-700 block mb-1">15:00 – 15:20</span>
+                                <p class="font-bold text-gray-900">Động kinh tự miễn – Khi nào cần nghĩ tới</p>
+                                <p class="text-brand-800 font-bold mt-1">Ths.Bs Phương Thanh Hà</p>
+                                <p class="text-xs text-gray-500 italic">Bộ môn Thần kinh, Đại học Y Hà Nội</p>
+                            </div>
+                            <div class="timeline-row">
+                                <span class="font-bold text-brand-700 block mb-1">15:20 – 15:40</span>
+                                <p class="font-bold text-gray-900">Biến chứng thần kinh hiếm gặp trong bệnh sởi: bàn về vai trò của bác sĩ thần kinh trong bệnh truyền nhiễm</p>
+                                <p class="text-brand-800 font-bold mt-1">ThS.BS Lê Thụy Minh An</p>
+                                <p class="text-xs text-gray-500 italic">Bộ môn Thần kinh, Đại học Y Dược TP.HCM</p>
+                            </div>
+                            <div class="timeline-row">
+                                <span class="font-bold text-brand-700 block mb-1">15:40 – 16:00</span>
+                                <p class="font-bold text-gray-900">Khi nào động kinh là dấu hiệu huỷ myelin trung ương? Báo cáo trường hợp lâm sàng</p>
+                                <p class="text-brand-800 font-bold mt-1">ThS.BS Lê Văn Thủy</p>
+                                <p class="text-xs text-gray-500 italic">Bộ môn Thần kinh, Đại học Y Hà Nội</p>
+                            </div>
+                            <div class="timeline-row">
+                                <span class="font-bold text-brand-700 block mb-1">16:00 – 16:15</span>
+                                <p class="font-bold text-gray-900">Các trường hợp lâm sàng về động kinh trên một số bệnh lý liên quan tại khoa Thần kinh bệnh viên Đa khoa Nghệ an</p>
+                                <p class="text-brand-800 font-bold mt-1">Ths.Bs Hồ Quang Thịnh</p>
+                                <p class="text-xs text-gray-500 italic">Khoa Thần kinh, Bệnh viện đa khoa tỉnh Nghệ An</p>
+                            </div>
+                            <div class="timeline-row">
+                                <span class="font-bold text-brand-700 block mb-1">16:15 – 16:30</span>
+                                <p class="font-bold text-gray-900">Động kinh trên bệnh nhân tổn thương não do mắc bệnh máu ác tính: góc nhìn từ các trường hợp lâm sàng</p>
+                                <p class="text-brand-800 font-bold mt-1">ThS.BSNT Nguyễn Thị Thơm</p>
+                                <p class="text-xs text-gray-500 italic">Viện Đào tạo Răng Hàm Mặt, Trường ĐH Y Hà Nội</p>
+                            </div>
+                            <div class="discussion-row text-center font-bold text-brand-900">
+                                16:30 – 16:40: Thảo luận (Q&A)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 border border-yellow-100 p-6 rounded-lg shadow-sm">
+                        <div class="border-b-2 border-brand-gold pb-3 mb-4">
+                            <h5 class="text-brand-gold font-bold uppercase text-lg"><i class="fas fa-comments mr-2"></i> HỘI TRƯỜNG 2: TRANH LUẬN (DEBATE)</h5>
+                            <p class="text-xs text-gray-500 mt-1">Chủ tọa: PGS.TS Phan Việt Nga, PGS.TS Nguyễn Lê Trung Hiếu</p>
+                        </div>
+                        <div class="space-y-6 text-sm">
+                            <div class="bg-white p-4 rounded shadow-sm">
+                                <span class="bg-brand-900 text-white text-xs px-2 py-1 rounded mb-2 inline-block">Chủ đề 1 (15:00 - 15:40)</span>
+                                <p class="font-bold text-gray-900 text-base mb-2">Chỉ định xét nghiệm di truyền sớm trong quản lý động kinh trẻ em, nên hay không nên?</p>
+                                <div class="grid grid-cols-2 gap-4 mt-2">
+                                    <div class="text-green-700 font-bold border-r border-gray-200 pr-2">
+                                        ✔ Ủng hộ (Nên):<br>
+                                        <span class="text-xs font-normal text-gray-600 block mt-1">BS Nguyễn Thị Vân</span>
+                                        <span class="text-[10px] text-gray-400 italic">Trung tâm thần kinh, BV Nhi Trung ương</span>
+                                    </div>
+                                    <div class="text-red-700 font-bold">
+                                        ✘ Phản đối (Không):<br>
+                                        <span class="text-xs font-normal text-gray-600 block mt-1">BS Đào Thị Việt Hường</span>
+                                        <span class="text-[10px] text-gray-400 italic">Trung tâm thần kinh, BV Nhi Trung ương</span>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-brand-gold mt-2 italic text-center font-bold">Thảo luận chủ đề 1</p>
+                            </div>
+                            <div class="bg-white p-4 rounded shadow-sm">
+                                <span class="bg-brand-900 text-white text-xs px-2 py-1 rounded mb-2 inline-block">Chủ đề 2 (15:40 - 16:30)</span>
+                                <p class="font-bold text-gray-900 text-base mb-2">Dự phòng tái phát sau cơn co giật lần đầu lúc ngủ ở trẻ thiếu niên nên hay không?</p>
+                                <div class="grid grid-cols-2 gap-4 mt-2">
+                                    <div class="text-green-700 font-bold border-r border-gray-200 pr-2">
+                                        ✔ Ủng hộ (Nên):<br>
+                                        <span class="text-xs font-normal text-gray-600 block mt-1">ThS.BS Võ Thị Hạnh Vi</span>
+                                        <span class="text-[10px] text-gray-400 italic">Khoa Thần kinh, BV Nguyễn Tri Phương</span>
+                                    </div>
+                                    <div class="text-red-700 font-bold">
+                                        ✘ Phản đối (Không):<br>
+                                        <span class="text-xs font-normal text-gray-600 block mt-1">ThS.BS Tăng Ngọc Phương Lộc</span>
+                                        <span class="text-[10px] text-gray-400 italic">Bộ môn Thần kinh, ĐH Y khoa Phạm Ngọc Thạch</span>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-brand-gold mt-2 italic text-center font-bold">Thảo luận chủ đề 2</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-center pt-8 border-t border-gray-200">
+                    <span class="text-brand-900 font-bold uppercase tracking-widest text-lg bg-gray-100 px-8 py-3 rounded-full shadow-inner">16:40 – 17:00: BẾ MẠC HỘI NGHỊ</span>
+                </div>
+
+                <div class="mt-12" id="sun-content">
+                    <div class="bg-gradient-to-r from-brand-900 to-brand-800 text-white p-8 rounded-xl shadow-2xl flex flex-col md:flex-row items-center gap-8">
+                        <div class="md:w-1/4 text-center md:text-right border-b md:border-b-0 md:border-r border-white/20 pb-4 md:pb-0 md:pr-8">
+                            <div class="text-4xl font-bold text-brand-gold">CN</div>
+                            <div class="text-xl font-bold">12/04/2026</div>
+                            <div class="text-sm opacity-80 mt-1">08:00 - 11:00</div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h4 class="font-bold text-2xl mb-2 text-brand-gold uppercase">WORKSHOP CHUYÊN SÂU</h4>
+                            <p class="text-xl font-medium">Chủ đề: "Kỹ thuật VNS trong điều trị bệnh lí động kinh kháng thuốc"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="speakers" class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="font-serif text-3xl font-bold text-brand-900 mb-2">Chủ Tọa & Báo Cáo Viên</h3>
+                <div class="w-16 h-1 bg-brand-gold mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group">
+                    <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4"><img src="gs-cuong.jpg" class="w-full h-full object-cover object-top" alt="GS Cường"></div>
+                    <h5 class="font-bold text-brand-900 text-sm mb-1">GS.TS Lê Quang Cường</h5><p class="text-[10px] text-gray-500 uppercase">Chủ tịch Hội đồng GS Y học</p>
+                </div>
+                <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group">
+                    <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4"><img src="pgs-nga.jpg" class="w-full h-full object-cover object-top" alt="PGS Nga"></div>
+                    <h5 class="font-bold text-brand-900 text-sm mb-1">PGS.TS Phan Việt Nga</h5><p class="text-[10px] text-gray-500 uppercase">Chủ tịch VAAE</p>
+                </div>
+                <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group">
+                    <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4"><img src="gs-duc.jpg" class="w-full h-full object-cover object-top" alt="GS Đức"></div>
+                    <h5 class="font-bold text-brand-900 text-sm mb-1">GS.TS Cao Tiến Đức</h5><p class="text-[10px] text-gray-500 uppercase">Chủ tọa phiên chiều</p>
+                </div>
+                <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group">
+                    <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4"><img src="pgs-lieu.jpg" class="w-full h-full object-cover object-top" alt="PGS Liệu"></div>
+                    <h5 class="font-bold text-brand-900 text-sm mb-1">PGS.TS Nguyễn Văn Liệu</h5><p class="text-[10px] text-gray-500 uppercase">Cố vấn chuyên môn</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sponsors" class="py-20 bg-white border-y border-gray-100">
+        <div class="container mx-auto px-6 text-center">
+            <h4 class="font-serif font-bold text-brand-900 text-2xl mb-2">Đơn Vị Tài Trợ</h4>
+            <div class="w-16 h-1 bg-brand-gold mx-auto mb-12"></div>
+            
+            <div class="mb-16">
+                <p class="text-xs text-brand-gold font-bold tracking-widest uppercase mb-8 border-b border-brand-gold/20 inline-block pb-1">Nhà Tài Trợ Vàng</p>
+                <div class="flex flex-wrap justify-center items-center gap-16">
+                    <img src="sponsor-gold-1.jpg" class="h-24 object-contain hover:scale-110 transition duration-300" alt="Eisai" onerror="this.style.display='none'">
+                    <img src="sponsor-gold-2.jpg" class="h-24 object-contain hover:scale-110 transition duration-300" alt="Golden Gate" onerror="this.style.display='none'">
+                    <img src="sponsor-gold-3.jpg" class="h-24 object-contain hover:scale-110 transition duration-300" alt="Gold 3" onerror="this.style.display='none'">
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <p class="text-[10px] text-gray-400 font-bold tracking-widest uppercase mb-6">Nhà Tài Trợ Bạc</p>
+                <div class="flex flex-wrap justify-center items-center gap-12">
+                    <img src="sponsor-silver-1.jpg" class="h-12 object-contain hover:scale-105 transition" alt="Silver 1" onerror="this.style.display='none'">
+                    <img src="sponsor-silver-2.jpg" class="h-12 object-contain hover:scale-105 transition" alt="Silver 2" onerror="this.style.display='none'">
+                </div>
+            </div>
+
+            <div>
+                <p class="text-[10px] text-gray-400 font-bold tracking-widest uppercase mb-6">Nhà Tài Trợ Đồng</p>
+                <div class="flex flex-wrap justify-center items-center gap-8">
+                    <img src="sponsor-bronze-1.jpg" class="h-8 object-contain hover:scale-105 transition" alt="Bronze 1" onerror="this.style.display='none'">
+                    <img src="sponsor-bronze-2.jpg" class="h-8 object-contain hover:scale-105 transition" alt="Bronze 2" onerror="this.style.display='none'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="register" class="py-24 bg-brand-900 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
+                <div class="md:w-4/12 bg-slate-100 p-8 border-r border-gray-200">
+                    <h3 class="font-serif font-bold text-2xl text-brand-900 mb-6">Đăng Ký Tham Dự</h3>
+                    <div id="fee-box-free" class="bg-white p-6 rounded-lg shadow-sm border border-green-200 mb-6 text-center">
+                        <p class="text-[10px] text-gray-500 uppercase font-bold">Phí đăng kí tham dự</p>
+                        <p class="text-2xl font-bold text-green-600 mt-1 uppercase">Miễn phí</p>
+                    </div>
+                    <div id="fee-box-cme" class="hidden bg-white p-6 rounded-lg shadow-sm border-2 border-brand-800 mb-6 text-center relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-brand-800"></div>
+                        <p class="text-[10px] text-gray-500 uppercase font-bold">Phí Đăng Ký Cấp CME</p>
+                        <p class="text-3xl font-bold text-brand-800 mt-2">500.000<span class="text-sm align-top">đ</span></p>
+                    </div>
+                    <div id="bank-info" class="space-y-4 text-sm hidden">
+                        <div>
+                            <p class="font-bold text-gray-700">Ngân hàng MB Bank</p>
+                            <p class="text-gray-600">STK: <span class="font-mono font-bold text-brand-700">5686 888 666</span></p>
+                            <p class="text-gray-600">CTK: <span class="uppercase">Hội Chống động kinh Việt Nam</span></p>
+                            <p class="text-xs text-gray-400 mt-1">Nội dung: HNKH [Họ Tên] [SĐT]</p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="md:w-8/12 p-8 md:p-10 relative">
+                    <form id="submit-to-google-sheet" name="submit-to-google-sheet">
+                        <div class="mb-8 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <label class="block text-xs font-bold text-gray-500 uppercase mb-3">Tùy chọn tham dự (Vui lòng tích chọn) *</label>
+                            <div class="space-y-3">
+                                <label class="flex items-center gap-3 cursor-pointer p-2 hover:bg-white rounded transition">
+                                    <input type="checkbox" name="Option_Conference" value="Có" class="custom-checkbox" checked>
+                                    <span class="text-sm font-medium text-gray-700">Tham dự Hội nghị ngày 11/04</span>
+                                </label>
+                                <label class="flex items-center gap-3 cursor-pointer p-2 hover:bg-white rounded transition">
+                                    <input type="checkbox" name="Option_Workshop" value="Có" class="custom-checkbox">
+                                    <span class="text-sm font-medium text-gray-700">Tham dự Workshop ngày 12/04</span>
+                                </label>
+                                <label class="flex items-center gap-3 cursor-pointer p-2 bg-blue-50 border border-blue-100 rounded transition">
+                                    <input type="checkbox" id="check-cme" name="Option_CME" value="Có" class="custom-checkbox">
+                                    <div>
+                                        <span class="text-sm font-bold text-brand-800">Đăng kí nhận CME (Phí: 500.000 VNĐ)</span>
+                                        <p class="text-[10px] text-gray-500 italic">Không bắt buộc</p>
+                                    </div>
+                                </label>
+                            </div>
+                            <p class="text-[10px] text-gray-400 mt-3 italic">* Hội thảo và Workshop không bắt buộc tham gia cả hai.</p>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div><label class="block text-xs font-bold text-gray-500 uppercase mb-1">Họ và tên *</label><input name="Ho_Ten" type="text" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-brand-800 outline-none"></div>
+                            <div><label class="block text-xs font-bold text-gray-500 uppercase mb-1">Ngày sinh *</label><input name="Ngay_Sinh" type="date" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-brand-800 outline-none text-gray-700"></div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div><label class="block text-xs font-bold text-gray-500 uppercase mb-1">Học hàm / Học vị</label><select name="Chuc_Vu" class="w-full px-4 py-2 border border-gray-300 rounded bg-white"><option value="BS">Bác sĩ</option><option value="ThS">Thạc sĩ</option><option value="TS">Tiến sĩ</option><option value="PGS">Phó Giáo sư</option><option value="GS">Giáo sư</option></select></div>
+                            <div><label class="block text-xs font-bold text-gray-500 uppercase mb-1">Đơn vị công tác *</label><input name="Don_Vi" type="text" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-brand-800 outline-none"></div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div><label class="block text-xs font-bold text-gray-500 uppercase mb-1">Email *</label><input id="email-input" name="Email" type="email" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-brand-800 outline-none"></div>
+                            <div><label class="block text-xs font-bold text-gray-500 uppercase mb-1">Số điện thoại *</label><input name="So_Dien_Thoai" type="tel" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-brand-800 outline-none"></div>
+                        </div>
+                        <div id="cme-section" class="hidden space-y-6 animate-fade-in border-t border-dashed pt-6 mb-6">
+                            <div><label class="block text-xs font-bold text-gray-500 uppercase mb-1">Địa chỉ nhận CME (Ghi rõ) *</label><input id="cme-address" name="Dia_Chi_CME" type="text" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-brand-800 outline-none" placeholder="Số nhà, đường, quận/huyện..."></div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Ảnh xác nhận chuyển khoản *</label>
+                                <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:bg-gray-50 transition cursor-pointer relative bg-gray-50">
+                                    <input type="file" id="payment-file" accept="image/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10">
+                                    <div class="text-gray-500" id="file-label"><i class="fas fa-cloud-upload-alt text-3xl mb-2 text-brand-800"></i><p class="text-sm">Nhấn để tải lên chuyển khoản thành công</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" name="Noi_Dung_Tham_Du" id="hidden-content">
+                        <button type="submit" class="w-full bg-brand-800 text-white font-bold py-4 rounded hover:bg-brand-900 transition shadow-lg flex justify-center items-center gap-2 uppercase tracking-wide"><span>GỬI ĐĂNG KÝ THAM DỰ</span><div class="loader hidden"></div></button>
+                    </form>
+                    <div id="success-message" class="hidden absolute inset-0 bg-white flex flex-col items-center justify-center text-center p-10 z-20"><div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-4xl mb-6 shadow-lg"><i class="fas fa-check"></i></div><h3 class="font-serif font-bold text-2xl text-brand-900 mb-2">Đăng Ký Thành Công!</h3><p class="text-gray-600 mb-6">Ban Tổ chức đã nhận được thông tin.<br>Thư xác nhận sẽ được gửi qua email sớm nhất.</p><button onclick="location.reload()" class="text-brand-700 font-bold hover:underline">Quay lại</button></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-900 text-white py-12 border-t border-brand-800">
+        <div class="container mx-auto px-6 text-center">
+            <a href="https://hoichongdongkinhvietnam.vn" target="_blank" class="inline-block group">
+                <img src="logo.png" alt="Logo VAAE" class="w-16 h-16 mx-auto mb-4 bg-white rounded-full p-1 opacity-80 group-hover:opacity-100 transition duration-300 transform group-hover:scale-110">
+                <p class="font-serif font-bold text-xl mb-2 group-hover:text-brand-gold transition">HỘI CHỐNG ĐỘNG KINH VIỆT NAM</p>
+            </a>
+            <p class="text-gray-400 text-sm">Vietnam Association Against Epilepsy (VAAE)</p>
+            <div class="mt-8 text-xs text-gray-500 border-t border-brand-800 pt-8">© 2026 VAAE. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxPSjPxyxFchecPfCy1pSGWiC4cb7TF2xt9GHxJg7Rm9rfC67hk6RaNkYUoRW6Hv94B_A/exec' 
+        const form = document.forms['submit-to-google-sheet'];
+        const btn = form.querySelector('button');
+        const loader = form.querySelector('.loader');
+        const successMsg = document.getElementById('success-message');
+        const fileInput = document.getElementById('payment-file');
+        const fileLabel = document.getElementById('file-label');
+        const checkCME = document.getElementById('check-cme');
+        const cmeSection = document.getElementById('cme-section');
+        const feeBoxFree = document.getElementById('fee-box-free');
+        const feeBoxCME = document.getElementById('fee-box-cme');
+        const bankInfo = document.getElementById('bank-info');
+        const cmeAddress = document.getElementById('cme-address');
+
+        checkCME.addEventListener('change', function() {
+            if(this.checked) {
+                cmeSection.classList.remove('hidden');
+                feeBoxFree.classList.add('hidden');
+                feeBoxCME.classList.remove('hidden');
+                bankInfo.classList.remove('hidden');
+                cmeAddress.required = true;
+                fileInput.required = true;
+            } else {
+                cmeSection.classList.add('hidden');
+                feeBoxFree.classList.remove('hidden');
+                feeBoxCME.classList.add('hidden');
+                bankInfo.classList.add('hidden');
+                cmeAddress.required = false;
+                fileInput.required = false;
+            }
+        });
+
+        fileInput.addEventListener('change', function() {
+            if (this.files && this.files[0]) {
+                fileLabel.innerHTML = `<p class="text-brand-800 font-bold">${this.files[0].name}</p>`;
+            }
+        });
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            let contentArr = [];
+            if(form.Option_Conference.checked) contentArr.push("Hội nghị 11/04");
+            if(form.Option_Workshop.checked) contentArr.push("Workshop 12/04");
+            if(form.Option_CME.checked) contentArr.push("CME");
+            
+            if(contentArr.length === 0) { alert("Vui lòng chọn ít nhất một nội dung tham dự!"); return; }
+            document.getElementById('hidden-content').value = contentArr.join(", ");
+
+            const emailInput = document.getElementById('email-input');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value)) { alert('Vui lòng nhập Email hợp lệ!'); emailInput.focus(); return; }
+
+            btn.disabled = true;
+            btn.classList.add('opacity-75', 'cursor-not-allowed');
+            loader.classList.remove('hidden');
+
+            const sendData = (fileData = null, fileName = null, mimeType = null) => {
+                const formDataObj = {
+                    Ho_Ten: form.Ho_Ten.value,
+                    Ngay_Sinh: form.Ngay_Sinh.value,
+                    Chuc_Vu: form.Chuc_Vu.value,
+                    Don_Vi: form.Don_Vi.value,
+                    Email: form.Email.value,
+                    So_Dien_Thoai: form.So_Dien_Thoai.value,
+                    Dia_Chi_CME: form.Dia_Chi_CME.value,
+                    Noi_Dung_Tham_Du: form.Noi_Dung_Tham_Du.value,
+                    fileName: fileName,
+                    mimeType: mimeType,
+                    fileData: fileData 
+                };
+                fetch(scriptURL, { method: 'POST', body: JSON.stringify(formDataObj) })
+                .then(response => { console.log('Success!'); successMsg.classList.remove('hidden'); form.reset(); })
+                .catch(error => { console.error('Error!', error.message); alert('Lỗi kết nối!'); btn.disabled = false; loader.classList.add('hidden'); });
+            };
+
+            if (checkCME.checked && fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                const reader = new FileReader();
+                reader.onload = function(e) { sendData(e.target.result, file.name, file.type); };
+                reader.readAsDataURL(file);
+            } else {
+                sendData();
+            }
+        })
+    </script>
+</body>
+</html>
