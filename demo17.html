@@ -80,132 +80,9 @@
         .lang-text[data-lang-en] { display: none; }
         html[lang="en"] .lang-text[data-lang-vi] { display: none; }
         html[lang="en"] .lang-text[data-lang-en] { display: inline; }
-        
-        /* INTRO SPLASH SCREEN STYLES */
-        #intro-splash {
-            position: fixed;
-            inset: 0;
-            z-index: 9999;
-            background-color: #0f172a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
-        }
-        #intro-splash.hidden-splash {
-            transform: translateY(-100%);
-        }
-        #intro-splash .intro-bg {
-            position: absolute;
-            inset: 0;
-            background-image: url('anhlangsen.jpg');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.4;
-            transform: scale(1.1);
-        }
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(180, 83, 9, 0.5); }
-            50% { box-shadow: 0 0 40px rgba(180, 83, 9, 0.9); }
-        }
-        .animate-fade-in-down { animation: fadeInDown 1s ease forwards; }
-        .animate-fade-in-up { animation: fadeInUp 1s ease forwards 0.3s; opacity: 0; }
-        .enter-btn { animation: pulse-glow 2s ease-in-out infinite; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">
-
-    <!-- INTRO SPLASH SCREEN - KẾT HỢP 2 PHIÊN BẢN -->
-    <div id="intro-splash">
-        <div class="intro-bg"></div>
-        
-        <div class="relative z-10 container mx-auto px-6 text-center text-white">
-            <!-- Logo + Tên Hội -->
-            <div class="mb-6 animate-fade-in-down">
-                <img src="logo.png" class="h-24 mx-auto mb-4 bg-white rounded-full p-2 shadow-2xl">
-                <p class="text-brand-gold font-bold tracking-[0.3em] uppercase text-sm">
-                    <span class="lang-text" data-lang-vi>Hội Chống Động Kinh Việt Nam</span>
-                    <span class="lang-text" data-lang-en>Vietnam Association Against Epilepsy</span>
-                </p>
-            </div>
-            
-            <!-- Tiêu đề Hội nghị -->
-            <h1 class="font-serif text-4xl md:text-6xl font-bold mb-8 leading-tight animate-fade-in-up">
-                <span class="lang-text" data-lang-vi>HỘI NGHỊ KHOA HỌC <br> THƯỜNG NIÊN 2026</span>
-                <span class="lang-text" data-lang-en>ANNUAL SCIENTIFIC <br> CONFERENCE 2026</span>
-            </h1>
-            
-            <!-- Quote Box với border-left -->
-            <div class="max-w-3xl mx-auto border-l-4 border-brand-gold pl-6 text-left mb-10 bg-black/30 p-6 rounded-r-lg backdrop-blur-sm animate-fade-in-up" style="animation-delay: 0.5s;">
-                <p class="text-gray-200 text-lg leading-relaxed italic">
-                    <span class="lang-text" data-lang-vi>
-                        "<strong class="text-brand-gold not-italic">Nghệ An</strong> – mảnh đất địa linh nhân kiệt, quê hương <strong class="text-brand-gold not-italic">Chủ tịch Hồ Chí Minh</strong>... Nơi hội tụ các chuyên gia hàng đầu trong nước và quốc tế để cập nhật những tiến bộ mới nhất trong chẩn đoán và điều trị động kinh tại Việt Nam."
-                    </span>
-                    <span class="lang-text" data-lang-en>
-                        "<strong class="text-brand-gold not-italic">Nghe An</strong> – land of great heritage, homeland of <strong class="text-brand-gold not-italic">President Ho Chi Minh</strong>... Where leading domestic and international experts gather to update the latest advances in epilepsy diagnosis and treatment in Vietnam."
-                    </span>
-                </p>
-            </div>
-
-            <!-- Enter Button -->
-            <div class="animate-fade-in-up" style="animation-delay: 0.7s;">
-                <button onclick="enterSite()" class="enter-btn group bg-brand-gold text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-brand-900 transition-all duration-300">
-                    <span class="lang-text" data-lang-vi>TRUY CẬP WEBSITE</span>
-                    <span class="lang-text" data-lang-en>ENTER WEBSITE</span>
-                    <i class="fas fa-arrow-down ml-2 group-hover:translate-y-1 transition"></i>
-                </button>
-                
-                <!-- Skip hint -->
-                <p class="mt-4 text-gray-500 text-sm">
-                    <span class="lang-text" data-lang-vi>Nhấn nút hoặc cuộn chuột để vào trang</span>
-                    <span class="lang-text" data-lang-en>Click button or scroll to enter</span>
-                </p>
-            </div>
-        </div>
-    </div>
-    
-    <script>
-        // Check if user has already seen the intro
-        function checkIntroSeen() {
-            const hasSeenIntro = localStorage.getItem('hasSeenVAAEIntro');
-            if (hasSeenIntro) {
-                document.getElementById('intro-splash').classList.add('hidden-splash');
-                document.body.style.overflow = 'auto';
-            } else {
-                document.body.style.overflow = 'hidden';
-            }
-        }
-        
-        // Enter site function
-        function enterSite() {
-            localStorage.setItem('hasSeenVAAEIntro', 'true');
-            document.getElementById('intro-splash').classList.add('hidden-splash');
-            document.body.style.overflow = 'auto';
-        }
-        
-        // Also allow scroll to dismiss
-        let scrollAttempts = 0;
-        window.addEventListener('wheel', function(e) {
-            const splash = document.getElementById('intro-splash');
-            if (!splash.classList.contains('hidden-splash')) {
-                scrollAttempts++;
-                if (scrollAttempts >= 2) {
-                    enterSite();
-                }
-            }
-        });
-        
-        // Check on page load
-        document.addEventListener('DOMContentLoaded', checkIntroSeen);
-    </script>
 
     <nav class="bg-white/95 backdrop-blur-md shadow-sm fixed w-full z-50 border-b border-gray-100">
         <div class="container mx-auto px-4 lg:px-8 py-3 flex justify-between items-center">
@@ -393,6 +270,96 @@
             </div>
         </div>
     </header>
+
+    <!-- DEMO 17: CINEMATIC STYLE - Phong cách điện ảnh với letterbox -->
+    <section id="welcome" class="relative bg-black">
+        <!-- Letterbox top -->
+        <div class="h-16 bg-black"></div>
+        
+        <!-- Main content -->
+        <div class="relative h-[600px] overflow-hidden">
+            <!-- Background Image -->
+            <div class="absolute inset-0">
+                <img src="anhlangsen.jpg" alt="Nghệ An" class="w-full h-full object-cover opacity-60">
+            </div>
+            
+            <!-- Gradient overlays for cinematic feel -->
+            <div class="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-50"></div>
+            
+            <!-- Content -->
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="text-center text-white max-w-4xl px-6">
+                    <!-- Location tag (like movie location) -->
+                    <div class="mb-8 animate-pulse">
+                        <span class="text-brand-gold text-sm font-mono tracking-[0.5em] uppercase">
+                            <i class="fas fa-map-pin mr-2"></i>
+                            <span class="lang-text" data-lang-vi>Nghệ An, Việt Nam</span>
+                            <span class="lang-text" data-lang-en>Nghe An, Vietnam</span>
+                        </span>
+                    </div>
+                    
+                    <!-- Main title - Cinematic typography -->
+                    <h2 class="font-serif text-6xl lg:text-8xl font-bold mb-6 tracking-wide">
+                        <span class="block text-white/90">
+                            <span class="lang-text" data-lang-vi>ĐỊA LINH</span>
+                            <span class="lang-text" data-lang-en>LAND OF</span>
+                        </span>
+                        <span class="block text-brand-gold">
+                            <span class="lang-text" data-lang-vi>NHÂN KIỆT</span>
+                            <span class="lang-text" data-lang-en>HERITAGE</span>
+                        </span>
+                    </h2>
+                    
+                    <!-- Subtitle with line -->
+                    <div class="flex items-center justify-center gap-4 mb-8">
+                        <div class="w-16 h-px bg-brand-gold"></div>
+                        <p class="text-lg text-gray-300 italic font-light">
+                            <span class="lang-text" data-lang-vi>Quê hương Chủ tịch Hồ Chí Minh</span>
+                            <span class="lang-text" data-lang-en>Homeland of President Ho Chi Minh</span>
+                        </p>
+                        <div class="w-16 h-px bg-brand-gold"></div>
+                    </div>
+                    
+                    <!-- Quote -->
+                    <p class="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed mb-10">
+                        <span class="lang-text" data-lang-vi>
+                            "Nơi hội tụ các chuyên gia hàng đầu trong nước và quốc tế, cập nhật những tiến bộ mới nhất trong chẩn đoán và điều trị động kinh tại Việt Nam."
+                        </span>
+                        <span class="lang-text" data-lang-en>
+                            "Where leading domestic and international experts gather, updating the latest advances in epilepsy diagnosis and treatment in Vietnam."
+                        </span>
+                    </p>
+                    
+                    <!-- CTA with play button style -->
+                    <a href="#agenda" class="inline-flex items-center gap-4 group">
+                        <div class="w-16 h-16 rounded-full border-2 border-brand-gold flex items-center justify-center group-hover:bg-brand-gold transition">
+                            <i class="fas fa-play text-brand-gold group-hover:text-black transition ml-1"></i>
+                        </div>
+                        <span class="text-white font-bold uppercase tracking-widest text-sm group-hover:text-brand-gold transition">
+                            <span class="lang-text" data-lang-vi>Xem chương trình</span>
+                            <span class="lang-text" data-lang-en>View Program</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Side info (like movie credits) -->
+            <div class="absolute bottom-8 left-8 text-white/50 text-xs font-mono tracking-wider hidden lg:block">
+                <p>VAAE 2026</p>
+                <p>11-12 / 04 / 2026</p>
+            </div>
+            
+            <div class="absolute bottom-8 right-8 text-white/50 text-xs font-mono tracking-wider text-right hidden lg:block">
+                <p class="lang-text" data-lang-vi>MƯỜNG THANH CỬA ĐÔNG</p>
+                <p class="lang-text" data-lang-en>MUONG THANH CUA DONG</p>
+                <p>VINH CITY</p>
+            </div>
+        </div>
+        
+        <!-- Letterbox bottom -->
+        <div class="h-16 bg-black"></div>
+    </section>
 
     <section id="agenda" class="py-20 bg-white">
         <div class="container mx-auto px-4 lg:px-6">

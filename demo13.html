@@ -80,132 +80,9 @@
         .lang-text[data-lang-en] { display: none; }
         html[lang="en"] .lang-text[data-lang-vi] { display: none; }
         html[lang="en"] .lang-text[data-lang-en] { display: inline; }
-        
-        /* INTRO SPLASH SCREEN STYLES */
-        #intro-splash {
-            position: fixed;
-            inset: 0;
-            z-index: 9999;
-            background-color: #0f172a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
-        }
-        #intro-splash.hidden-splash {
-            transform: translateY(-100%);
-        }
-        #intro-splash .intro-bg {
-            position: absolute;
-            inset: 0;
-            background-image: url('anhlangsen.jpg');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.4;
-            transform: scale(1.1);
-        }
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(180, 83, 9, 0.5); }
-            50% { box-shadow: 0 0 40px rgba(180, 83, 9, 0.9); }
-        }
-        .animate-fade-in-down { animation: fadeInDown 1s ease forwards; }
-        .animate-fade-in-up { animation: fadeInUp 1s ease forwards 0.3s; opacity: 0; }
-        .enter-btn { animation: pulse-glow 2s ease-in-out infinite; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">
-
-    <!-- INTRO SPLASH SCREEN - KẾT HỢP 2 PHIÊN BẢN -->
-    <div id="intro-splash">
-        <div class="intro-bg"></div>
-        
-        <div class="relative z-10 container mx-auto px-6 text-center text-white">
-            <!-- Logo + Tên Hội -->
-            <div class="mb-6 animate-fade-in-down">
-                <img src="logo.png" class="h-24 mx-auto mb-4 bg-white rounded-full p-2 shadow-2xl">
-                <p class="text-brand-gold font-bold tracking-[0.3em] uppercase text-sm">
-                    <span class="lang-text" data-lang-vi>Hội Chống Động Kinh Việt Nam</span>
-                    <span class="lang-text" data-lang-en>Vietnam Association Against Epilepsy</span>
-                </p>
-            </div>
-            
-            <!-- Tiêu đề Hội nghị -->
-            <h1 class="font-serif text-4xl md:text-6xl font-bold mb-8 leading-tight animate-fade-in-up">
-                <span class="lang-text" data-lang-vi>HỘI NGHỊ KHOA HỌC <br> THƯỜNG NIÊN 2026</span>
-                <span class="lang-text" data-lang-en>ANNUAL SCIENTIFIC <br> CONFERENCE 2026</span>
-            </h1>
-            
-            <!-- Quote Box với border-left -->
-            <div class="max-w-3xl mx-auto border-l-4 border-brand-gold pl-6 text-left mb-10 bg-black/30 p-6 rounded-r-lg backdrop-blur-sm animate-fade-in-up" style="animation-delay: 0.5s;">
-                <p class="text-gray-200 text-lg leading-relaxed italic">
-                    <span class="lang-text" data-lang-vi>
-                        "<strong class="text-brand-gold not-italic">Nghệ An</strong> – mảnh đất địa linh nhân kiệt, quê hương <strong class="text-brand-gold not-italic">Chủ tịch Hồ Chí Minh</strong>... Nơi hội tụ các chuyên gia hàng đầu trong nước và quốc tế để cập nhật những tiến bộ mới nhất trong chẩn đoán và điều trị động kinh tại Việt Nam."
-                    </span>
-                    <span class="lang-text" data-lang-en>
-                        "<strong class="text-brand-gold not-italic">Nghe An</strong> – land of great heritage, homeland of <strong class="text-brand-gold not-italic">President Ho Chi Minh</strong>... Where leading domestic and international experts gather to update the latest advances in epilepsy diagnosis and treatment in Vietnam."
-                    </span>
-                </p>
-            </div>
-
-            <!-- Enter Button -->
-            <div class="animate-fade-in-up" style="animation-delay: 0.7s;">
-                <button onclick="enterSite()" class="enter-btn group bg-brand-gold text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-brand-900 transition-all duration-300">
-                    <span class="lang-text" data-lang-vi>TRUY CẬP WEBSITE</span>
-                    <span class="lang-text" data-lang-en>ENTER WEBSITE</span>
-                    <i class="fas fa-arrow-down ml-2 group-hover:translate-y-1 transition"></i>
-                </button>
-                
-                <!-- Skip hint -->
-                <p class="mt-4 text-gray-500 text-sm">
-                    <span class="lang-text" data-lang-vi>Nhấn nút hoặc cuộn chuột để vào trang</span>
-                    <span class="lang-text" data-lang-en>Click button or scroll to enter</span>
-                </p>
-            </div>
-        </div>
-    </div>
-    
-    <script>
-        // Check if user has already seen the intro
-        function checkIntroSeen() {
-            const hasSeenIntro = localStorage.getItem('hasSeenVAAEIntro');
-            if (hasSeenIntro) {
-                document.getElementById('intro-splash').classList.add('hidden-splash');
-                document.body.style.overflow = 'auto';
-            } else {
-                document.body.style.overflow = 'hidden';
-            }
-        }
-        
-        // Enter site function
-        function enterSite() {
-            localStorage.setItem('hasSeenVAAEIntro', 'true');
-            document.getElementById('intro-splash').classList.add('hidden-splash');
-            document.body.style.overflow = 'auto';
-        }
-        
-        // Also allow scroll to dismiss
-        let scrollAttempts = 0;
-        window.addEventListener('wheel', function(e) {
-            const splash = document.getElementById('intro-splash');
-            if (!splash.classList.contains('hidden-splash')) {
-                scrollAttempts++;
-                if (scrollAttempts >= 2) {
-                    enterSite();
-                }
-            }
-        });
-        
-        // Check on page load
-        document.addEventListener('DOMContentLoaded', checkIntroSeen);
-    </script>
 
     <nav class="bg-white/95 backdrop-blur-md shadow-sm fixed w-full z-50 border-b border-gray-100">
         <div class="container mx-auto px-4 lg:px-8 py-3 flex justify-between items-center">
@@ -393,6 +270,89 @@
             </div>
         </div>
     </header>
+
+    <!-- DEMO 13: MAGAZINE/EDITORIAL STYLE - Phong cách tạp chí sang trọng -->
+    <section id="welcome" class="relative bg-slate-900 text-white overflow-hidden">
+        <div class="grid lg:grid-cols-2 min-h-[700px]">
+            <!-- Bên trái: Ảnh full height -->
+            <div class="relative h-[400px] lg:h-auto">
+                <img src="anhlangsen.jpg" alt="Làng Sen Nghệ An" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-slate-900 lg:block hidden"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent lg:hidden"></div>
+                
+                <!-- Badge góc -->
+                <div class="absolute top-6 left-6 bg-brand-gold text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
+                    <i class="fas fa-map-marker-alt mr-2"></i>
+                    <span class="lang-text" data-lang-vi>Nghệ An, Việt Nam</span>
+                    <span class="lang-text" data-lang-en>Nghe An, Vietnam</span>
+                </div>
+            </div>
+            
+            <!-- Bên phải: Nội dung editorial -->
+            <div class="relative flex items-center">
+                <div class="p-8 lg:p-16 max-w-2xl">
+                    <!-- Số trang giả (magazine style) -->
+                    <div class="absolute top-8 right-8 text-8xl font-serif font-bold text-white/5">01</div>
+                    
+                    <!-- Headline nhỏ -->
+                    <p class="text-brand-gold font-bold tracking-[0.4em] uppercase text-xs mb-6">
+                        <span class="lang-text" data-lang-vi>Điểm đến Hội nghị 2026</span>
+                        <span class="lang-text" data-lang-en>Conference Destination 2026</span>
+                    </p>
+                    
+                    <!-- Tiêu đề lớn kiểu magazine -->
+                    <h2 class="font-serif text-5xl lg:text-7xl font-bold leading-none mb-8">
+                        <span class="lang-text" data-lang-vi>
+                            Nghệ<br>
+                            <span class="text-brand-gold">An</span>
+                        </span>
+                        <span class="lang-text" data-lang-en>
+                            Nghe<br>
+                            <span class="text-brand-gold">An</span>
+                        </span>
+                    </h2>
+                    
+                    <!-- Subtitle -->
+                    <p class="text-2xl font-light text-gray-300 mb-8 italic">
+                        <span class="lang-text" data-lang-vi>"Địa linh nhân kiệt"</span>
+                        <span class="lang-text" data-lang-en>"Land of Great Heritage"</span>
+                    </p>
+                    
+                    <!-- Nội dung -->
+                    <div class="space-y-4 text-gray-400 leading-relaxed border-l-2 border-brand-gold pl-6">
+                        <p>
+                            <span class="lang-text" data-lang-vi>
+                                Mảnh đất giàu truyền thống lịch sử, văn hóa và cách mạng, quê hương của <strong class="text-white">Chủ tịch Hồ Chí Minh</strong> vĩ đại. Nghệ An đang từng bước khẳng định vị thế là trung tâm năng động của khu vực Bắc Trung Bộ.
+                            </span>
+                            <span class="lang-text" data-lang-en>
+                                A land rich in historical, cultural and revolutionary traditions, the homeland of the great <strong class="text-white">President Ho Chi Minh</strong>. Nghe An is gradually affirming its position as a dynamic center of the North Central region.
+                            </span>
+                        </p>
+                        <p>
+                            <span class="lang-text" data-lang-vi>
+                                <strong class="text-brand-gold">Hội nghị VAAE 2026</strong> sẽ là cơ hội quý báu để các chuyên gia hàng đầu trong nước và quốc tế cùng hội tụ, chia sẻ tri thức về chẩn đoán và điều trị động kinh.
+                            </span>
+                            <span class="lang-text" data-lang-en>
+                                <strong class="text-brand-gold">VAAE Conference 2026</strong> will be a valuable opportunity for leading domestic and international experts to gather and share knowledge about epilepsy diagnosis and treatment.
+                            </span>
+                        </p>
+                    </div>
+                    
+                    <!-- CTA -->
+                    <div class="mt-10 flex items-center gap-6">
+                        <a href="#agenda" class="bg-brand-gold text-white px-8 py-4 rounded font-bold uppercase tracking-wider hover:bg-amber-600 transition">
+                            <span class="lang-text" data-lang-vi>Xem chương trình</span>
+                            <span class="lang-text" data-lang-en>View Program</span>
+                        </a>
+                        <span class="text-gray-500 text-sm">
+                            <span class="lang-text" data-lang-vi>11-12/04/2026</span>
+                            <span class="lang-text" data-lang-en>April 11-12, 2026</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="agenda" class="py-20 bg-white">
         <div class="container mx-auto px-4 lg:px-6">

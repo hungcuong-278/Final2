@@ -80,132 +80,9 @@
         .lang-text[data-lang-en] { display: none; }
         html[lang="en"] .lang-text[data-lang-vi] { display: none; }
         html[lang="en"] .lang-text[data-lang-en] { display: inline; }
-        
-        /* INTRO SPLASH SCREEN STYLES */
-        #intro-splash {
-            position: fixed;
-            inset: 0;
-            z-index: 9999;
-            background-color: #0f172a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
-        }
-        #intro-splash.hidden-splash {
-            transform: translateY(-100%);
-        }
-        #intro-splash .intro-bg {
-            position: absolute;
-            inset: 0;
-            background-image: url('anhlangsen.jpg');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.4;
-            transform: scale(1.1);
-        }
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(180, 83, 9, 0.5); }
-            50% { box-shadow: 0 0 40px rgba(180, 83, 9, 0.9); }
-        }
-        .animate-fade-in-down { animation: fadeInDown 1s ease forwards; }
-        .animate-fade-in-up { animation: fadeInUp 1s ease forwards 0.3s; opacity: 0; }
-        .enter-btn { animation: pulse-glow 2s ease-in-out infinite; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">
-
-    <!-- INTRO SPLASH SCREEN - KẾT HỢP 2 PHIÊN BẢN -->
-    <div id="intro-splash">
-        <div class="intro-bg"></div>
-        
-        <div class="relative z-10 container mx-auto px-6 text-center text-white">
-            <!-- Logo + Tên Hội -->
-            <div class="mb-6 animate-fade-in-down">
-                <img src="logo.png" class="h-24 mx-auto mb-4 bg-white rounded-full p-2 shadow-2xl">
-                <p class="text-brand-gold font-bold tracking-[0.3em] uppercase text-sm">
-                    <span class="lang-text" data-lang-vi>Hội Chống Động Kinh Việt Nam</span>
-                    <span class="lang-text" data-lang-en>Vietnam Association Against Epilepsy</span>
-                </p>
-            </div>
-            
-            <!-- Tiêu đề Hội nghị -->
-            <h1 class="font-serif text-4xl md:text-6xl font-bold mb-8 leading-tight animate-fade-in-up">
-                <span class="lang-text" data-lang-vi>HỘI NGHỊ KHOA HỌC <br> THƯỜNG NIÊN 2026</span>
-                <span class="lang-text" data-lang-en>ANNUAL SCIENTIFIC <br> CONFERENCE 2026</span>
-            </h1>
-            
-            <!-- Quote Box với border-left -->
-            <div class="max-w-3xl mx-auto border-l-4 border-brand-gold pl-6 text-left mb-10 bg-black/30 p-6 rounded-r-lg backdrop-blur-sm animate-fade-in-up" style="animation-delay: 0.5s;">
-                <p class="text-gray-200 text-lg leading-relaxed italic">
-                    <span class="lang-text" data-lang-vi>
-                        "<strong class="text-brand-gold not-italic">Nghệ An</strong> – mảnh đất địa linh nhân kiệt, quê hương <strong class="text-brand-gold not-italic">Chủ tịch Hồ Chí Minh</strong>... Nơi hội tụ các chuyên gia hàng đầu trong nước và quốc tế để cập nhật những tiến bộ mới nhất trong chẩn đoán và điều trị động kinh tại Việt Nam."
-                    </span>
-                    <span class="lang-text" data-lang-en>
-                        "<strong class="text-brand-gold not-italic">Nghe An</strong> – land of great heritage, homeland of <strong class="text-brand-gold not-italic">President Ho Chi Minh</strong>... Where leading domestic and international experts gather to update the latest advances in epilepsy diagnosis and treatment in Vietnam."
-                    </span>
-                </p>
-            </div>
-
-            <!-- Enter Button -->
-            <div class="animate-fade-in-up" style="animation-delay: 0.7s;">
-                <button onclick="enterSite()" class="enter-btn group bg-brand-gold text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-brand-900 transition-all duration-300">
-                    <span class="lang-text" data-lang-vi>TRUY CẬP WEBSITE</span>
-                    <span class="lang-text" data-lang-en>ENTER WEBSITE</span>
-                    <i class="fas fa-arrow-down ml-2 group-hover:translate-y-1 transition"></i>
-                </button>
-                
-                <!-- Skip hint -->
-                <p class="mt-4 text-gray-500 text-sm">
-                    <span class="lang-text" data-lang-vi>Nhấn nút hoặc cuộn chuột để vào trang</span>
-                    <span class="lang-text" data-lang-en>Click button or scroll to enter</span>
-                </p>
-            </div>
-        </div>
-    </div>
-    
-    <script>
-        // Check if user has already seen the intro
-        function checkIntroSeen() {
-            const hasSeenIntro = localStorage.getItem('hasSeenVAAEIntro');
-            if (hasSeenIntro) {
-                document.getElementById('intro-splash').classList.add('hidden-splash');
-                document.body.style.overflow = 'auto';
-            } else {
-                document.body.style.overflow = 'hidden';
-            }
-        }
-        
-        // Enter site function
-        function enterSite() {
-            localStorage.setItem('hasSeenVAAEIntro', 'true');
-            document.getElementById('intro-splash').classList.add('hidden-splash');
-            document.body.style.overflow = 'auto';
-        }
-        
-        // Also allow scroll to dismiss
-        let scrollAttempts = 0;
-        window.addEventListener('wheel', function(e) {
-            const splash = document.getElementById('intro-splash');
-            if (!splash.classList.contains('hidden-splash')) {
-                scrollAttempts++;
-                if (scrollAttempts >= 2) {
-                    enterSite();
-                }
-            }
-        });
-        
-        // Check on page load
-        document.addEventListener('DOMContentLoaded', checkIntroSeen);
-    </script>
 
     <nav class="bg-white/95 backdrop-blur-md shadow-sm fixed w-full z-50 border-b border-gray-100">
         <div class="container mx-auto px-4 lg:px-8 py-3 flex justify-between items-center">
@@ -393,6 +270,157 @@
             </div>
         </div>
     </header>
+
+    <!-- DEMO 18: JOURNEY TIMELINE - Hành trình với timeline dọc -->
+    <section id="welcome" class="py-20 bg-gradient-to-br from-brand-900 via-brand-800 to-brand-900 text-white overflow-hidden">
+        <div class="container mx-auto px-6">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <span class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-brand-gold text-sm font-bold uppercase tracking-widest mb-6">
+                    <i class="fas fa-route"></i>
+                    <span class="lang-text" data-lang-vi>Hành trình đến Nghệ An</span>
+                    <span class="lang-text" data-lang-en>Journey to Nghe An</span>
+                </span>
+                <h2 class="font-serif text-4xl lg:text-5xl font-bold">
+                    <span class="lang-text" data-lang-vi>Khám phá vùng đất <span class="text-brand-gold">Địa Linh Nhân Kiệt</span></span>
+                    <span class="lang-text" data-lang-en>Discover the Land of <span class="text-brand-gold">Great Heritage</span></span>
+                </h2>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Timeline line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-brand-gold/30"></div>
+                
+                <!-- Step 1: Lịch sử -->
+                <div class="relative flex items-center mb-12">
+                    <div class="w-1/2 pr-8 text-right">
+                        <span class="text-brand-gold font-bold text-sm uppercase tracking-widest">
+                            <span class="lang-text" data-lang-vi>Di sản</span>
+                            <span class="lang-text" data-lang-en>Heritage</span>
+                        </span>
+                        <h3 class="font-bold text-2xl mt-2 mb-3">
+                            <span class="lang-text" data-lang-vi>Quê hương Bác Hồ</span>
+                            <span class="lang-text" data-lang-en>Ho Chi Minh's Homeland</span>
+                        </h3>
+                        <p class="text-gray-400">
+                            <span class="lang-text" data-lang-vi>Mảnh đất giàu truyền thống lịch sử, văn hóa và cách mạng, quê hương của Chủ tịch Hồ Chí Minh vĩ đại.</span>
+                            <span class="lang-text" data-lang-en>A land rich in historical, cultural and revolutionary traditions, the homeland of the great President Ho Chi Minh.</span>
+                        </p>
+                    </div>
+                    <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-brand-gold rounded-full flex items-center justify-center z-10 shadow-lg shadow-brand-gold/30">
+                        <i class="fas fa-landmark text-white"></i>
+                    </div>
+                    <div class="w-1/2 pl-8">
+                        <img src="anhlangsen.jpg" alt="Làng Sen" class="w-full h-40 object-cover rounded-lg shadow-xl">
+                    </div>
+                </div>
+                
+                <!-- Step 2: Tinh thần -->
+                <div class="relative flex items-center mb-12">
+                    <div class="w-1/2 pr-8">
+                        <div class="bg-white/10 backdrop-blur rounded-lg p-6">
+                            <i class="fas fa-book-reader text-4xl text-brand-gold mb-4"></i>
+                            <h4 class="font-bold text-lg mb-2">
+                                <span class="lang-text" data-lang-vi>Tinh thần hiếu học</span>
+                                <span class="lang-text" data-lang-en>Spirit of Learning</span>
+                            </h4>
+                            <p class="text-gray-400 text-sm">
+                                <span class="lang-text" data-lang-vi>Xứ Nghệ nổi tiếng với truyền thống hiếu học, nghĩa tình và bản sắc văn hóa đậm đà.</span>
+                                <span class="lang-text" data-lang-en>Nghe is famous for its tradition of learning, compassion and rich cultural identity.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-brand-800 border-4 border-brand-gold rounded-full flex items-center justify-center z-10">
+                        <i class="fas fa-heart text-brand-gold"></i>
+                    </div>
+                    <div class="w-1/2 pl-8 text-left">
+                        <span class="text-brand-gold font-bold text-sm uppercase tracking-widest">
+                            <span class="lang-text" data-lang-vi>Văn hóa</span>
+                            <span class="lang-text" data-lang-en>Culture</span>
+                        </span>
+                        <h3 class="font-bold text-2xl mt-2 mb-3">
+                            <span class="lang-text" data-lang-vi">Bản sắc xứ Nghệ</span>
+                            <span class="lang-text" data-lang-en>Nghe Identity</span>
+                        </h3>
+                        <p class="text-gray-400">
+                            <span class="lang-text" data-lang-vi>Nơi gìn giữ những giá trị truyền thống tốt đẹp qua bao thế hệ.</span>
+                            <span class="lang-text" data-lang-en>Where beautiful traditional values are preserved through generations.</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Y tế -->
+                <div class="relative flex items-center mb-12">
+                    <div class="w-1/2 pr-8 text-right">
+                        <span class="text-brand-gold font-bold text-sm uppercase tracking-widest">
+                            <span class="lang-text" data-lang-vi>Y tế</span>
+                            <span class="lang-text" data-lang-en>Healthcare</span>
+                        </span>
+                        <h3 class="font-bold text-2xl mt-2 mb-3">
+                            <span class="lang-text" data-lang-vi>Trung tâm Bắc Trung Bộ</span>
+                            <span class="lang-text" data-lang-en>North Central Hub</span>
+                        </h3>
+                        <p class="text-gray-400">
+                            <span class="lang-text" data-lang-vi>Nghệ An đang từng bước khẳng định vị thế là trung tâm y tế năng động với nhiều thành tựu nổi bật.</span>
+                            <span class="lang-text" data-lang-en>Nghe An is gradually affirming its position as a dynamic healthcare center with many outstanding achievements.</span>
+                        </p>
+                    </div>
+                    <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-brand-800 border-4 border-brand-gold rounded-full flex items-center justify-center z-10">
+                        <i class="fas fa-heartbeat text-brand-gold"></i>
+                    </div>
+                    <div class="w-1/2 pl-8">
+                        <div class="bg-white/10 backdrop-blur rounded-lg p-6">
+                            <div class="flex items-center gap-4">
+                                <div class="text-center">
+                                    <p class="text-3xl font-bold text-brand-gold">200+</p>
+                                    <p class="text-xs text-gray-400">
+                                        <span class="lang-text" data-lang-vi>Đại biểu</span>
+                                        <span class="lang-text" data-lang-en>Delegates</span>
+                                    </p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="text-3xl font-bold text-brand-gold">20+</p>
+                                    <p class="text-xs text-gray-400">
+                                        <span class="lang-text" data-lang-vi>Báo cáo</span>
+                                        <span class="lang-text" data-lang-en>Reports</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Final: Hội nghị -->
+                <div class="relative flex items-center justify-center">
+                    <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-brand-gold rounded-full flex items-center justify-center z-10 shadow-lg shadow-brand-gold/50 animate-pulse">
+                        <i class="fas fa-flag-checkered text-white text-xl"></i>
+                    </div>
+                </div>
+                
+                <!-- Destination Card -->
+                <div class="mt-8 text-center bg-white/10 backdrop-blur rounded-2xl p-8 border border-brand-gold/30">
+                    <h3 class="font-serif text-3xl font-bold mb-4">
+                        <span class="lang-text" data-lang-vi>Hội nghị VAAE 2026</span>
+                        <span class="lang-text" data-lang-en>VAAE Conference 2026</span>
+                    </h3>
+                    <p class="text-gray-300 mb-6 max-w-2xl mx-auto">
+                        <span class="lang-text" data-lang-vi>
+                            Cơ hội quý báu để các chuyên gia, nhà khoa học hàng đầu trong nước và quốc tế cùng hội tụ, chia sẻ tri thức về chẩn đoán và điều trị động kinh.
+                        </span>
+                        <span class="lang-text" data-lang-en>
+                            A valuable opportunity for leading domestic and international experts to gather and share knowledge about epilepsy diagnosis and treatment.
+                        </span>
+                    </p>
+                    <a href="#agenda" class="inline-flex items-center gap-2 bg-brand-gold text-white px-8 py-4 rounded-full font-bold hover:bg-amber-500 transition">
+                        <span class="lang-text" data-lang-vi>Xem chương trình chi tiết</span>
+                        <span class="lang-text" data-lang-en>View detailed program</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="agenda" class="py-20 bg-white">
         <div class="container mx-auto px-4 lg:px-6">
