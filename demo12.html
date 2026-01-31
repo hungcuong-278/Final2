@@ -80,9 +80,156 @@
         .lang-text[data-lang-en] { display: none; }
         html[lang="en"] .lang-text[data-lang-vi] { display: none; }
         html[lang="en"] .lang-text[data-lang-en] { display: inline; }
+        
+        /* INTRO SPLASH SCREEN STYLES */
+        #intro-splash {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background-color: #0f172a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+        #intro-splash.hidden-splash {
+            transform: translateY(-100%);
+        }
+        #intro-splash .intro-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('anhlensen.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4;
+        }
+        #intro-splash .intro-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 58, 138, 0.8) 100%);
+        }
+        #intro-splash .intro-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 900px;
+            padding: 2rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards 0.5s;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(180, 83, 9, 0.4); }
+            50% { box-shadow: 0 0 40px rgba(180, 83, 9, 0.8); }
+        }
+        .enter-btn {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">
+
+    <!-- INTRO SPLASH SCREEN - Ý TƯỞNG 3 -->
+    <div id="intro-splash">
+        <div class="intro-bg"></div>
+        <div class="intro-overlay"></div>
+        
+        <div class="intro-content">
+            <!-- Logo -->
+            <div class="mb-8">
+                <img src="logo.png" alt="VAAE Logo" class="w-24 h-24 mx-auto bg-white rounded-full p-2 shadow-2xl">
+            </div>
+            
+            <!-- Title -->
+            <div class="inline-flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full mb-8 border border-white/20">
+                <i class="fas fa-map-marker-alt text-brand-gold"></i>
+                <span class="text-brand-gold font-bold uppercase tracking-widest text-sm">
+                    <span class="lang-text" data-lang-vi>Chào mừng đến với Nghệ An</span>
+                    <span class="lang-text" data-lang-en>Welcome to Nghe An</span>
+                </span>
+            </div>
+            
+            <!-- Main Text -->
+            <div class="space-y-6 mb-10">
+                <p class="font-serif text-xl lg:text-2xl text-white leading-relaxed">
+                    <span class="lang-text" data-lang-vi>
+                        <strong class="text-brand-gold">Nghệ An</strong> – mảnh đất "địa linh nhân kiệt", giàu truyền thống lịch sử, văn hóa và cách mạng, quê hương của <strong class="text-brand-gold">Chủ tịch Hồ Chí Minh</strong> vĩ đại – từ lâu đã được nhắc đến với tinh thần hiếu học, nghĩa tình và bản sắc xứ Nghệ đậm đà.
+                    </span>
+                    <span class="lang-text" data-lang-en>
+                        <strong class="text-brand-gold">Nghe An</strong> – a land of "great people and rich heritage", the homeland of the great <strong class="text-brand-gold">President Ho Chi Minh</strong> – has long been known for its spirit of learning, compassion and distinctive Nghe culture.
+                    </span>
+                </p>
+                
+                <div class="w-16 h-1 bg-brand-gold mx-auto"></div>
+                
+                <p class="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                    <span class="lang-text" data-lang-vi>
+                        Việc lựa chọn <strong class="text-white">Nghệ An</strong> là nơi tổ chức <strong class="text-brand-gold">Hội nghị Khoa học Thường niên VAAE 2026</strong> thể hiện mong muốn xây dựng một diễn đàn học thuật uy tín, cởi mở và gắn kết – nơi các chuyên gia hàng đầu trong nước và quốc tế cùng hội tụ, chia sẻ tri thức về chẩn đoán và điều trị động kinh.
+                    </span>
+                    <span class="lang-text" data-lang-en>
+                        The selection of <strong class="text-white">Nghe An</strong> as the venue for the <strong class="text-brand-gold">VAAE 2026 Annual Scientific Conference</strong> reflects the desire to build a prestigious academic forum where leading experts gather to share knowledge about epilepsy diagnosis and treatment.
+                    </span>
+                </p>
+            </div>
+            
+            <!-- Enter Button -->
+            <button onclick="enterSite()" class="enter-btn inline-flex items-center gap-3 bg-brand-gold text-white px-10 py-4 rounded-full font-bold text-lg uppercase tracking-wider hover:bg-amber-600 transition-all duration-300 transform hover:scale-105">
+                <span class="lang-text" data-lang-vi>Truy cập Website Hội nghị</span>
+                <span class="lang-text" data-lang-en>Enter Conference Website</span>
+                <i class="fas fa-arrow-right"></i>
+            </button>
+            
+            <!-- Skip hint -->
+            <p class="mt-6 text-gray-500 text-sm">
+                <span class="lang-text" data-lang-vi>Nhấn nút hoặc cuộn chuột để vào trang</span>
+                <span class="lang-text" data-lang-en>Click button or scroll to enter</span>
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        // Check if user has already seen the intro
+        function checkIntroSeen() {
+            const hasSeenIntro = localStorage.getItem('hasSeenVAAEIntro');
+            if (hasSeenIntro) {
+                document.getElementById('intro-splash').classList.add('hidden-splash');
+                document.body.style.overflow = 'auto';
+            } else {
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        // Enter site function
+        function enterSite() {
+            localStorage.setItem('hasSeenVAAEIntro', 'true');
+            document.getElementById('intro-splash').classList.add('hidden-splash');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Also allow scroll to dismiss
+        let scrollAttempts = 0;
+        window.addEventListener('wheel', function(e) {
+            const splash = document.getElementById('intro-splash');
+            if (!splash.classList.contains('hidden-splash')) {
+                scrollAttempts++;
+                if (scrollAttempts >= 2) {
+                    enterSite();
+                }
+            }
+        });
+        
+        // Check on page load
+        document.addEventListener('DOMContentLoaded', checkIntroSeen);
+    </script>
 
     <nav class="bg-white/95 backdrop-blur-md shadow-sm fixed w-full z-50 border-b border-gray-100">
         <div class="container mx-auto px-4 lg:px-8 py-3 flex justify-between items-center">

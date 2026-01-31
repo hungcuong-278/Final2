@@ -1,0 +1,117 @@
+====================================================================
+       HƯỚNG DẪN ĐẶT TÊN ẢNH CHO WEBSITE HỘI NGHỊ VAAE 2026
+====================================================================
+
+Lưu ý quan trọng:
+- Tất cả ảnh nên có kích thước vuông hoặc gần vuông (ví dụ: 400x400px)
+- Định dạng: JPG hoặc PNG
+- Ảnh nên chụp từ vai trở lên, mặt ở giữa khung hình
+- Đặt tất cả ảnh vào cùng thư mục với file demo9.html
+
+====================================================================
+1. DIỄN GIẢ QUỐC TẾ (INTERNATIONAL SPEAKERS)
+====================================================================
+
+Tên file              | Diễn giả                        | Quốc gia
+---------------------|----------------------------------|----------
+gs-lim.jpg           | Prof. Lim Kheng Seang           | Malaysia
+prof-derrick.jpg     | Prof. Derrick Chan Wei Shih     | Singapore
+dr-chanfulin.jpg     | Dr. Chan Fu Lin                 | Taiwan
+
+====================================================================
+2. CHỦ TỌA PHIÊN (SESSION CHAIRS)
+====================================================================
+
+Tên file              | Diễn giả (Tiếng Việt)
+---------------------|------------------------------------------
+gs-cuong.jpg         | GS.TS Lê Quang Cường
+pgs-nga.jpg          | PGS.TS Phan Việt Nga
+gs-duc.jpg           | GS.TS Cao Tiến Đức
+pgs-lieu.jpg         | PGS.TS Nguyễn Văn Liệu
+pgs-chinh.jpg        | PGS.TS Dương Đình Chỉnh
+ts-tuan.jpg          | TS.BS Lê Văn Tuấn
+ts-hung.jpg          | TS.BS Cao Vũ Hùng
+ts-muoi.jpg          | TS.BS Hồ Đăng Mười
+pgs-hieu.jpg         | PGS.TS Nguyễn Lê Trung Hiếu
+pgs-toan.jpg         | PGS.TS Nguyễn Đình Toàn
+ts-anhtuan.jpg       | TS.BS Nguyễn Anh Tuấn
+ts-kimtuan.jpg       | TS.BS Hoàng Kim Tuấn
+pgs-huong.jpg        | PGS.TS Nguyễn Văn Hướng
+pgs-vantuan.jpg      | PGS.TS Trần Văn Tuấn
+ts-hoa.jpg           | TS.BS Nguyễn Ngọc Hòa
+pgs-luc.jpg          | PGS.TS Trần Viết Lực
+pgs-khoi.jpg         | PGS.TS Võ Hồng Khôi
+
+====================================================================
+3. BÁO CÁO VIÊN (PRESENTERS)
+====================================================================
+
+Tên file              | Diễn giả (Tiếng Việt)           | Đơn vị
+---------------------|----------------------------------|------------------
+ths-minhan.jpg       | ThS.BS Lê Thụy Minh An          | ĐH Y Dược TP.HCM
+ths-ngocanh.jpg      | ThS.BS Doãn Ngọc Ánh            | BV Nhi Trung ương
+bsck2-bichvan.jpg    | BSCK2 Nguyễn Thị Bích Vân       | BV Nhi Trung ương
+ths-hieuanh.jpg      | ThS.BS Bùi Hiếu Anh             | ĐH Y Phạm Ngọc Thạch
+ths-hongnhung.jpg    | ThS.BS Tạ Hồng Nhung            | BV Việt Đức
+ths-thenhan.jpg      | ThS.BS Võ Thế Nhân              | BV Bạch Mai
+ts-dinhvan.jpg       | TS.BS Trần Đình Văn             | BV Việt Đức
+bsck2-namthang.jpg   | BSCK2 Lê Nam Thắng              | BV Nhi Trung ương
+bsck2-thithao.jpg    | BSCK2 Nguyễn Thị Thảo           | BV Nhi Trung ương
+ts-thuhau.jpg        | TS.BS Nguyễn Thị Thu Hậu        | BV Nhi đồng 2
+ths-thanhtu.jpg      | ThS.BS Nguyễn Phan Thanh Tú     | BV ĐH Y Dược TP.HCM
+ths-thanhha.jpg      | ThS.BS Phương Thanh Hà          | ĐH Y Hà Nội
+ths-vanthuy.jpg      | ThS.BS Lê Văn Thủy              | ĐH Y Hà Nội
+ths-quangthinh.jpg   | ThS.BS Hồ Quang Thịnh           | BV ĐK Nghệ An
+ths-thithom.jpg      | ThS.BSNT Nguyễn Thị Thơm        | BV ĐH Y Hà Nội
+bs-thivan.jpg        | BS Nguyễn Thị Vân               | BV Nhi Trung ương
+bs-viethuong.jpg     | BS Đào Thị Việt Hường           | BV Nhi Trung ương
+
+====================================================================
+4. NHÀ TÀI TRỢ (SPONSORS)
+====================================================================
+
+Tên file              | Mô tả
+---------------------|------------------------------------------
+sponsor-gold-1.jpg   | Logo nhà tài trợ Vàng 1 (Eisai)
+sponsor-gold-2.jpg   | Logo nhà tài trợ Vàng 2 (Golden Gate)
+sponsor-gold-3.jpg   | Logo nhà tài trợ Vàng 3
+sponsor-silver-1.jpg | Logo nhà tài trợ Đồng 1
+sponsor-silver-2.jpg | Logo nhà tài trợ Đồng 2
+
+====================================================================
+TỔNG KẾT
+====================================================================
+
+Tổng số ảnh cần chuẩn bị:
+- Diễn giả quốc tế:  3 ảnh
+- Chủ tọa phiên:    17 ảnh
+- Báo cáo viên:     17 ảnh
+- Nhà tài trợ:       5 ảnh
+--------------------------------
+TỔNG CỘNG:          42 ảnh
+
+====================================================================
+GHI CHÚ
+====================================================================
+
+* Nếu chưa có ảnh, website sẽ tự động hiển thị avatar placeholder
+  với chữ cái viết tắt tên diễn giả.
+
+* Ảnh đã có sẵn (theo thông tin trước đó):
+  - gs-lim.jpg
+  - gs-cuong.jpg
+  - pgs-nga.jpg
+  - gs-duc.jpg
+  - pgs-lieu.jpg
+
+* Quy tắc đặt tên:
+  - gs-   : Giáo sư (Prof.)
+  - pgs-  : Phó Giáo sư (Assoc. Prof.)
+  - ts-   : Tiến sĩ (Dr. PhD)
+  - ths-  : Thạc sĩ (MSc.)
+  - bsck2-: Bác sĩ chuyên khoa 2 (Specialist Dr.)
+  - bs-   : Bác sĩ (Dr.)
+  - prof- : Professor (quốc tế)
+  - dr-   : Doctor (quốc tế)
+
+====================================================================

@@ -271,6 +271,76 @@
         </div>
     </header>
 
+    <!-- PARALLAX SECTION - Ý TƯỞNG 2: Hiệu ứng Parallax điện ảnh -->
+    <section id="welcome" class="relative min-h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image với Parallax Effect -->
+        <div class="absolute inset-0 bg-fixed bg-center bg-cover" style="background-image: url('anhlensen.jpg');">
+        </div>
+        
+        <!-- Overlay màu xanh Navy -->
+        <div class="absolute inset-0 bg-brand-900/85"></div>
+        
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-gold via-brand-800 to-brand-gold"></div>
+        <div class="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-brand-gold via-brand-800 to-brand-gold"></div>
+        
+        <!-- Content -->
+        <div class="relative z-10 container mx-auto px-6 py-20 text-center">
+            <!-- Quote Icon -->
+            <div class="mb-8">
+                <i class="fas fa-quote-left text-6xl text-brand-gold/30"></i>
+            </div>
+            
+            <!-- Title -->
+            <div class="inline-flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full mb-8 border border-white/20">
+                <i class="fas fa-map-marker-alt text-brand-gold"></i>
+                <span class="text-brand-gold font-bold uppercase tracking-widest text-sm">
+                    <span class="lang-text" data-lang-vi>Nghệ An - Việt Nam</span>
+                    <span class="lang-text" data-lang-en>Nghe An - Vietnam</span>
+                </span>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="max-w-4xl mx-auto space-y-8">
+                <p class="font-serif text-xl lg:text-2xl text-white leading-relaxed italic">
+                    <span class="lang-text" data-lang-vi>
+                        "<strong class="text-brand-gold font-bold not-italic">Nghệ An</strong> – mảnh đất "địa linh nhân kiệt", giàu truyền thống lịch sử, văn hóa và cách mạng, quê hương của <strong class="text-brand-gold font-bold not-italic">Chủ tịch Hồ Chí Minh</strong> vĩ đại – từ lâu đã được nhắc đến với tinh thần hiếu học, nghĩa tình và bản sắc xứ Nghệ đậm đà. Hôm nay, trên hành trình đổi mới và phát triển, Nghệ An đang từng bước khẳng định vị thế là trung tâm năng động của khu vực Bắc Trung Bộ, đặc biệt trong lĩnh vực y tế với nhiều thành tựu nổi bật về phát triển chuyên môn và kỹ thuật."
+                    </span>
+                    <span class="lang-text" data-lang-en>
+                        "<strong class="text-brand-gold font-bold not-italic">Nghe An</strong> – a land of "great people and rich heritage", with profound historical, cultural and revolutionary traditions, the homeland of the great <strong class="text-brand-gold font-bold not-italic">President Ho Chi Minh</strong> – has long been known for its spirit of learning, compassion and distinctive Nghe culture. Today, on the journey of innovation and development, Nghe An is gradually affirming its position as a dynamic center of the North Central region, especially in the healthcare sector with many outstanding achievements."
+                    </span>
+                </p>
+                
+                <div class="w-24 h-1 bg-brand-gold mx-auto"></div>
+                
+                <p class="font-serif text-lg lg:text-xl text-gray-300 leading-relaxed">
+                    <span class="lang-text" data-lang-vi>
+                        Việc lựa chọn <strong class="text-white">Nghệ An</strong> là nơi tổ chức <strong class="text-brand-gold">Hội nghị</strong> quan trọng này không chỉ là sự ghi nhận của giới chuyên môn đối với năng lực tổ chức, đào tạo và hợp tác khoa học của địa phương, mà còn thể hiện mong muốn xây dựng một diễn đàn học thuật uy tín, cởi mở và gắn kết. <strong class="text-brand-gold">Hội nghị</strong> sẽ là cơ hội quý báu để các chuyên gia, nhà khoa học hàng đầu trong nước và quốc tế cùng hội tụ, trao đổi kinh nghiệm, chia sẻ tri thức và cập nhật những tiến bộ mới nhất trong chẩn đoán và điều trị động kinh tại Việt Nam.
+                    </span>
+                    <span class="lang-text" data-lang-en>
+                        The selection of <strong class="text-white">Nghe An</strong> as the venue for this important <strong class="text-brand-gold">Conference</strong> is not only recognition from the professional community of the local capacity for organization, training and scientific cooperation, but also reflects the desire to build a prestigious, open and cohesive academic forum. The <strong class="text-brand-gold">Conference</strong> will be a valuable opportunity for leading domestic and international experts and scientists to gather, exchange experiences, share knowledge and update the latest advances in epilepsy diagnosis and treatment in Vietnam.
+                    </span>
+                </p>
+            </div>
+            
+            <!-- Quote Icon End -->
+            <div class="mt-8">
+                <i class="fas fa-quote-right text-6xl text-brand-gold/30"></i>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="mt-12 animate-bounce">
+                <a href="#agenda" class="inline-flex flex-col items-center text-white/60 hover:text-white transition">
+                    <span class="text-xs uppercase tracking-widest mb-2">
+                        <span class="lang-text" data-lang-vi>Xem chương trình</span>
+                        <span class="lang-text" data-lang-en>View Program</span>
+                    </span>
+                    <i class="fas fa-chevron-down text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <section id="agenda" class="py-20 bg-white">
         <div class="container mx-auto px-4 lg:px-6">
             <div class="text-center mb-16">
