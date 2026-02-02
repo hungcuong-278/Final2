@@ -77,11 +77,9 @@
             border-radius: 2px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.2);
         }
-        .lang-text[data-lang-en] { display: none !important; }
-        html[lang="en"] .lang-text[data-lang-vi] { display: none !important; }
-        html[lang="en"] .lang-text[data-lang-en] { display: inline !important; }
-        html[lang="vi"] .lang-text[data-lang-vi] { display: inline !important; }
-        html[lang="vi"] .lang-text[data-lang-en] { display: none !important; }
+        .lang-text[data-lang-en] { display: none; }
+        html[lang="en"] .lang-text[data-lang-vi] { display: none; }
+        html[lang="en"] .lang-text[data-lang-en] { display: inline; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">
@@ -273,71 +271,92 @@
         </div>
     </header>
 
-    <!-- WELCOME SECTION - Ý TƯỞNG 1: Chia 50/50 -->
-    <section id="welcome" class="py-20 bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
-        <div class="container mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Bên trái: Ảnh Làng Sen -->
-                <div class="relative group" data-aos="fade-right">
-                    <div class="absolute -inset-4 bg-brand-gold/20 rounded-2xl blur-xl group-hover:bg-brand-gold/30 transition duration-500"></div>
-                    <div class="relative overflow-hidden rounded-2xl shadow-2xl">
-                        <img src="anhlangsen.jpg" alt="Làng Sen - Quê hương Bác Hồ" class="w-full h-[500px] object-cover transform group-hover:scale-105 transition duration-700">
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-brand-900/90 to-transparent p-6">
-                            <p class="text-white font-serif text-lg italic">
-                                <span class="lang-text" data-lang-vi>"Làng Sen - Quê hương Chủ tịch Hồ Chí Minh"</span>
-                                <span class="lang-text" data-lang-en>"Lang Sen - Hometown of President Ho Chi Minh"</span>
-                            </p>
-                            <p class="text-brand-gold text-sm mt-1">
-                                <i class="fas fa-map-marker-alt mr-1"></i> Nam Đàn, Nghệ An
-                            </p>
-                        </div>
+    <!-- DEMO 15: MINIMALIST ZEN - Tối giản thanh lịch -->
+    <section id="welcome" class="py-32 bg-white relative overflow-hidden">
+        <!-- Subtle background pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'0.4\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        </div>
+        
+        <div class="relative z-10 container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <!-- Top line decoration -->
+                <div class="flex items-center justify-center gap-4 mb-16">
+                    <div class="w-20 h-px bg-brand-gold"></div>
+                    <i class="fas fa-circle text-[6px] text-brand-gold"></i>
+                    <div class="w-20 h-px bg-brand-gold"></div>
+                </div>
+                
+                <!-- Main title - Very large, elegant -->
+                <h2 class="text-center mb-8">
+                    <span class="block text-sm font-bold tracking-[0.5em] text-brand-gold uppercase mb-4">
+                        <span class="lang-text" data-lang-vi>Chào mừng đến với</span>
+                        <span class="lang-text" data-lang-en>Welcome to</span>
+                    </span>
+                    <span class="font-serif text-7xl lg:text-9xl font-bold text-brand-900 tracking-tight">
+                        <span class="lang-text" data-lang-vi>Nghệ An</span>
+                        <span class="lang-text" data-lang-en>Nghệ An</span>
+                    </span>
+                </h2>
+                
+                <!-- Subtitle elegant -->
+                <p class="text-center text-2xl lg:text-3xl text-gray-400 font-light italic mb-16">
+                    <span class="lang-text" data-lang-vi>"Địa linh nhân kiệt"</span>
+                    <span class="lang-text" data-lang-en>"Land of Great Heritage"</span>
+                </p>
+                
+                <!-- Image with frame -->
+                <div class="relative max-w-3xl mx-auto mb-16">
+                    <div class="absolute -inset-4 border border-brand-gold/30"></div>
+                    <div class="absolute -inset-8 border border-brand-gold/10"></div>
+                    <img src="anhlangsen.jpg" alt="Làng Sen - Quê Bác" class="w-full h-80 object-cover grayscale hover:grayscale-0 transition duration-700">
+                    <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur p-4">
+                        <p class="text-center text-sm text-gray-600 italic">
+                            <span class="lang-text" data-lang-vi>Làng Sen - Quê hương Chủ tịch Hồ Chí Minh, Nam Đàn, Nghệ An</span>
+                            <span class="lang-text" data-lang-en>Sen Village - Homeland of President Ho Chi Minh, Nam Dan, Nghe An</span>
+                        </p>
                     </div>
                 </div>
                 
-                <!-- Bên phải: Nội dung văn bản -->
-                <div class="lg:pl-8" data-aos="fade-left">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-brand-gold/10 rounded-full mb-6">
-                        <i class="fas fa-star text-brand-gold"></i>
-                        <span class="text-brand-gold font-bold text-sm uppercase tracking-widest">
-                            <span class="lang-text" data-lang-vi>Chào mừng đến với Nghệ An</span>
-                            <span class="lang-text" data-lang-en>Welcome to Nghe An</span>
+                <!-- Quote content - centered, elegant -->
+                <div class="max-w-3xl mx-auto text-center space-y-8">
+                    <p class="text-xl lg:text-2xl text-gray-600 leading-relaxed font-light">
+                        <span class="lang-text" data-lang-vi>
+                            Mảnh đất giàu truyền thống lịch sử, văn hóa và cách mạng. Nơi tinh thần hiếu học, nghĩa tình và bản sắc xứ Nghệ đậm đà được gìn giữ qua bao thế hệ.
                         </span>
-                    </div>
+                        <span class="lang-text" data-lang-en>
+                            A land rich in historical, cultural and revolutionary traditions. Where the spirit of learning, compassion and distinctive Nghe culture have been preserved through generations.
+                        </span>
+                    </p>
                     
-                    <h2 class="font-serif text-3xl lg:text-4xl font-bold text-brand-900 mb-6 leading-tight">
-                        <span class="lang-text" data-lang-vi>Mảnh đất <span class="text-brand-800">"Địa linh nhân kiệt"</span></span>
-                        <span class="lang-text" data-lang-en>The Land of <span class="text-brand-800">"Great People"</span></span>
-                    </h2>
+                    <div class="w-12 h-px bg-brand-900 mx-auto"></div>
                     
-                    <div class="space-y-4 text-gray-700 leading-relaxed">
-                        <p class="text-justify">
-                            <span class="lang-text" data-lang-vi>
-                                <strong class="text-brand-900">Nghệ An</strong> – mảnh đất "địa linh nhân kiệt", giàu truyền thống lịch sử, văn hóa và cách mạng, quê hương của <strong class="text-brand-800">Chủ tịch Hồ Chí Minh</strong> vĩ đại – từ lâu đã được nhắc đến với tinh thần hiếu học, nghĩa tình và bản sắc xứ Nghệ đậm đà. Hôm nay, trên hành trình đổi mới và phát triển, Nghệ An đang từng bước khẳng định vị thế là trung tâm năng động của khu vực Bắc Trung Bộ, đặc biệt trong lĩnh vực y tế với nhiều thành tựu nổi bật về phát triển chuyên môn và kỹ thuật.
-                            </span>
-                            <span class="lang-text" data-lang-en>
-                                <strong class="text-brand-900">Nghe An</strong> – a land of "great people and rich heritage", with profound historical, cultural and revolutionary traditions, the homeland of the great <strong class="text-brand-800">President Ho Chi Minh</strong> – has long been known for its spirit of learning, compassion and distinctive Nghe culture. Today, on the journey of innovation and development, Nghe An is gradually affirming its position as a dynamic center of the North Central region, especially in the healthcare sector with many outstanding achievements in professional and technical development.
-                            </span>
-                        </p>
-                        
-                        <p class="text-justify">
-                            <span class="lang-text" data-lang-vi>
-                                Việc lựa chọn <strong class="text-brand-900">Nghệ An</strong> là nơi tổ chức <strong class="text-brand-800">Hội nghị</strong> quan trọng này không chỉ là sự ghi nhận của giới chuyên môn đối với năng lực tổ chức, đào tạo và hợp tác khoa học của địa phương, mà còn thể hiện mong muốn xây dựng một diễn đàn học thuật uy tín, cởi mở và gắn kết. <strong class="text-brand-800">Hội nghị</strong> sẽ là cơ hội quý báu để các chuyên gia, nhà khoa học hàng đầu trong nước và quốc tế cùng hội tụ, trao đổi kinh nghiệm, chia sẻ tri thức và cập nhật những tiến bộ mới nhất trong chẩn đoán và điều trị động kinh tại Việt Nam.
-                            </span>
-                            <span class="lang-text" data-lang-en>
-                                The selection of <strong class="text-brand-900">Nghe An</strong> as the venue for this important <strong class="text-brand-800">Conference</strong> is not only recognition from the professional community of the local capacity for organization, training and scientific cooperation, but also reflects the desire to build a prestigious, open and cohesive academic forum. The <strong class="text-brand-800">Conference</strong> will be a valuable opportunity for leading domestic and international experts and scientists to gather, exchange experiences, share knowledge and update the latest advances in epilepsy diagnosis and treatment in Vietnam.
-                            </span>
-                        </p>
-                    </div>
-                    
-                    <div class="mt-8 flex items-center gap-4">
-                        <div class="flex -space-x-2">
-                            <div class="w-10 h-10 rounded-full bg-brand-800 flex items-center justify-center text-white text-sm font-bold border-2 border-white">200+</div>
-                        </div>
-                        <p class="text-sm text-gray-500">
-                            <span class="lang-text" data-lang-vi>Đại biểu từ khắp cả nước và quốc tế</span>
-                            <span class="lang-text" data-lang-en>Delegates from across Vietnam and internationally</span>
-                        </p>
-                    </div>
+                    <p class="text-lg text-gray-500 leading-relaxed">
+                        <span class="lang-text" data-lang-vi>
+                            <strong class="text-brand-900">Hội nghị Khoa học Thường niên VAAE 2026</strong> vinh dự được tổ chức tại đây — nơi hội tụ các chuyên gia hàng đầu trong nước và quốc tế.
+                        </span>
+                        <span class="lang-text" data-lang-en>
+                            <strong class="text-brand-900">VAAE Annual Scientific Conference 2026</strong> is honored to be held here — where leading domestic and international experts gather.
+                        </span>
+                    </p>
+                </div>
+                
+                <!-- Bottom CTA -->
+                <div class="text-center mt-16">
+                    <a href="#agenda" class="inline-flex items-center gap-3 text-brand-900 font-medium hover:text-brand-gold transition group">
+                        <span class="uppercase tracking-widest text-sm">
+                            <span class="lang-text" data-lang-vi>Xem chương trình chi tiết</span>
+                            <span class="lang-text" data-lang-en>View detailed program</span>
+                        </span>
+                        <i class="fas fa-long-arrow-alt-down text-xl group-hover:translate-y-1 transition"></i>
+                    </a>
+                </div>
+                
+                <!-- Bottom line decoration -->
+                <div class="flex items-center justify-center gap-4 mt-16">
+                    <div class="w-20 h-px bg-brand-gold"></div>
+                    <i class="fas fa-circle text-[6px] text-brand-gold"></i>
+                    <div class="w-20 h-px bg-brand-gold"></div>
                 </div>
             </div>
         </div>
@@ -460,8 +479,8 @@
 
                 <div class="flex justify-center">
                     <span class="bg-orange-100 text-orange-800 px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wide">
-                        <span class="lang-text" data-lang-vi>10:00 - 10:15: Giải lao (Tea Break)</span>
-                        <span class="lang-text" data-lang-en>10:00 - 10:15: Tea Break</span>
+                        <span class="lang-text" data-lang-vi>10:00 - 10:20: Giải lao (Tea Break)</span>
+                        <span class="lang-text" data-lang-en>10:00 - 10:20: Tea Break</span>
                     </span>
                 </div>
 
@@ -480,7 +499,7 @@
                         </div>
                         <div class="space-y-4 text-sm">
                             <div class="timeline-row">
-                                <span class="font-bold text-brand-700 block mb-1">10:15 – 10:35</span>
+                                <span class="font-bold text-brand-700 block mb-1">10:20 – 10:35</span>
                                 <p class="font-bold text-gray-900">
                                     <span class="lang-text" data-lang-vi>Phổ kiểu gen động kinh kháng thuốc: kết quả từ nghiên cứu đa trung tâm trên trẻ em Việt Nam</span>
                                     <span class="lang-text" data-lang-en>Genotype Spectrum of Drug-Resistant Epilepsy: Results from a Multicenter Study in Vietnamese Children</span>
@@ -575,7 +594,7 @@
                         </div>
                         <div class="space-y-4 text-sm">
                             <div class="timeline-row">
-                                <span class="font-bold text-brand-gold block mb-1">10:15 – 10:35</span>
+                                <span class="font-bold text-brand-gold block mb-1">10:20 – 10:35</span>
                                 <p class="font-bold text-gray-900">
                                     <span class="lang-text" data-lang-vi>Định khu vùng sinh động kinh bằng điện não đồ nội sọ trong đánh giá phẫu thuật động kinh kháng thuốc</span>
                                     <span class="lang-text" data-lang-en>Localization of Epileptogenic Zone by Intracranial EEG in Drug-Resistant Epilepsy Surgery Evaluation</span>
@@ -607,8 +626,8 @@
                             <div class="timeline-row">
                                 <span class="font-bold text-brand-gold block mb-1">10:55 – 11:15</span>
                                 <p class="font-bold text-gray-900">
-                                    <span class="lang-text" data-lang-vi>Kết quả thực hiện SEEG và phẫu thuật điều trị động kinh - nhân trường hợp thành công đầu tiên tại BV Việt Đức</span>
-                                    <span class="lang-text" data-lang-en>Results of SEEG and Epilepsy Surgery - First Successful Case at Viet Duc Hospital</span>
+                                    <span class="lang-text" data-lang-vi>Phẫu thuật động kinh thái dương: Cắt chọn lọc hay cắt thái dương trước?</span>
+                                    <span class="lang-text" data-lang-en>Temporal Lobe Epilepsy Surgery: Selective Resection or Anterior Temporal Lobectomy?</span>
                                 </p>
                                 <p class="text-brand-800 font-bold mt-1">
                                     <span class="lang-text" data-lang-vi>TS.BS Trần Đình Văn</span>
@@ -617,14 +636,6 @@
                                 <p class="text-xs text-gray-500 italic">
                                     <span class="lang-text" data-lang-vi>Khoa Phẫu thuật thần kinh, Bệnh viện Hữu nghị Việt Đức</span>
                                     <span class="lang-text" data-lang-en>Department of Neurosurgery, Viet Duc University Hospital</span>
-                                </p>
-                                <p class="text-brand-800 font-bold mt-2">
-                                    <span class="lang-text" data-lang-vi>ThS.BS Nguyễn Hồng Phấn</span>
-                                    <span class="lang-text" data-lang-en>MSc. Dr. Nguyen Hong Phan</span>
-                                </p>
-                                <p class="text-xs text-gray-500 italic">
-                                    <span class="lang-text" data-lang-vi>Khoa Nội - Hồi sức thần kinh, Bệnh viện Hữu Nghị Việt Đức</span>
-                                    <span class="lang-text" data-lang-en>Neuro-ICU Department, Viet Duc University Hospital</span>
                                 </p>
                             </div>
                             <div class="timeline-row">
@@ -687,7 +698,7 @@
                             </p>
                             <div class="space-y-4">
                                 <div class="timeline-row flex gap-4">
-                                    <span class="font-bold text-brand-gold w-28 flex-shrink-0 whitespace-nowrap">13:30 – 14:00</span>
+                                    <span class="font-bold text-brand-gold w-28 flex-shrink-0 whitespace-nowrap">13:30 – 13:50</span>
                                     <div>
                                         <p class="font-bold text-brand-900 text-lg">
                                             <span class="lang-text" data-lang-vi>Ứng dụng điều biến thần kinh trong điều trị động kinh kháng thuốc</span>
@@ -698,7 +709,7 @@
                                     </div>
                                 </div>
                                 <div class="timeline-row flex gap-4">
-                                    <span class="font-bold text-brand-gold w-28 flex-shrink-0 whitespace-nowrap">14:00 – 14:20</span>
+                                    <span class="font-bold text-brand-gold w-28 flex-shrink-0 whitespace-nowrap">13:50 – 14:10</span>
                                     <div>
                                         <p class="font-bold text-brand-900 text-lg">
                                             <span class="lang-text" data-lang-vi>Phương pháp điều trị động kinh kháng trị bằng chế độ keto trên thế giới và Việt Nam</span>
@@ -715,7 +726,7 @@
                                     </div>
                                 </div>
                                 <div class="timeline-row flex gap-4">
-                                    <span class="font-bold text-brand-gold w-28 flex-shrink-0 whitespace-nowrap">14:20 – 14:40</span>
+                                    <span class="font-bold text-brand-gold w-28 flex-shrink-0 whitespace-nowrap">14:10 – 14:30</span>
                                     <div>
                                         <p class="font-bold text-brand-900 text-lg">
                                             <span class="lang-text" data-lang-vi>Những tiến bộ trong phẫu thuật động kinh kháng thuốc và vai trò của kích thích thần kinh phế vị (VNS)</span>
@@ -732,7 +743,7 @@
                                     </div>
                                 </div>
                                 <div class="timeline-row flex gap-4 items-center">
-                                    <span class="font-bold text-brand-gold w-28 flex-shrink-0 whitespace-nowrap">14:40 – 14:45</span>
+                                    <span class="font-bold text-brand-gold w-28 flex-shrink-0 whitespace-nowrap">14:30 – 14:40</span>
                                     <p class="font-bold text-brand-900 uppercase">
                                         <span class="lang-text" data-lang-vi>Thảo luận</span>
                                         <span class="lang-text" data-lang-en>Discussion</span>
@@ -745,8 +756,8 @@
 
                 <div class="flex justify-center">
                     <span class="bg-orange-100 text-orange-800 px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wide">
-                        <span class="lang-text" data-lang-vi>14:45 – 15:00: Giải lao (Tea Break)</span>
-                        <span class="lang-text" data-lang-en>14:45 – 15:00: Tea Break</span>
+                        <span class="lang-text" data-lang-vi>14:40 – 15:00: Giải lao (Tea Break)</span>
+                        <span class="lang-text" data-lang-en>14:40 – 15:00: Tea Break</span>
                     </span>
                 </div>
 
@@ -810,7 +821,7 @@
                                 </p>
                             </div>
                             <div class="timeline-row">
-                                <span class="font-bold text-brand-700 block mb-1">16:00 – 16:20</span>
+                                <span class="font-bold text-brand-700 block mb-1">16:00 – 16:15</span>
                                 <p class="font-bold text-gray-900">
                                     <span class="lang-text" data-lang-vi>Các trường hợp lâm sàng về động kinh trên một số bệnh lý liên quan tại khoa Thần kinh bệnh viên Đa khoa Nghệ an</span>
                                     <span class="lang-text" data-lang-en>Clinical Cases of Epilepsy in Related Conditions at Neurology Department, Nghe An General Hospital</span>
@@ -825,7 +836,7 @@
                                 </p>
                             </div>
                             <div class="timeline-row">
-                                <span class="font-bold text-brand-700 block mb-1">16:20 – 16:40</span>
+                                <span class="font-bold text-brand-700 block mb-1">16:15 – 16:30</span>
                                 <p class="font-bold text-gray-900">
                                     <span class="lang-text" data-lang-vi>Động kinh trên bệnh nhân tổn thương não do mắc bệnh máu ác tính: góc nhìn từ các trường hợp lâm sàng</span>
                                     <span class="lang-text" data-lang-en>Epilepsy in Patients with Brain Damage Due to Hematological Malignancies: Clinical Case Perspectives</span>
@@ -840,8 +851,8 @@
                                 </p>
                             </div>
                             <div class="timeline-row text-center font-bold text-brand-900">
-                                <span class="lang-text" data-lang-vi>16:40 – 16:50: Thảo luận</span>
-                                <span class="lang-text" data-lang-en>16:40 – 16:50: Discussion</span>
+                                <span class="lang-text" data-lang-vi>16:30 – 16:40: Thảo luận</span>
+                                <span class="lang-text" data-lang-en>16:30 – 16:40: Discussion</span>
                             </div>
                         </div>
                     </div>
@@ -945,8 +956,8 @@
 
                 <div class="flex justify-center pt-8 border-t border-gray-200">
                     <span class="text-brand-900 font-bold uppercase tracking-widest text-lg bg-gray-100 px-8 py-3 rounded-full shadow-inner">
-                        <span class="lang-text" data-lang-vi>16:50 – 17:00: BẾ MẠC HỘI NGHỊ</span>
-                        <span class="lang-text" data-lang-en>16:50 – 17:00: CLOSING CEREMONY</span>
+                        <span class="lang-text" data-lang-vi>16:40 – 17:00: BẾ MẠC HỘI NGHỊ</span>
+                        <span class="lang-text" data-lang-en>16:40 – 17:00: CLOSING CEREMONY</span>
                     </span>
                 </div>
 
@@ -1034,189 +1045,189 @@
                     <span class="lang-text" data-lang-vi>Chủ Tọa Phiên</span>
                     <span class="lang-text" data-lang-en>Session Chairs</span>
                 </h4>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
                     <!-- GS Lê Quang Cường -->
-                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group border-2 border-brand-800/30">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-brand-800">
+                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group">
+                        <div class="w-28 h-28 mx-auto rounded-full overflow-hidden mb-4 border-2 border-brand-800/20">
                             <img src="gs-cuong.jpg" class="w-full h-full object-cover" style="object-position: center 15%;" alt="GS Lê Quang Cường">
                         </div>
-                        <h5 class="font-bold text-brand-900 text-sm mb-1">
+                        <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>GS.TS Lê Quang Cường</span>
                             <span class="lang-text" data-lang-en>Prof. Le Quang Cuong</span>
                         </h5>
-                        <p class="text-[10px] text-gray-500">
+                        <p class="text-[9px] text-gray-500">
                             <span class="lang-text" data-lang-vi>Chủ tịch Hội đồng GS Y học</span>
                             <span class="lang-text" data-lang-en>Chairman of Medical Professor Council</span>
                         </p>
                     </div>
                     <!-- PGS Phan Việt Nga -->
-                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group border-2 border-brand-800/30">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-brand-800">
+                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group">
+                        <div class="w-28 h-28 mx-auto rounded-full overflow-hidden mb-4 border-2 border-brand-800/20">
                             <img src="pgs-nga.jpg" class="w-full h-full object-cover object-top" alt="PGS Phan Việt Nga">
                         </div>
-                        <h5 class="font-bold text-brand-900 text-sm mb-1">
+                        <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>PGS.TS Phan Việt Nga</span>
                             <span class="lang-text" data-lang-en>Assoc. Prof. Phan Viet Nga</span>
                         </h5>
-                        <p class="text-[10px] text-gray-500">
+                        <p class="text-[9px] text-gray-500">
                             <span class="lang-text" data-lang-vi>Chủ tịch VAAE</span>
                             <span class="lang-text" data-lang-en>President of VAAE</span>
                         </p>
                     </div>
                     <!-- GS Cao Tiến Đức -->
-                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group border-2 border-brand-800/30">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-brand-800">
+                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group">
+                        <div class="w-28 h-28 mx-auto rounded-full overflow-hidden mb-4 border-2 border-brand-800/20">
                             <img src="gs-duc.jpg" class="w-full h-full object-cover object-top" alt="GS Cao Tiến Đức">
                         </div>
-                        <h5 class="font-bold text-brand-900 text-sm mb-1">
+                        <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>GS.TS Cao Tiến Đức</span>
                             <span class="lang-text" data-lang-en>Prof. Cao Tien Duc</span>
                         </h5>
-                        <p class="text-[10px] text-gray-500">
+                        <p class="text-[9px] text-gray-500">
                             <span class="lang-text" data-lang-vi>Chủ tọa phiên chiều</span>
                             <span class="lang-text" data-lang-en>Afternoon Session Chair</span>
                         </p>
                     </div>
                     <!-- PGS Nguyễn Văn Liệu -->
-                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group border-2 border-brand-800/30">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-brand-800">
+                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group">
+                        <div class="w-28 h-28 mx-auto rounded-full overflow-hidden mb-4 border-2 border-brand-800/20">
                             <img src="pgs-lieu.jpg" class="w-full h-full object-cover object-top" alt="PGS Nguyễn Văn Liệu">
                         </div>
-                        <h5 class="font-bold text-brand-900 text-sm mb-1">
+                        <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>PGS.TS Nguyễn Văn Liệu</span>
                             <span class="lang-text" data-lang-en>Assoc. Prof. Nguyen Van Lieu</span>
                         </h5>
-                        <p class="text-[10px] text-gray-500">
+                        <p class="text-[9px] text-gray-500">
                             <span class="lang-text" data-lang-vi>Cố vấn chuyên môn</span>
                             <span class="lang-text" data-lang-en>Professional Advisor</span>
                         </p>
                     </div>
                     <!-- PGS Dương Đình Chỉnh -->
-                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group border-2 border-brand-800/30">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-brand-800">
-                            <img src="pgs-chinh.jpg" class="w-full h-full object-cover object-top" alt="PGS Dương Đình Chỉnh" onerror="this.src='https://ui-avatars.com/api/?name=D+D+Chinh&background=1e3a5f&color=fff&size=150'">
+                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group">
+                        <div class="w-28 h-28 mx-auto rounded-full overflow-hidden mb-4 border-2 border-brand-800/20">
+                            <img src="pgs-chinh.jpg" class="w-full h-full object-cover object-top" alt="PGS Dương Đình Chỉnh" onerror="this.src='https://ui-avatars.com/api/?name=D+D+Chinh&background=1e3a5f&color=fff&size=100'">
                         </div>
-                        <h5 class="font-bold text-brand-900 text-sm mb-1">
+                        <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>PGS.TS Dương Đình Chỉnh</span>
                             <span class="lang-text" data-lang-en>Assoc. Prof. Duong Dinh Chinh</span>
                         </h5>
                     </div>
                     <!-- TS Lê Văn Tuấn -->
-                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group border-2 border-brand-800/30">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-brand-800">
-                            <img src="ts-tuan.jpg" class="w-full h-full object-cover object-top" alt="TS Lê Văn Tuấn" onerror="this.src='https://ui-avatars.com/api/?name=L+V+Tuan&background=1e3a5f&color=fff&size=150'">
+                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group">
+                        <div class="w-28 h-28 mx-auto rounded-full overflow-hidden mb-4 border-2 border-brand-800/20">
+                            <img src="ts-tuan.jpg" class="w-full h-full object-cover object-top" alt="TS Lê Văn Tuấn" onerror="this.src='https://ui-avatars.com/api/?name=L+V+Tuan&background=1e3a5f&color=fff&size=100'">
                         </div>
-                        <h5 class="font-bold text-brand-900 text-sm mb-1">
+                        <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>TS.BS Lê Văn Tuấn</span>
                             <span class="lang-text" data-lang-en>Dr. Le Van Tuan</span>
                         </h5>
                     </div>
                     <!-- TS Cao Vũ Hùng -->
-                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group border-2 border-brand-800/30">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-brand-800">
-                            <img src="ts-hung.jpg" class="w-full h-full object-cover object-top" alt="TS Cao Vũ Hùng" onerror="this.src='https://ui-avatars.com/api/?name=C+V+Hung&background=1e3a5f&color=fff&size=150'">
+                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group">
+                        <div class="w-28 h-28 mx-auto rounded-full overflow-hidden mb-4 border-2 border-brand-800/20">
+                            <img src="ts-hung.jpg" class="w-full h-full object-cover object-top" alt="TS Cao Vũ Hùng" onerror="this.src='https://ui-avatars.com/api/?name=C+V+Hung&background=1e3a5f&color=fff&size=100'">
                         </div>
-                        <h5 class="font-bold text-brand-900 text-sm mb-1">
+                        <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>TS.BS Cao Vũ Hùng</span>
                             <span class="lang-text" data-lang-en>Dr. Cao Vu Hung</span>
                         </h5>
                     </div>
                     <!-- TS Hồ Đăng Mười -->
-                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group border-2 border-brand-800/30">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-brand-800">
-                            <img src="ts-muoi.jpg" class="w-full h-full object-cover object-top" alt="TS Hồ Đăng Mười" onerror="this.src='https://ui-avatars.com/api/?name=H+D+Muoi&background=1e3a5f&color=fff&size=150'">
+                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group">
+                        <div class="w-28 h-28 mx-auto rounded-full overflow-hidden mb-4 border-2 border-brand-800/20">
+                            <img src="ts-muoi.jpg" class="w-full h-full object-cover object-top" alt="TS Hồ Đăng Mười" onerror="this.src='https://ui-avatars.com/api/?name=H+D+Muoi&background=1e3a5f&color=fff&size=100'">
                         </div>
-                        <h5 class="font-bold text-brand-900 text-sm mb-1">
+                        <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>TS.BS Hồ Đăng Mười</span>
                             <span class="lang-text" data-lang-en>Dr. Ho Dang Muoi</span>
                         </h5>
                     </div>
                     <!-- PGS Nguyễn Lê Trung Hiếu -->
-                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group border-2 border-brand-800/30">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-brand-800">
-                            <img src="pgs-hieu.jpg" class="w-full h-full object-cover object-top" alt="PGS Nguyễn Lê Trung Hiếu" onerror="this.src='https://ui-avatars.com/api/?name=N+L+T+Hieu&background=1e3a5f&color=fff&size=150'">
+                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group">
+                        <div class="w-28 h-28 mx-auto rounded-full overflow-hidden mb-4 border-2 border-brand-800/20">
+                            <img src="pgs-hieu.jpg" class="w-full h-full object-cover object-top" alt="PGS Nguyễn Lê Trung Hiếu" onerror="this.src='https://ui-avatars.com/api/?name=N+L+T+Hieu&background=1e3a5f&color=fff&size=100'">
                         </div>
-                        <h5 class="font-bold text-brand-900 text-sm mb-1">
+                        <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>PGS.TS Nguyễn Lê Trung Hiếu</span>
                             <span class="lang-text" data-lang-en>Assoc. Prof. Nguyen Le Trung Hieu</span>
                         </h5>
                     </div>
                     <!-- PGS Nguyễn Đình Toàn -->
-                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group border-2 border-brand-800/30">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-brand-800">
-                            <img src="pgs-toan.jpg" class="w-full h-full object-cover object-top" alt="PGS Nguyễn Đình Toàn" onerror="this.src='https://ui-avatars.com/api/?name=N+D+Toan&background=1e3a5f&color=fff&size=150'">
+                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group">
+                        <div class="w-28 h-28 mx-auto rounded-full overflow-hidden mb-4 border-2 border-brand-800/20">
+                            <img src="pgs-toan.jpg" class="w-full h-full object-cover object-top" alt="PGS Nguyễn Đình Toàn" onerror="this.src='https://ui-avatars.com/api/?name=N+D+Toan&background=1e3a5f&color=fff&size=100'">
                         </div>
-                        <h5 class="font-bold text-brand-900 text-sm mb-1">
+                        <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>PGS.TS Nguyễn Đình Toàn</span>
                             <span class="lang-text" data-lang-en>Assoc. Prof. Nguyen Dinh Toan</span>
                         </h5>
                     </div>
                     <!-- TS Nguyễn Anh Tuấn -->
-                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group border-2 border-brand-800/30">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-brand-800">
-                            <img src="ts-anhtuan.jpg" class="w-full h-full object-cover object-top" alt="TS Nguyễn Anh Tuấn" onerror="this.src='https://ui-avatars.com/api/?name=N+A+Tuan&background=1e3a5f&color=fff&size=150'">
+                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group">
+                        <div class="w-28 h-28 mx-auto rounded-full overflow-hidden mb-4 border-2 border-brand-800/20">
+                            <img src="ts-anhtuan.jpg" class="w-full h-full object-cover object-top" alt="TS Nguyễn Anh Tuấn" onerror="this.src='https://ui-avatars.com/api/?name=N+A+Tuan&background=1e3a5f&color=fff&size=100'">
                         </div>
-                        <h5 class="font-bold text-brand-900 text-sm mb-1">
+                        <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>TS.BS Nguyễn Anh Tuấn</span>
                             <span class="lang-text" data-lang-en>Dr. Nguyen Anh Tuan</span>
                         </h5>
                     </div>
                     <!-- TS Hoàng Kim Tuấn -->
-                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group border-2 border-brand-800/30">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-brand-800">
-                            <img src="ts-kimtuan.jpg" class="w-full h-full object-cover object-top" alt="TS Hoàng Kim Tuấn" onerror="this.src='https://ui-avatars.com/api/?name=H+K+Tuan&background=1e3a5f&color=fff&size=150'">
+                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group">
+                        <div class="w-28 h-28 mx-auto rounded-full overflow-hidden mb-4 border-2 border-brand-800/20">
+                            <img src="ts-kimtuan.jpg" class="w-full h-full object-cover object-top" alt="TS Hoàng Kim Tuấn" onerror="this.src='https://ui-avatars.com/api/?name=H+K+Tuan&background=1e3a5f&color=fff&size=100'">
                         </div>
-                        <h5 class="font-bold text-brand-900 text-sm mb-1">
+                        <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>TS.BS Hoàng Kim Tuấn</span>
                             <span class="lang-text" data-lang-en>Dr. Hoang Kim Tuan</span>
                         </h5>
                     </div>
                     <!-- PGS Nguyễn Văn Hướng -->
-                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group border-2 border-brand-800/30">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-brand-800">
-                            <img src="pgs-huong.jpg" class="w-full h-full object-cover object-top" alt="PGS Nguyễn Văn Hướng" onerror="this.src='https://ui-avatars.com/api/?name=N+V+Huong&background=1e3a5f&color=fff&size=150'">
+                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group">
+                        <div class="w-28 h-28 mx-auto rounded-full overflow-hidden mb-4 border-2 border-brand-800/20">
+                            <img src="pgs-huong.jpg" class="w-full h-full object-cover object-top" alt="PGS Nguyễn Văn Hướng" onerror="this.src='https://ui-avatars.com/api/?name=N+V+Huong&background=1e3a5f&color=fff&size=100'">
                         </div>
-                        <h5 class="font-bold text-brand-900 text-sm mb-1">
+                        <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>PGS.TS Nguyễn Văn Hướng</span>
                             <span class="lang-text" data-lang-en>Assoc. Prof. Nguyen Van Huong</span>
                         </h5>
                     </div>
                     <!-- PGS Trần Văn Tuấn -->
-                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group border-2 border-brand-800/30">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-brand-800">
-                            <img src="pgs-vantuan.jpg" class="w-full h-full object-cover object-top" alt="PGS Trần Văn Tuấn" onerror="this.src='https://ui-avatars.com/api/?name=T+V+Tuan&background=1e3a5f&color=fff&size=150'">
+                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group">
+                        <div class="w-28 h-28 mx-auto rounded-full overflow-hidden mb-4 border-2 border-brand-800/20">
+                            <img src="pgs-vantuan.jpg" class="w-full h-full object-cover object-top" alt="PGS Trần Văn Tuấn" onerror="this.src='https://ui-avatars.com/api/?name=T+V+Tuan&background=1e3a5f&color=fff&size=100'">
                         </div>
-                        <h5 class="font-bold text-brand-900 text-sm mb-1">
+                        <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>PGS.TS Trần Văn Tuấn</span>
                             <span class="lang-text" data-lang-en>Assoc. Prof. Tran Van Tuan</span>
                         </h5>
                     </div>
                     <!-- TS Nguyễn Ngọc Hòa -->
-                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group border-2 border-brand-800/30">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-brand-800">
-                            <img src="ts-hoa.jpg" class="w-full h-full object-cover object-top" alt="TS Nguyễn Ngọc Hòa" onerror="this.src='https://ui-avatars.com/api/?name=N+N+Hoa&background=1e3a5f&color=fff&size=150'">
+                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group">
+                        <div class="w-28 h-28 mx-auto rounded-full overflow-hidden mb-4 border-2 border-brand-800/20">
+                            <img src="ts-hoa.jpg" class="w-full h-full object-cover object-top" alt="TS Nguyễn Ngọc Hòa" onerror="this.src='https://ui-avatars.com/api/?name=N+N+Hoa&background=1e3a5f&color=fff&size=100'">
                         </div>
-                        <h5 class="font-bold text-brand-900 text-sm mb-1">
+                        <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>TS.BS Nguyễn Ngọc Hòa</span>
                             <span class="lang-text" data-lang-en>Dr. Nguyen Ngoc Hoa</span>
                         </h5>
                     </div>
                     <!-- PGS Trần Viết Lực -->
-                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group border-2 border-brand-800/30">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-brand-800">
-                            <img src="pgs-luc.jpg" class="w-full h-full object-cover object-top" alt="PGS Trần Viết Lực" onerror="this.src='https://ui-avatars.com/api/?name=T+V+Luc&background=1e3a5f&color=fff&size=150'">
+                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group">
+                        <div class="w-28 h-28 mx-auto rounded-full overflow-hidden mb-4 border-2 border-brand-800/20">
+                            <img src="pgs-luc.jpg" class="w-full h-full object-cover object-top" alt="PGS Trần Viết Lực" onerror="this.src='https://ui-avatars.com/api/?name=T+V+Luc&background=1e3a5f&color=fff&size=100'">
                         </div>
-                        <h5 class="font-bold text-brand-900 text-sm mb-1">
+                        <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>PGS.TS Trần Viết Lực</span>
                             <span class="lang-text" data-lang-en>Assoc. Prof. Tran Viet Luc</span>
                         </h5>
                     </div>
                     <!-- PGS Võ Hồng Khôi -->
-                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group border-2 border-brand-800/30">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-brand-800">
-                            <img src="pgs-khoi.jpg" class="w-full h-full object-cover object-top" alt="PGS Võ Hồng Khôi" onerror="this.src='https://ui-avatars.com/api/?name=V+H+Khoi&background=1e3a5f&color=fff&size=150'">
+                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group">
+                        <div class="w-28 h-28 mx-auto rounded-full overflow-hidden mb-4 border-2 border-brand-800/20">
+                            <img src="pgs-khoi.jpg" class="w-full h-full object-cover object-top" alt="PGS Võ Hồng Khôi" onerror="this.src='https://ui-avatars.com/api/?name=V+H+Khoi&background=1e3a5f&color=fff&size=100'">
                         </div>
-                        <h5 class="font-bold text-brand-900 text-sm mb-1">
+                        <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>PGS.TS Võ Hồng Khôi</span>
                             <span class="lang-text" data-lang-en>Assoc. Prof. Vo Hong Khoi</span>
                         </h5>
@@ -1230,255 +1241,241 @@
                     <span class="lang-text" data-lang-vi>Báo Cáo Viên</span>
                     <span class="lang-text" data-lang-en>Presenters</span>
                 </h4>
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
                     <!-- ThS Lê Thụy Minh An -->
-                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
-                            <img src="ths-minhan.jpg" class="w-full h-full object-cover object-top" alt="ThS Lê Thụy Minh An" onerror="this.src='https://ui-avatars.com/api/?name=L+T+M+An&background=6b7280&color=fff&size=120'">
+                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition text-center">
+                        <div class="w-20 h-20 mx-auto rounded-full overflow-hidden mb-3 border-2 border-gray-200">
+                            <img src="ths-minhan.jpg" class="w-full h-full object-cover object-top" alt="ThS Lê Thụy Minh An" onerror="this.src='https://ui-avatars.com/api/?name=L+T+M+An&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>ThS.BS Lê Thụy Minh An</span>
                             <span class="lang-text" data-lang-en>MSc. Dr. Le Thuy Minh An</span>
                         </h5>
-                        <p class="text-[10px] text-gray-500">
+                        <p class="text-[9px] text-gray-400">
                             <span class="lang-text" data-lang-vi>ĐH Y Dược TP.HCM</span>
                             <span class="lang-text" data-lang-en>UMP HCMC</span>
                         </p>
                     </div>
                     <!-- ThS Doãn Ngọc Ánh -->
-                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
-                            <img src="ths-ngocanh.jpg" class="w-full h-full object-cover object-top" alt="ThS Doãn Ngọc Ánh" onerror="this.src='https://ui-avatars.com/api/?name=D+N+Anh&background=6b7280&color=fff&size=120'">
+                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition text-center">
+                        <div class="w-20 h-20 mx-auto rounded-full overflow-hidden mb-3 border-2 border-gray-200">
+                            <img src="ths-ngocanh.jpg" class="w-full h-full object-cover object-top" alt="ThS Doãn Ngọc Ánh" onerror="this.src='https://ui-avatars.com/api/?name=D+N+Anh&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>ThS.BS Doãn Ngọc Ánh</span>
                             <span class="lang-text" data-lang-en>MSc. Dr. Doan Ngoc Anh</span>
                         </h5>
-                        <p class="text-[10px] text-gray-500">
+                        <p class="text-[9px] text-gray-400">
                             <span class="lang-text" data-lang-vi>BV Nhi Trung ương</span>
                             <span class="lang-text" data-lang-en>Natl Children's Hospital</span>
                         </p>
                     </div>
                     <!-- BSCK2 Nguyễn Thị Bích Vân -->
-                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
-                            <img src="bsck2-bichvan.jpg" class="w-full h-full object-cover object-top" alt="BSCK2 Nguyễn Thị Bích Vân" onerror="this.src='https://ui-avatars.com/api/?name=N+T+B+Van&background=6b7280&color=fff&size=120'">
+                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition text-center">
+                        <div class="w-20 h-20 mx-auto rounded-full overflow-hidden mb-3 border-2 border-gray-200">
+                            <img src="bsck2-bichvan.jpg" class="w-full h-full object-cover object-top" alt="BSCK2 Nguyễn Thị Bích Vân" onerror="this.src='https://ui-avatars.com/api/?name=N+T+B+Van&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>BSCK2 Nguyễn Thị Bích Vân</span>
                             <span class="lang-text" data-lang-en>Specialist Dr. Nguyen Thi Bich Van</span>
                         </h5>
-                        <p class="text-[10px] text-gray-500">
+                        <p class="text-[9px] text-gray-400">
                             <span class="lang-text" data-lang-vi>BV Nhi Trung ương</span>
                             <span class="lang-text" data-lang-en>Natl Children's Hospital</span>
                         </p>
                     </div>
                     <!-- ThS Bùi Hiếu Anh -->
-                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
+                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition text-center">
+                        <div class="w-20 h-20 mx-auto rounded-full overflow-hidden mb-3 border-2 border-gray-200">
                             <img src="ths-hieuanh.jpg" class="w-full h-full object-cover object-top" alt="ThS Bùi Hiếu Anh" onerror="this.src='https://ui-avatars.com/api/?name=B+H+Anh&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>ThS.BS Bùi Hiếu Anh</span>
                             <span class="lang-text" data-lang-en>MSc. Dr. Bui Hieu Anh</span>
                         </h5>
-                        <p class="text-[10px] text-gray-500">
+                        <p class="text-[9px] text-gray-400">
                             <span class="lang-text" data-lang-vi>ĐH Y Phạm Ngọc Thạch</span>
                             <span class="lang-text" data-lang-en>Pham Ngoc Thach UMP</span>
                         </p>
                     </div>
                     <!-- ThS Tạ Hồng Nhung -->
-                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
+                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition text-center">
+                        <div class="w-20 h-20 mx-auto rounded-full overflow-hidden mb-3 border-2 border-gray-200">
                             <img src="ths-hongnhung.jpg" class="w-full h-full object-cover object-top" alt="ThS Tạ Hồng Nhung" onerror="this.src='https://ui-avatars.com/api/?name=T+H+Nhung&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>ThS.BS Tạ Hồng Nhung</span>
                             <span class="lang-text" data-lang-en>MSc. Dr. Ta Hong Nhung</span>
                         </h5>
-                        <p class="text-[10px] text-gray-500">
+                        <p class="text-[9px] text-gray-400">
                             <span class="lang-text" data-lang-vi>BV Việt Đức</span>
                             <span class="lang-text" data-lang-en>Viet Duc Hospital</span>
                         </p>
                     </div>
                     <!-- ThS Võ Thế Nhân -->
-                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
+                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition text-center">
+                        <div class="w-20 h-20 mx-auto rounded-full overflow-hidden mb-3 border-2 border-gray-200">
                             <img src="ths-thenhan.jpg" class="w-full h-full object-cover object-top" alt="ThS Võ Thế Nhân" onerror="this.src='https://ui-avatars.com/api/?name=V+T+Nhan&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>ThS.BS Võ Thế Nhân</span>
                             <span class="lang-text" data-lang-en>MSc. Dr. Vo The Nhan</span>
                         </h5>
-                        <p class="text-[10px] text-gray-500">
+                        <p class="text-[9px] text-gray-400">
                             <span class="lang-text" data-lang-vi>BV Bạch Mai</span>
                             <span class="lang-text" data-lang-en>Bach Mai Hospital</span>
                         </p>
                     </div>
                     <!-- TS Trần Đình Văn -->
-                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
+                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition text-center">
+                        <div class="w-20 h-20 mx-auto rounded-full overflow-hidden mb-3 border-2 border-gray-200">
                             <img src="ts-dinhvan.jpg" class="w-full h-full object-cover object-top" alt="TS Trần Đình Văn" onerror="this.src='https://ui-avatars.com/api/?name=T+D+Van&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>TS.BS Trần Đình Văn</span>
                             <span class="lang-text" data-lang-en>Dr. Tran Dinh Van, PhD</span>
                         </h5>
-                        <p class="text-[10px] text-gray-500">
-                            <span class="lang-text" data-lang-vi>BV Việt Đức</span>
-                            <span class="lang-text" data-lang-en>Viet Duc Hospital</span>
-                        </p>
-                    </div>
-                    <!-- ThS Nguyễn Hồng Phấn -->
-                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
-                            <img src="ths-hongphan.jpg" class="w-full h-full object-cover object-top" alt="ThS Nguyễn Hồng Phấn" onerror="this.src='https://ui-avatars.com/api/?name=N+H+Phan&background=6b7280&color=fff&size=100'">
-                        </div>
-                        <h5 class="font-bold text-brand-900 text-xs mb-1">
-                            <span class="lang-text" data-lang-vi>ThS.BS Nguyễn Hồng Phấn</span>
-                            <span class="lang-text" data-lang-en>MSc. Dr. Nguyen Hong Phan</span>
-                        </h5>
-                        <p class="text-[10px] text-gray-500">
+                        <p class="text-[9px] text-gray-400">
                             <span class="lang-text" data-lang-vi>BV Việt Đức</span>
                             <span class="lang-text" data-lang-en>Viet Duc Hospital</span>
                         </p>
                     </div>
                     <!-- BSCK2 Lê Nam Thắng -->
-                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
+                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition text-center">
+                        <div class="w-20 h-20 mx-auto rounded-full overflow-hidden mb-3 border-2 border-gray-200">
                             <img src="bsck2-namthang.jpg" class="w-full h-full object-cover object-top" alt="BSCK2 Lê Nam Thắng" onerror="this.src='https://ui-avatars.com/api/?name=L+N+Thang&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>BSCK2 Lê Nam Thắng</span>
                             <span class="lang-text" data-lang-en>Specialist Dr. Le Nam Thang</span>
                         </h5>
-                        <p class="text-[10px] text-gray-500">
+                        <p class="text-[9px] text-gray-400">
                             <span class="lang-text" data-lang-vi>BV Nhi Trung ương</span>
                             <span class="lang-text" data-lang-en>Natl Children's Hospital</span>
                         </p>
                     </div>
                     <!-- BSCK2 Nguyễn Thị Thảo -->
-                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
+                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition text-center">
+                        <div class="w-20 h-20 mx-auto rounded-full overflow-hidden mb-3 border-2 border-gray-200">
                             <img src="bsck2-thithao.jpg" class="w-full h-full object-cover object-top" alt="BSCK2 Nguyễn Thị Thảo" onerror="this.src='https://ui-avatars.com/api/?name=N+T+Thao&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>BSCK2 Nguyễn Thị Thảo</span>
                             <span class="lang-text" data-lang-en>Specialist Dr. Nguyen Thi Thao</span>
                         </h5>
-                        <p class="text-[10px] text-gray-500">
+                        <p class="text-[9px] text-gray-400">
                             <span class="lang-text" data-lang-vi>BV Nhi Trung ương</span>
                             <span class="lang-text" data-lang-en>Natl Children's Hospital</span>
                         </p>
                     </div>
                     <!-- TS Nguyễn Thị Thu Hậu -->
-                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
+                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition text-center">
+                        <div class="w-20 h-20 mx-auto rounded-full overflow-hidden mb-3 border-2 border-gray-200">
                             <img src="ts-thuhau.jpg" class="w-full h-full object-cover object-top" alt="TS Nguyễn Thị Thu Hậu" onerror="this.src='https://ui-avatars.com/api/?name=N+T+T+Hau&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>TS.BS Nguyễn Thị Thu Hậu</span>
                             <span class="lang-text" data-lang-en>Dr. Nguyen Thi Thu Hau, PhD</span>
                         </h5>
-                        <p class="text-[10px] text-gray-500">
+                        <p class="text-[9px] text-gray-400">
                             <span class="lang-text" data-lang-vi>BV Nhi đồng 2</span>
                             <span class="lang-text" data-lang-en>Children's Hospital 2</span>
                         </p>
                     </div>
                     <!-- ThS Nguyễn Phan Thanh Tú -->
-                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
+                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition text-center">
+                        <div class="w-20 h-20 mx-auto rounded-full overflow-hidden mb-3 border-2 border-gray-200">
                             <img src="ths-thanhtu.jpg" class="w-full h-full object-cover object-top" alt="ThS Nguyễn Phan Thanh Tú" onerror="this.src='https://ui-avatars.com/api/?name=N+P+T+Tu&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>ThS.BS Nguyễn Phan Thanh Tú</span>
                             <span class="lang-text" data-lang-en>MSc. Dr. Nguyen Phan Thanh Tu</span>
                         </h5>
-                        <p class="text-[10px] text-gray-500">
+                        <p class="text-[9px] text-gray-400">
                             <span class="lang-text" data-lang-vi>BV ĐH Y Dược TP.HCM</span>
                             <span class="lang-text" data-lang-en>UMC HCMC</span>
                         </p>
                     </div>
                     <!-- ThS Phương Thanh Hà -->
-                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
+                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition text-center">
+                        <div class="w-20 h-20 mx-auto rounded-full overflow-hidden mb-3 border-2 border-gray-200">
                             <img src="ths-thanhha.jpg" class="w-full h-full object-cover object-top" alt="ThS Phương Thanh Hà" onerror="this.src='https://ui-avatars.com/api/?name=P+T+Ha&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>ThS.BS Phương Thanh Hà</span>
                             <span class="lang-text" data-lang-en>MSc. Dr. Phuong Thanh Ha</span>
                         </h5>
-                        <p class="text-[10px] text-gray-500">
+                        <p class="text-[9px] text-gray-400">
                             <span class="lang-text" data-lang-vi>ĐH Y Hà Nội</span>
                             <span class="lang-text" data-lang-en>Hanoi Medical Univ</span>
                         </p>
                     </div>
                     <!-- ThS Lê Văn Thủy -->
-                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
+                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition text-center">
+                        <div class="w-20 h-20 mx-auto rounded-full overflow-hidden mb-3 border-2 border-gray-200">
                             <img src="ths-vanthuy.jpg" class="w-full h-full object-cover object-top" alt="ThS Lê Văn Thủy" onerror="this.src='https://ui-avatars.com/api/?name=L+V+Thuy&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>ThS.BS Lê Văn Thủy</span>
                             <span class="lang-text" data-lang-en>MSc. Dr. Le Van Thuy</span>
                         </h5>
-                        <p class="text-[10px] text-gray-500">
+                        <p class="text-[9px] text-gray-400">
                             <span class="lang-text" data-lang-vi>ĐH Y Hà Nội</span>
                             <span class="lang-text" data-lang-en>Hanoi Medical Univ</span>
                         </p>
                     </div>
                     <!-- ThS Hồ Quang Thịnh -->
-                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
+                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition text-center">
+                        <div class="w-20 h-20 mx-auto rounded-full overflow-hidden mb-3 border-2 border-gray-200">
                             <img src="ths-quangthinh.jpg" class="w-full h-full object-cover object-top" alt="ThS Hồ Quang Thịnh" onerror="this.src='https://ui-avatars.com/api/?name=H+Q+Thinh&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>ThS.BS Hồ Quang Thịnh</span>
                             <span class="lang-text" data-lang-en>MSc. Dr. Ho Quang Thinh</span>
                         </h5>
-                        <p class="text-[10px] text-gray-500">
+                        <p class="text-[9px] text-gray-400">
                             <span class="lang-text" data-lang-vi>BV ĐK Nghệ An</span>
                             <span class="lang-text" data-lang-en>Nghe An Gen Hospital</span>
                         </p>
                     </div>
                     <!-- ThS Nguyễn Thị Thơm -->
-                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
+                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition text-center">
+                        <div class="w-20 h-20 mx-auto rounded-full overflow-hidden mb-3 border-2 border-gray-200">
                             <img src="ths-thithom.jpg" class="w-full h-full object-cover object-top" alt="ThS Nguyễn Thị Thơm" onerror="this.src='https://ui-avatars.com/api/?name=N+T+Thom&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>ThS.BSNT Nguyễn Thị Thơm</span>
                             <span class="lang-text" data-lang-en>MSc. Dr. Nguyen Thi Thom</span>
                         </h5>
-                        <p class="text-[10px] text-gray-500">
+                        <p class="text-[9px] text-gray-400">
                             <span class="lang-text" data-lang-vi>BV ĐH Y Hà Nội</span>
                             <span class="lang-text" data-lang-en>Hanoi MU Hospital</span>
                         </p>
                     </div>
                     <!-- BS Nguyễn Thị Vân (Tranh luận) -->
-                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
+                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition text-center">
+                        <div class="w-20 h-20 mx-auto rounded-full overflow-hidden mb-3 border-2 border-gray-200">
                             <img src="bs-thivan.jpg" class="w-full h-full object-cover object-top" alt="BS Nguyễn Thị Vân" onerror="this.src='https://ui-avatars.com/api/?name=N+T+Van&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>BS Nguyễn Thị Vân</span>
                             <span class="lang-text" data-lang-en>Dr. Nguyen Thi Van</span>
                         </h5>
-                        <p class="text-[10px] text-gray-500">
+                        <p class="text-[9px] text-gray-400">
                             <span class="lang-text" data-lang-vi>BV Nhi Trung ương</span>
                             <span class="lang-text" data-lang-en>Natl Children's Hospital</span>
                         </p>
                     </div>
                     <!-- BS Đào Thị Việt Hường (Tranh luận) -->
-                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
+                    <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition text-center">
+                        <div class="w-20 h-20 mx-auto rounded-full overflow-hidden mb-3 border-2 border-gray-200">
                             <img src="bs-viethuong.jpg" class="w-full h-full object-cover object-top" alt="BS Đào Thị Việt Hường" onerror="this.src='https://ui-avatars.com/api/?name=D+T+V+Huong&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
                             <span class="lang-text" data-lang-vi>BS Đào Thị Việt Hường</span>
                             <span class="lang-text" data-lang-en>Dr. Dao Thi Viet Huong</span>
                         </h5>
-                        <p class="text-[10px] text-gray-500">
+                        <p class="text-[9px] text-gray-400">
                             <span class="lang-text" data-lang-vi>BV Nhi Trung ương</span>
                             <span class="lang-text" data-lang-en>Natl Children's Hospital</span>
                         </p>
@@ -1524,9 +1521,9 @@
                     <span class="lang-text" data-lang-vi>Đồng tài trợ</span>
                     <span class="lang-text" data-lang-en>Co-Sponsors</span>
                 </p>
-                <div class="flex flex-wrap justify-center items-center gap-12">
-                    <img src="sponsor-bronze-1.jpg" class="h-28 object-contain hover:scale-105 transition" alt="Novartis" onerror="this.style.display='none'">
-                    <img src="sponsor-bronze-2.jpg" class="h-16 object-contain hover:scale-105 transition" alt="Torrent Pharma" onerror="this.style.display='none'">
+                <div class="flex flex-wrap justify-center items-center gap-8">
+                    <img src="sponsor-bronze-1.jpg" class="h-8 object-contain hover:scale-105 transition" alt="Bronze 1" onerror="this.style.display='none'">
+                    <img src="sponsor-bronze-2.jpg" class="h-8 object-contain hover:scale-105 transition" alt="Bronze 2" onerror="this.style.display='none'">
                 </div>
             </div>
         </div>
@@ -1733,9 +1730,7 @@
     <footer class="bg-brand-900 text-white py-12 border-t border-brand-800">
         <div class="container mx-auto px-6 text-center">
             <a href="https://hoichongdongkinhvietnam.vn" target="_blank" class="inline-block group">
-                <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-full p-2 flex items-center justify-center opacity-80 group-hover:opacity-100 transition duration-300 transform group-hover:scale-110">
-                    <img src="logo.png" alt="Logo VAAE" class="w-full h-full object-contain">
-                </div>
+                <img src="logo.png" alt="Logo VAAE" class="w-16 h-16 mx-auto mb-4 bg-white rounded-full p-1 opacity-80 group-hover:opacity-100 transition duration-300 transform group-hover:scale-110">
                 <p class="font-serif font-bold text-xl mb-2 group-hover:text-brand-gold transition">
                     <span class="lang-text" data-lang-vi>HỘI CHỐNG ĐỘNG KINH VIỆT NAM</span>
                     <span class="lang-text" data-lang-en>VIETNAM ASSOCIATION AGAINST EPILEPSY</span>
