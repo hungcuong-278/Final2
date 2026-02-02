@@ -77,9 +77,11 @@
             border-radius: 2px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.2);
         }
-        .lang-text[data-lang-en] { display: none; }
-        html[lang="en"] .lang-text[data-lang-vi] { display: none; }
-        html[lang="en"] .lang-text[data-lang-en] { display: inline; }
+        .lang-text[data-lang-en] { display: none !important; }
+        html[lang="en"] .lang-text[data-lang-vi] { display: none !important; }
+        html[lang="en"] .lang-text[data-lang-en] { display: inline !important; }
+        html[lang="vi"] .lang-text[data-lang-vi] { display: inline !important; }
+        html[lang="vi"] .lang-text[data-lang-en] { display: none !important; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">
@@ -800,7 +802,7 @@
                                 </p>
                             </div>
                             <div class="timeline-row">
-                                <span class="font-bold text-brand-700 block mb-1">16:00 – 16:15</span>
+                                <span class="font-bold text-brand-700 block mb-1">16:00 – 16:20</span>
                                 <p class="font-bold text-gray-900">
                                     <span class="lang-text" data-lang-vi>Các trường hợp lâm sàng về động kinh trên một số bệnh lý liên quan tại khoa Thần kinh bệnh viên Đa khoa Nghệ an</span>
                                     <span class="lang-text" data-lang-en>Clinical Cases of Epilepsy in Related Conditions at Neurology Department, Nghe An General Hospital</span>
@@ -815,7 +817,7 @@
                                 </p>
                             </div>
                             <div class="timeline-row">
-                                <span class="font-bold text-brand-700 block mb-1">16:15 – 16:30</span>
+                                <span class="font-bold text-brand-700 block mb-1">16:20 – 16:40</span>
                                 <p class="font-bold text-gray-900">
                                     <span class="lang-text" data-lang-vi>Động kinh trên bệnh nhân tổn thương não do mắc bệnh máu ác tính: góc nhìn từ các trường hợp lâm sàng</span>
                                     <span class="lang-text" data-lang-en>Epilepsy in Patients with Brain Damage Due to Hematological Malignancies: Clinical Case Perspectives</span>
@@ -830,8 +832,8 @@
                                 </p>
                             </div>
                             <div class="timeline-row text-center font-bold text-brand-900">
-                                <span class="lang-text" data-lang-vi>16:30 – 16:40: Thảo luận</span>
-                                <span class="lang-text" data-lang-en>16:30 – 16:40: Discussion</span>
+                                <span class="lang-text" data-lang-vi>16:40 – 16:50: Thảo luận</span>
+                                <span class="lang-text" data-lang-en>16:40 – 16:50: Discussion</span>
                             </div>
                         </div>
                     </div>
@@ -935,8 +937,8 @@
 
                 <div class="flex justify-center pt-8 border-t border-gray-200">
                     <span class="text-brand-900 font-bold uppercase tracking-widest text-lg bg-gray-100 px-8 py-3 rounded-full shadow-inner">
-                        <span class="lang-text" data-lang-vi>16:40 – 17:00: BẾ MẠC HỘI NGHỊ</span>
-                        <span class="lang-text" data-lang-en>16:40 – 17:00: CLOSING CEREMONY</span>
+                        <span class="lang-text" data-lang-vi>16:50 – 17:00: BẾ MẠC HỘI NGHỊ</span>
+                        <span class="lang-text" data-lang-en>16:50 – 17:00: CLOSING CEREMONY</span>
                     </span>
                 </div>
 
@@ -1220,10 +1222,10 @@
                     <span class="lang-text" data-lang-vi>Báo Cáo Viên</span>
                     <span class="lang-text" data-lang-en>Presenters</span>
                 </h4>
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-5 max-w-6xl mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
                     <!-- ThS Lê Thụy Minh An -->
                     <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-24 h-24 mx-auto rounded-lg overflow-hidden mb-3 border-2 border-gray-300">
+                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
                             <img src="ths-minhan.jpg" class="w-full h-full object-cover object-top" alt="ThS Lê Thụy Minh An" onerror="this.src='https://ui-avatars.com/api/?name=L+T+M+An&background=6b7280&color=fff&size=120'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
@@ -1237,7 +1239,7 @@
                     </div>
                     <!-- ThS Doãn Ngọc Ánh -->
                     <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-24 h-24 mx-auto rounded-lg overflow-hidden mb-3 border-2 border-gray-300">
+                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
                             <img src="ths-ngocanh.jpg" class="w-full h-full object-cover object-top" alt="ThS Doãn Ngọc Ánh" onerror="this.src='https://ui-avatars.com/api/?name=D+N+Anh&background=6b7280&color=fff&size=120'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
@@ -1251,7 +1253,7 @@
                     </div>
                     <!-- BSCK2 Nguyễn Thị Bích Vân -->
                     <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-24 h-24 mx-auto rounded-lg overflow-hidden mb-3 border-2 border-gray-300">
+                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
                             <img src="bsck2-bichvan.jpg" class="w-full h-full object-cover object-top" alt="BSCK2 Nguyễn Thị Bích Vân" onerror="this.src='https://ui-avatars.com/api/?name=N+T+B+Van&background=6b7280&color=fff&size=120'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
@@ -1265,7 +1267,7 @@
                     </div>
                     <!-- ThS Bùi Hiếu Anh -->
                     <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-24 h-24 mx-auto rounded-lg overflow-hidden mb-3 border-2 border-gray-300">
+                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
                             <img src="ths-hieuanh.jpg" class="w-full h-full object-cover object-top" alt="ThS Bùi Hiếu Anh" onerror="this.src='https://ui-avatars.com/api/?name=B+H+Anh&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
@@ -1279,7 +1281,7 @@
                     </div>
                     <!-- ThS Tạ Hồng Nhung -->
                     <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-24 h-24 mx-auto rounded-lg overflow-hidden mb-3 border-2 border-gray-300">
+                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
                             <img src="ths-hongnhung.jpg" class="w-full h-full object-cover object-top" alt="ThS Tạ Hồng Nhung" onerror="this.src='https://ui-avatars.com/api/?name=T+H+Nhung&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
@@ -1293,7 +1295,7 @@
                     </div>
                     <!-- ThS Võ Thế Nhân -->
                     <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-24 h-24 mx-auto rounded-lg overflow-hidden mb-3 border-2 border-gray-300">
+                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
                             <img src="ths-thenhan.jpg" class="w-full h-full object-cover object-top" alt="ThS Võ Thế Nhân" onerror="this.src='https://ui-avatars.com/api/?name=V+T+Nhan&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
@@ -1307,7 +1309,7 @@
                     </div>
                     <!-- TS Trần Đình Văn -->
                     <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-24 h-24 mx-auto rounded-lg overflow-hidden mb-3 border-2 border-gray-300">
+                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
                             <img src="ts-dinhvan.jpg" class="w-full h-full object-cover object-top" alt="TS Trần Đình Văn" onerror="this.src='https://ui-avatars.com/api/?name=T+D+Van&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
@@ -1321,7 +1323,7 @@
                     </div>
                     <!-- BSCK2 Lê Nam Thắng -->
                     <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-24 h-24 mx-auto rounded-lg overflow-hidden mb-3 border-2 border-gray-300">
+                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
                             <img src="bsck2-namthang.jpg" class="w-full h-full object-cover object-top" alt="BSCK2 Lê Nam Thắng" onerror="this.src='https://ui-avatars.com/api/?name=L+N+Thang&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
@@ -1335,7 +1337,7 @@
                     </div>
                     <!-- BSCK2 Nguyễn Thị Thảo -->
                     <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-24 h-24 mx-auto rounded-lg overflow-hidden mb-3 border-2 border-gray-300">
+                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
                             <img src="bsck2-thithao.jpg" class="w-full h-full object-cover object-top" alt="BSCK2 Nguyễn Thị Thảo" onerror="this.src='https://ui-avatars.com/api/?name=N+T+Thao&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
@@ -1349,7 +1351,7 @@
                     </div>
                     <!-- TS Nguyễn Thị Thu Hậu -->
                     <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-24 h-24 mx-auto rounded-lg overflow-hidden mb-3 border-2 border-gray-300">
+                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
                             <img src="ts-thuhau.jpg" class="w-full h-full object-cover object-top" alt="TS Nguyễn Thị Thu Hậu" onerror="this.src='https://ui-avatars.com/api/?name=N+T+T+Hau&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
@@ -1363,7 +1365,7 @@
                     </div>
                     <!-- ThS Nguyễn Phan Thanh Tú -->
                     <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-24 h-24 mx-auto rounded-lg overflow-hidden mb-3 border-2 border-gray-300">
+                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
                             <img src="ths-thanhtu.jpg" class="w-full h-full object-cover object-top" alt="ThS Nguyễn Phan Thanh Tú" onerror="this.src='https://ui-avatars.com/api/?name=N+P+T+Tu&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
@@ -1377,7 +1379,7 @@
                     </div>
                     <!-- ThS Phương Thanh Hà -->
                     <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-24 h-24 mx-auto rounded-lg overflow-hidden mb-3 border-2 border-gray-300">
+                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
                             <img src="ths-thanhha.jpg" class="w-full h-full object-cover object-top" alt="ThS Phương Thanh Hà" onerror="this.src='https://ui-avatars.com/api/?name=P+T+Ha&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
@@ -1391,7 +1393,7 @@
                     </div>
                     <!-- ThS Lê Văn Thủy -->
                     <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-24 h-24 mx-auto rounded-lg overflow-hidden mb-3 border-2 border-gray-300">
+                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
                             <img src="ths-vanthuy.jpg" class="w-full h-full object-cover object-top" alt="ThS Lê Văn Thủy" onerror="this.src='https://ui-avatars.com/api/?name=L+V+Thuy&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
@@ -1405,7 +1407,7 @@
                     </div>
                     <!-- ThS Hồ Quang Thịnh -->
                     <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-24 h-24 mx-auto rounded-lg overflow-hidden mb-3 border-2 border-gray-300">
+                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
                             <img src="ths-quangthinh.jpg" class="w-full h-full object-cover object-top" alt="ThS Hồ Quang Thịnh" onerror="this.src='https://ui-avatars.com/api/?name=H+Q+Thinh&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
@@ -1419,7 +1421,7 @@
                     </div>
                     <!-- ThS Nguyễn Thị Thơm -->
                     <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-24 h-24 mx-auto rounded-lg overflow-hidden mb-3 border-2 border-gray-300">
+                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
                             <img src="ths-thithom.jpg" class="w-full h-full object-cover object-top" alt="ThS Nguyễn Thị Thơm" onerror="this.src='https://ui-avatars.com/api/?name=N+T+Thom&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
@@ -1433,7 +1435,7 @@
                     </div>
                     <!-- BS Nguyễn Thị Vân (Tranh luận) -->
                     <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-24 h-24 mx-auto rounded-lg overflow-hidden mb-3 border-2 border-gray-300">
+                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
                             <img src="bs-thivan.jpg" class="w-full h-full object-cover object-top" alt="BS Nguyễn Thị Vân" onerror="this.src='https://ui-avatars.com/api/?name=N+T+Van&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
@@ -1447,7 +1449,7 @@
                     </div>
                     <!-- BS Đào Thị Việt Hường (Tranh luận) -->
                     <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition text-center border border-gray-200">
-                        <div class="w-24 h-24 mx-auto rounded-lg overflow-hidden mb-3 border-2 border-gray-300">
+                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-gray-400">
                             <img src="bs-viethuong.jpg" class="w-full h-full object-cover object-top" alt="BS Đào Thị Việt Hường" onerror="this.src='https://ui-avatars.com/api/?name=D+T+V+Huong&background=6b7280&color=fff&size=100'">
                         </div>
                         <h5 class="font-bold text-brand-900 text-xs mb-1">
