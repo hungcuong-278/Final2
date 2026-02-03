@@ -11,6 +11,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
     
+    <!-- FIREBASE SDK - Project: vaae-conference-2026 -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+    
     <script>
         tailwind.config = {
             theme: {
@@ -1532,6 +1537,103 @@
         </div>
     </section>
 
+    <!-- LOCATION MAP SECTION -->
+    <section id="location" class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h3 class="font-serif text-3xl font-bold text-brand-900 mb-2">
+                    <span class="lang-text" data-lang-vi>Địa Điểm Tổ Chức</span>
+                    <span class="lang-text" data-lang-en>Event Location</span>
+                </h3>
+                <div class="w-16 h-1 bg-brand-gold mx-auto mb-4"></div>
+                <p class="text-gray-600">
+                    <span class="lang-text" data-lang-vi>Khách sạn Mường Thanh Cửa Đông - Nghệ An</span>
+                    <span class="lang-text" data-lang-en>Muong Thanh Cua Dong Hotel - Nghe An</span>
+                </p>
+            </div>
+            
+            <div class="max-w-5xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-8 items-start">
+                    <!-- Map -->
+                    <div class="rounded-xl overflow-hidden shadow-lg border border-gray-200">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3779.5103976863743!2d105.69708621039022!3d18.685953982366772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3139cde7d3b62789%3A0x8467ee7c6f642419!2zS2jDoWNoIHPhuqFuIE3GsOG7nW5nIFRoYW5oIEPhu61hIMSQw7RuZw!5e0!3m2!1svi!2s!4v1770120053021!5m2!1svi!2s" 
+                            width="100%" 
+                            height="350" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="w-full">
+                        </iframe>
+                    </div>
+                    
+                    <!-- Location Info -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                        <div class="flex items-start gap-4 mb-6">
+                            <div class="w-12 h-12 bg-brand-800 text-white rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-900 text-lg">
+                                    <span class="lang-text" data-lang-vi>Khách sạn Mường Thanh Cửa Đông</span>
+                                    <span class="lang-text" data-lang-en>Muong Thanh Cua Dong Hotel</span>
+                                </h4>
+                                <p class="text-gray-600 text-sm">
+                                    <span class="lang-text" data-lang-vi>Số 167, Nguyễn Phong Sắc, Trường Vinh, TP Vinh, Nghệ An</span>
+                                    <span class="lang-text" data-lang-en>167 Nguyen Phong Sac, Truong Vinh, Vinh City, Nghe An</span>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
+                                <i class="fas fa-calendar-alt text-brand-800"></i>
+                                <div>
+                                    <p class="text-xs text-gray-500 uppercase font-bold">
+                                        <span class="lang-text" data-lang-vi>Ngày hội nghị</span>
+                                        <span class="lang-text" data-lang-en>Conference Date</span>
+                                    </p>
+                                    <p class="font-bold text-brand-900">11/04/2026</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-3 p-3 bg-orange-50 rounded-lg">
+                                <i class="fas fa-tools text-brand-gold"></i>
+                                <div>
+                                    <p class="text-xs text-gray-500 uppercase font-bold">
+                                        <span class="lang-text" data-lang-vi>Ngày Workshop</span>
+                                        <span class="lang-text" data-lang-en>Workshop Date</span>
+                                    </p>
+                                    <p class="font-bold text-brand-900">12/04/2026</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-3 p-3 bg-green-50 rounded-lg">
+                                <i class="fas fa-phone text-green-600"></i>
+                                <div>
+                                    <p class="text-xs text-gray-500 uppercase font-bold">
+                                        <span class="lang-text" data-lang-vi>Liên hệ BTC</span>
+                                        <span class="lang-text" data-lang-en>Contact</span>
+                                    </p>
+                                    <p class="font-bold text-brand-900">0238 123 4567</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="https://maps.google.com/?q=18.685953982366772,105.69708621039022" 
+                           target="_blank" 
+                           class="mt-6 w-full bg-brand-800 text-white py-3 rounded-lg font-bold text-center flex items-center justify-center gap-2 hover:bg-brand-900 transition">
+                            <i class="fas fa-directions"></i>
+                            <span class="lang-text" data-lang-vi>Chỉ đường đến địa điểm</span>
+                            <span class="lang-text" data-lang-en>Get Directions</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="register" class="py-24 bg-brand-900 relative overflow-hidden">
         <div class="absolute top-0 right-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
         <div class="container mx-auto px-6 relative z-10">
@@ -1597,6 +1699,8 @@
                                         <span class="lang-text" data-lang-en>Attend Conference on 11/04</span>
                                     </span>
                                 </label>
+                                <!-- 🛡️ HONEYPOT: Hidden field to catch bots -->
+                                <input type="text" name="website" id="website" style="position:absolute;left:-9999px;" tabindex="-1" autocomplete="off">
                                 <label class="flex items-center gap-3 cursor-pointer p-2 hover:bg-white rounded transition">
                                     <input type="checkbox" name="Option_Workshop" value="Có" class="custom-checkbox">
                                     <span class="text-sm font-medium text-gray-700">
@@ -1776,7 +1880,46 @@
             switchLanguage(savedLang);
         });
 
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxPSjPxyxFchecPfCy1pSGWiC4cb7TF2xt9GHxJg7Rm9rfC67hk6RaNkYUoRW6Hv94B_A/exec' 
+        // =====================================================
+        // FIREBASE CONFIGURATION - Project: vaae-conference-2026
+        // =====================================================
+        const firebaseConfig = {
+            apiKey: "AIzaSyD6IRZFuWbdB-2P6Q7E3CTiFvyOpDr991c",
+            authDomain: "vaae-conference-2026.firebaseapp.com",
+            projectId: "vaae-conference-2026",
+            storageBucket: "vaae-conference-2026.firebasestorage.app",
+            messagingSenderId: "524329655506",
+            appId: "1:524329655506:web:2b1b5c3f4c59228d71e10b",
+            measurementId: "G-E1BZDK5MDV"
+        };
+        
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        
+        // Storage - sẽ enable sau khi setup xong
+        let storage = null;
+        try {
+            storage = firebase.storage();
+            console.log('✅ Firebase Storage ready!');
+        } catch (error) {
+            console.warn('⚠️ Firebase Storage chưa enable, file sẽ gửi qua Apps Script');
+        }
+        
+        console.log('🔥 Firebase initialized successfully!');
+        
+        // =====================================================
+        // SECURITY: Rate Limiting & Anti-Spam Protection
+        // =====================================================
+        let formStartTime = Date.now();
+        let lastSubmitTime = parseInt(localStorage.getItem('lastSubmit') || '0');
+        const MIN_SUBMIT_INTERVAL = 60000; // 1 phút giữa các lần submit
+        const MIN_FILL_TIME = 5000; // Phải mất ít nhất 5 giây để điền form
+        
+        // =====================================================
+        // FORM HANDLING WITH FIREBASE + GOOGLE SHEETS HYBRID
+        // =====================================================
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxyaq3pVIBNw2hauYGRn_yHvwqQMDzt0yenIPG4ptCDN7g3QFcgWOnVMctRbnjS-eh4VQ/exec' 
         const form = document.forms['submit-to-google-sheet'];
         const btn = form.querySelector('button');
         const loader = form.querySelector('.loader');
@@ -1810,56 +1953,197 @@
 
         fileInput.addEventListener('change', function() {
             if (this.files && this.files[0]) {
-                fileLabel.innerHTML = `<p class="text-brand-800 font-bold">${this.files[0].name}</p>`;
+                const fileSizeMB = (this.files[0].size / (1024 * 1024)).toFixed(2);
+                fileLabel.innerHTML = `<p class="text-brand-800 font-bold">${this.files[0].name} <span class="text-gray-500 font-normal">(${fileSizeMB} MB)</span></p>`;
             }
         });
 
-        form.addEventListener('submit', e => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
+            
+            // =====================================================
+            // BẢO MẬT 1: HONEYPOT - Bắt bot tự động
+            // =====================================================
+            const honeypot = document.getElementById('website');
+            if (honeypot && honeypot.value !== '') {
+                console.warn('🚫 Bot detected via honeypot');
+                return; // Bot đã điền vào field ẩn
+            }
+            
+            // =====================================================
+            // BẢO MẬT 2: RATE LIMITING - Chống spam liên tục
+            // =====================================================
+            const now = Date.now();
+            if (now - lastSubmitTime < MIN_SUBMIT_INTERVAL) {
+                const waitTime = Math.ceil((MIN_SUBMIT_INTERVAL - (now - lastSubmitTime)) / 1000);
+                alert(`Vui lòng đợi ${waitTime} giây trước khi đăng ký lại!`);
+                return;
+            }
+            
+            // =====================================================
+            // BẢO MẬT 3: MINIMUM TIME - Bắt bot điền quá nhanh
+            // =====================================================
+            const fillTime = now - formStartTime;
+            if (fillTime < MIN_FILL_TIME) {
+                console.warn('🚫 Form filled too quickly:', fillTime + 'ms');
+                alert('Vui lòng kiểm tra lại thông tin trước khi gửi!');
+                return;
+            }
+            
+            // Validate nội dung tham dự
             let contentArr = [];
             if(form.Option_Conference.checked) contentArr.push("Hội nghị 11/04");
             if(form.Option_Workshop.checked) contentArr.push("Workshop 12/04");
             if(form.Option_CME.checked) contentArr.push("CME");
             
-            if(contentArr.length === 0) { alert("Vui lòng chọn ít nhất một nội dung tham dự!"); return; }
+            if(contentArr.length === 0) { 
+                alert("Vui lòng chọn ít nhất một nội dung tham dự!"); 
+                return; 
+            }
             document.getElementById('hidden-content').value = contentArr.join(", ");
 
+            // Validate Email
             const emailInput = document.getElementById('email-input');
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(emailInput.value)) { alert('Vui lòng nhập Email hợp lệ!'); emailInput.focus(); return; }
+            if (!emailRegex.test(emailInput.value)) { 
+                alert('Vui lòng nhập Email hợp lệ!'); 
+                emailInput.focus(); 
+                return; 
+            }
 
+            // Disable button & show loader
             btn.disabled = true;
             btn.classList.add('opacity-75', 'cursor-not-allowed');
             loader.classList.remove('hidden');
 
-            const sendData = (fileData = null, fileName = null, mimeType = null) => {
+            try {
+                // Chuẩn bị dữ liệu form
                 const formDataObj = {
-                    Ho_Ten: form.Ho_Ten.value,
+                    Ho_Ten: form.Ho_Ten.value.trim(),
                     Ngay_Sinh: form.Ngay_Sinh.value,
                     Chuc_Vu: form.Chuc_Vu.value,
-                    Don_Vi: form.Don_Vi.value,
-                    Email: form.Email.value,
-                    So_Dien_Thoai: form.So_Dien_Thoai.value,
-                    Dia_Chi_CME: form.Dia_Chi_CME.value,
+                    Don_Vi: form.Don_Vi.value.trim(),
+                    Email: form.Email.value.trim().toLowerCase(),
+                    So_Dien_Thoai: form.So_Dien_Thoai.value.trim(),
+                    Dia_Chi_CME: form.Dia_Chi_CME.value.trim() || null,
                     Noi_Dung_Tham_Du: form.Noi_Dung_Tham_Du.value,
-                    fileName: fileName,
-                    mimeType: mimeType,
-                    fileData: fileData 
+                    Created_At: new Date().toISOString(),
+                    Status: 'Pending',
+                    Payment_Verified: checkCME.checked ? false : null,
+                    // BẢO MẬT 4: Thêm metadata để validate phía server
+                    _timestamp: Date.now(),
+                    _timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                    _fillTime: fillTime
                 };
-                fetch(scriptURL, { method: 'POST', body: JSON.stringify(formDataObj) })
-                .then(response => { console.log('Success!'); successMsg.classList.remove('hidden'); form.reset(); })
-                .catch(error => { console.error('Error!', error.message); alert('Lỗi kết nối!'); btn.disabled = false; loader.classList.add('hidden'); });
-            };
 
-            if (checkCME.checked && fileInput.files.length > 0) {
-                const file = fileInput.files[0];
-                const reader = new FileReader();
-                reader.onload = function(e) { sendData(e.target.result, file.name, file.type); };
-                reader.readAsDataURL(file);
-            } else {
-                sendData();
+                let fileURL = null;
+                let fileName = null;
+                let fileData = null;
+
+                // =====================================================
+                // BƯỚC 1: UPLOAD FILE (ưu tiên Firebase, fallback Apps Script)
+                // =====================================================
+                if (checkCME.checked && fileInput.files.length > 0) {
+                    const file = fileInput.files[0];
+                    fileName = `payment_${Date.now()}_${file.name}`;
+                    
+                    if (storage) {
+                        // Upload lên Firebase Storage
+                        try {
+                            const storageRef = storage.ref(`payments/${fileName}`);
+                            console.log('📤 Đang upload file lên Firebase Storage...');
+                            const uploadTask = await storageRef.put(file);
+                            fileURL = await uploadTask.ref.getDownloadURL();
+                            console.log('✅ Upload Firebase thành công:', fileURL);
+                            
+                            formDataObj.Payment_File_URL = fileURL;
+                            formDataObj.Payment_File_Name = fileName;
+                        } catch (error) {
+                            console.warn('⚠️ Lỗi upload Firebase, dùng Apps Script:', error);
+                            // Fallback: Convert file thành base64 cho Apps Script
+                            fileData = await new Promise((resolve) => {
+                                const reader = new FileReader();
+                                reader.onload = (e) => resolve(e.target.result);
+                                reader.readAsDataURL(file);
+                            });
+                        }
+                    } else {
+                        // Không có Storage, dùng Apps Script
+                        console.log('📤 Gửi file qua Apps Script...');
+                        fileData = await new Promise((resolve) => {
+                            const reader = new FileReader();
+                            reader.onload = (e) => resolve(e.target.result);
+                            reader.readAsDataURL(file);
+                        });
+                    }
+                }
+
+                // =====================================================
+                // BƯỚC 2: LƯU VÀO FIREBASE FIRESTORE (Ưu tiên số 1)
+                // Đây là "kho vàng" - không bao giờ mất dữ liệu
+                // =====================================================
+                console.log('💾 Đang lưu vào Firebase Firestore...');
+                const docRef = await db.collection("registrations").add(formDataObj);
+                console.log('✅ Lưu Firebase thành công! ID:', docRef.id);
+
+                // =====================================================
+                // BƯỚC 3: GỬI VÀO GOOGLE SHEET (Cho sếp xem)
+                // Nếu có file nhưng chưa upload Firebase, gửi qua Apps Script
+                // =====================================================
+                const sheetData = {
+                    ...formDataObj,
+                    fileData: fileData,  // Gửi file nếu có (khi Storage chưa enable)
+                    fileName: fileName,
+                    mimeType: fileInput.files.length > 0 ? fileInput.files[0].type : null,
+                    firebaseDocId: docRef.id
+                };
+                
+                fetch(scriptURL, { 
+                    method: 'POST', 
+                    body: JSON.stringify(sheetData) 
+                })
+                .then(() => console.log('✅ Đã gửi lên Google Sheet'))
+                .catch(err => console.log('⚠️ Lỗi gửi Sheet (kệ, Firebase đã lưu):', err));
+
+                // =====================================================
+                // THÀNH CÔNG! Hiển thị thông báo
+                // =====================================================
+                // BẢO MẬT 5: Lưu thời gian submit để rate limit
+                localStorage.setItem('lastSubmit', now.toString());
+                lastSubmitTime = now;
+                
+                successMsg.classList.remove('hidden');
+                form.reset();
+                formStartTime = Date.now(); // Reset timer cho lần điền mới
+                fileLabel.innerHTML = `
+                    <i class="fas fa-cloud-upload-alt text-3xl mb-2 text-brand-800"></i>
+                    <p class="text-sm">
+                        <span class="lang-text" data-lang-vi>Nhấn để tải lên chuyển khoản thành công</span>
+                        <span class="lang-text" data-lang-en>Click to upload payment confirmation</span>
+                    </p>
+                `;
+
+            } catch (error) {
+                // =====================================================
+                // XỬ LÝ LỖI
+                // =====================================================
+                console.error('❌ Lỗi nghiêm trọng:', error);
+                
+                let errorMsg = 'Có lỗi xảy ra, vui lòng thử lại!';
+                if (error.code === 'storage/unauthorized') {
+                    errorMsg = 'Không có quyền upload file. Vui lòng liên hệ BTC.';
+                } else if (error.code === 'storage/canceled') {
+                    errorMsg = 'Upload bị hủy. Vui lòng thử lại.';
+                } else if (!navigator.onLine) {
+                    errorMsg = 'Không có kết nối mạng. Vui lòng kiểm tra và thử lại.';
+                }
+                
+                alert(errorMsg);
+                btn.disabled = false;
+                btn.classList.remove('opacity-75', 'cursor-not-allowed');
+                loader.classList.add('hidden');
             }
-        })
+        });
     </script>
 </body>
 </html>
