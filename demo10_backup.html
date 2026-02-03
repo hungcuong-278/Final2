@@ -118,24 +118,6 @@
             margin-top: 0.5rem;
         }
         
-        /* Hide old content on mobile, show accordions */
-        @media (max-width: 1023px) {
-            .old-agenda-content {
-                display: none !important;
-            }
-            .accordion-agenda {
-                display: block !important;
-            }
-        }
-        @media (min-width: 1024px) {
-            .accordion-agenda {
-                display: none !important;
-            }
-            .old-agenda-content {
-                display: block !important;
-            }
-        }
-        
         /* Language Switcher Styles */
         .lang-switcher {
             display: flex;
@@ -472,8 +454,8 @@
                 <span class="lang-text" data-lang-en>Tap on each session to view details</span>
             </p>
 
-            <!-- ========== SATURDAY CONTENT - ACCORDION VERSION (Mobile) ========== -->
-            <div class="max-w-4xl mx-auto space-y-3 accordion-agenda" id="saturday-content-accordion">
+            <!-- ========== SATURDAY CONTENT ========== -->
+            <div class="max-w-4xl mx-auto space-y-3" id="saturday-content">
                 
                 <!-- Đón tiếp đại biểu -->
                 <div class="accordion-item">
@@ -518,210 +500,6 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Thêm các accordion còn lại cho mobile -->
-                <!-- PHIÊN TOÀN THỂ 1 -->
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <div>
-                            <div class="font-bold text-lg">
-                                <span class="lang-text" data-lang-vi>📋 PHIÊN TOÀN THỂ 1</span>
-                                <span class="lang-text" data-lang-en>📋 PLENARY SESSION 1</span>
-                            </div>
-                            <div class="session-time">08:30 – 10:00</div>
-                            <div class="session-badge"><i class="fas fa-user-tie"></i> 3 báo cáo quốc tế</div>
-                        </div>
-                        <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body bg-blue-50">
-                            <p class="text-xs text-gray-600 mb-3 bg-white p-2 rounded"><strong>Chủ tọa:</strong> GS.TS Lê Quang Cường, PGS.TS Phan Việt Nga, PGS.TS Dương Đình Chỉnh, TS Lê Văn Tuấn</p>
-                            <div class="space-y-3 text-sm">
-                                <div class="timeline-row"><span class="font-bold text-brand-gold block">08:30–09:00</span><p class="font-bold">Những tiến bộ trong chẩn đoán và điều trị động kinh trong khu vực Đông Nam Á</p><p class="text-brand-800">Prof. Lim Kheng Seang (Malaysia)</p></div>
-                                <div class="timeline-row"><span class="font-bold text-brand-gold block">09:00–09:30</span><p class="font-bold">Căn nguyên viêm trong động kinh trẻ em</p><p class="text-brand-800">Prof. Derrick Chan Wei Shih (Singapore)</p></div>
-                                <div class="timeline-row"><span class="font-bold text-brand-gold block">09:30–09:50</span><p class="font-bold">Cập nhật hướng dẫn điều trị động kinh</p><p class="text-brand-800">ThS.BS Lê Thụy Minh An</p></div>
-                                <div class="bg-amber-50 p-2 rounded text-center font-bold">💬 09:50–10:00: Thảo luận</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Tea Break -->
-                <div class="text-center py-2"><span class="bg-orange-100 text-orange-800 px-4 py-2 rounded-full text-sm font-bold">☕ 10:00-10:15: Giải lao</span></div>
-                
-                <!-- PHIÊN SONG SONG SÁNG -->
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <div>
-                            <div class="font-bold text-lg">👶 HỘI TRƯỜNG LAM HỒNG: Động Kinh Nhi</div>
-                            <div class="session-time">10:15 – 12:00</div>
-                            <div class="session-badge"><i class="fas fa-child"></i> 5 báo cáo</div>
-                        </div>
-                        <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <p class="text-xs text-gray-600 mb-3 bg-gray-50 p-2 rounded"><strong>Chủ tọa:</strong> TS Cao Vũ Hùng, TS Hồ Đăng Mười, PGS.TS Nguyễn Lê Trung Hiếu</p>
-                            <div class="space-y-2 text-sm">
-                                <div class="timeline-row"><span class="font-bold text-brand-700 block">10:15–10:35</span><p class="font-bold">Phổ kiểu gen động kinh kháng thuốc trên trẻ em Việt Nam</p></div>
-                                <div class="timeline-row"><span class="font-bold text-brand-700 block">10:35–10:55</span><p class="font-bold">Chế độ ăn Keto cho trẻ động kinh kháng thuốc</p></div>
-                                <div class="timeline-row"><span class="font-bold text-brand-700 block">10:55–11:15</span><p class="font-bold">Cập nhật chẩn đoán và điều trị hội chứng động kinh trẻ em</p></div>
-                                <div class="timeline-row"><span class="font-bold text-brand-700 block">11:15–11:30</span><p class="font-bold">Tiên lượng động kinh ở trẻ sốt co giật</p></div>
-                                <div class="timeline-row"><span class="font-bold text-brand-700 block">11:30–11:50</span><p class="font-bold">Vai trò thuốc thế hệ mới trong kiểm soát động kinh trẻ em</p></div>
-                                <div class="bg-amber-50 p-2 rounded text-center font-bold">💬 11:50–12:00: Thảo luận</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <button class="accordion-header gold-theme" onclick="toggleAccordion(this)">
-                        <div>
-                            <div class="font-bold text-lg">🧠 HỘI TRƯỜNG VIP3: Phẫu Thuật Động Kinh</div>
-                            <div class="session-time">10:15 – 12:00</div>
-                            <div class="session-badge"><i class="fas fa-brain"></i> 5 báo cáo</div>
-                        </div>
-                        <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <p class="text-xs text-gray-600 mb-3 bg-gray-50 p-2 rounded"><strong>Chủ tọa:</strong> PGS.TS Nguyễn Đình Toàn, TS Nguyễn Anh Tuấn, TS Hoàng Kim Tuấn</p>
-                            <div class="space-y-2 text-sm">
-                                <div class="timeline-row"><span class="font-bold text-brand-gold block">10:15–10:35</span><p class="font-bold">Định khu vùng sinh động kinh bằng điện não đồ nội sọ</p></div>
-                                <div class="timeline-row"><span class="font-bold text-brand-gold block">10:35–10:55</span><p class="font-bold">Động kinh thùy trán hay thùy thái dương: sử dụng SEEG</p></div>
-                                <div class="timeline-row"><span class="font-bold text-brand-gold block">10:55–11:15</span><p class="font-bold">Kết quả SEEG và phẫu thuật động kinh tại BV Việt Đức</p></div>
-                                <div class="timeline-row"><span class="font-bold text-brand-gold block">11:15–11:30</span><p class="font-bold">Điện não đồ giám sát dưới màng cứng trong phẫu thuật động kinh trẻ em</p></div>
-                                <div class="timeline-row"><span class="font-bold text-brand-gold block">11:30–11:50</span><p class="font-bold">Kết quả phẫu thuật động kinh cục bộ kháng thuốc với ECoG</p></div>
-                                <div class="bg-amber-50 p-2 rounded text-center font-bold">💬 11:50–12:00: Thảo luận</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Lunch Break -->
-                <div class="text-center py-2"><span class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-bold">🍽️ 12:00-13:30: Ăn trưa</span></div>
-                
-                <!-- PHIÊN TOÀN THỂ CHIỀU -->
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <div>
-                            <div class="font-bold text-lg">📋 PHIÊN TOÀN THỂ CHIỀU</div>
-                            <div class="session-time">13:30 – 14:45</div>
-                            <div class="session-badge"><i class="fas fa-bolt"></i> Điều trị tiên tiến</div>
-                        </div>
-                        <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body bg-blue-50">
-                            <p class="text-xs text-gray-600 mb-3 bg-white p-2 rounded"><strong>Chủ tọa:</strong> GS.TS Cao Tiến Đức, PGS.TS Nguyễn Văn Liệu, PGS.TS Trần Viết Lực, PGS.TS Võ Hồng Khôi</p>
-                            <div class="space-y-2 text-sm">
-                                <div class="timeline-row"><span class="font-bold text-brand-gold block">13:30–14:00</span><p class="font-bold">Ứng dụng điều biến thần kinh trong điều trị động kinh kháng thuốc</p><p class="text-brand-800">Dr. Chan Fu Lin (Taiwan)</p></div>
-                                <div class="timeline-row"><span class="font-bold text-brand-gold block">14:00–14:20</span><p class="font-bold">Phương pháp điều trị động kinh kháng thuốc bằng chế độ keto</p><p class="text-brand-800">TS Nguyễn Thị Thu Hậu</p></div>
-                                <div class="timeline-row"><span class="font-bold text-brand-gold block">14:20–14:40</span><p class="font-bold">Tiến bộ trong phẫu thuật động kinh và vai trò của VNS</p><p class="text-brand-800">ThS.BS Nguyễn Phan Thanh Tú</p></div>
-                                <div class="bg-amber-50 p-2 rounded text-center font-bold">💬 14:40–14:45: Thảo luận</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Tea Break -->
-                <div class="text-center py-2"><span class="bg-orange-100 text-orange-800 px-4 py-2 rounded-full text-sm font-bold">☕ 14:45-15:00: Giải lao</span></div>
-                
-                <!-- PHIÊN CHIỀU -->
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <div>
-                            <div class="font-bold text-lg">❤️ LAM HỒNG: Động Kinh & Bệnh Lý Liên Quan</div>
-                            <div class="session-time">15:00 – 16:50</div>
-                            <div class="session-badge"><i class="fas fa-heartbeat"></i> 5 báo cáo</div>
-                        </div>
-                        <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <p class="text-xs text-gray-600 mb-3 bg-gray-50 p-2 rounded"><strong>Chủ tọa:</strong> PGS.TS Nguyễn Văn Hướng, PGS.TS Trần Văn Tuấn, TS Nguyễn Ngọc Hòa</p>
-                            <div class="space-y-2 text-sm">
-                                <div class="timeline-row"><span class="font-bold text-brand-700 block">15:00–15:20</span><p class="font-bold">Động kinh tự miễn – Khi nào cần nghĩ tới</p></div>
-                                <div class="timeline-row"><span class="font-bold text-brand-700 block">15:20–15:40</span><p class="font-bold">Biến chứng thần kinh hiếm gặp trong bệnh sởi</p></div>
-                                <div class="timeline-row"><span class="font-bold text-brand-700 block">15:40–16:00</span><p class="font-bold">Khi nào động kinh là dấu hiệu huỷ myelin trung ương?</p></div>
-                                <div class="timeline-row"><span class="font-bold text-brand-700 block">16:00–16:20</span><p class="font-bold">Các trường hợp lâm sàng tại khoa Thần kinh BV Nghệ An</p></div>
-                                <div class="timeline-row"><span class="font-bold text-brand-700 block">16:20–16:40</span><p class="font-bold">Động kinh trên bệnh nhân tổn thương não do bệnh máu ác tính</p></div>
-                                <div class="bg-amber-50 p-2 rounded text-center font-bold">💬 16:40–16:50: Thảo luận</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <button class="accordion-header gold-theme" onclick="toggleAccordion(this)">
-                        <div>
-                            <div class="font-bold text-lg">💬 VIP3: Tranh Luận</div>
-                            <div class="session-time">15:00 – 16:30</div>
-                            <div class="session-badge"><i class="fas fa-comments"></i> 2 chủ đề</div>
-                        </div>
-                        <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body bg-yellow-50">
-                            <p class="text-xs text-gray-600 mb-3 bg-white p-2 rounded"><strong>Chủ tọa:</strong> PGS.TS Phan Việt Nga, PGS.TS Nguyễn Lê Trung Hiếu</p>
-                            <div class="space-y-3">
-                                <div class="bg-white p-3 rounded shadow-sm">
-                                    <span class="bg-brand-900 text-white text-xs px-2 py-1 rounded">Chủ đề 1 (15:00-15:40)</span>
-                                    <p class="font-bold mt-2">Chỉ định xét nghiệm di truyền sớm trong quản lý động kinh trẻ em?</p>
-                                    <div class="grid grid-cols-2 gap-2 mt-2 text-xs">
-                                        <div class="text-green-700">✔ Ủng hộ: BS Nguyễn Thị Vân</div>
-                                        <div class="text-red-700">✘ Phản đối: BS Đào Thị Việt Hường</div>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-3 rounded shadow-sm">
-                                    <span class="bg-brand-900 text-white text-xs px-2 py-1 rounded">Chủ đề 2 (15:40-16:30)</span>
-                                    <p class="font-bold mt-2">Dự phòng tái phát sau cơn co giật lần đầu lúc ngủ ở trẻ thiếu niên?</p>
-                                    <div class="grid grid-cols-2 gap-2 mt-2 text-xs">
-                                        <div class="text-green-700">✔ Ủng hộ: ThS.BS Võ Thị Hạnh Vi</div>
-                                        <div class="text-red-700">✘ Phản đối: ThS.BS Tăng Ngọc Phương Lộc</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- BẾ MẠC -->
-                <div class="text-center pt-4">
-                    <span class="text-brand-900 font-bold uppercase tracking-wide bg-gradient-to-r from-gray-100 to-gray-200 px-6 py-3 rounded-full shadow-inner">🎊 16:50–17:00: BẾ MẠC HỘI NGHỊ</span>
-                </div>
-                
-            </div><!-- End accordion-agenda -->
-            
-            <!-- SUNDAY ACCORDION -->
-            <div class="max-w-4xl mx-auto hidden accordion-agenda" id="sunday-content-accordion">
-                <div class="accordion-item active">
-                    <button class="accordion-header green-theme" onclick="toggleAccordion(this)">
-                        <div>
-                            <div class="font-bold text-lg">🎓 WORKSHOP CHUYÊN SÂU</div>
-                            <div class="session-time">08:00 – 11:00</div>
-                            <div class="session-badge"><i class="fas fa-certificate"></i> Kỹ thuật VNS</div>
-                        </div>
-                        <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body bg-green-50">
-                            <div class="text-center">
-                                <h4 class="font-bold text-xl text-brand-900 mb-2">Chủ đề: "Kỹ thuật VNS trong điều trị bệnh lí động kinh kháng thuốc"</h4>
-                                <p class="text-gray-600 mb-4">Workshop chuyên sâu dành cho các bác sĩ chuyên khoa</p>
-                                <div class="grid grid-cols-3 gap-2 bg-white p-3 rounded-lg">
-                                    <div class="text-center"><i class="fas fa-clock text-xl text-green-600"></i><p class="font-bold text-sm mt-1">3 giờ</p></div>
-                                    <div class="text-center"><i class="fas fa-hands-helping text-xl text-blue-600"></i><p class="font-bold text-sm mt-1">Thực hành</p></div>
-                                    <div class="text-center"><i class="fas fa-certificate text-xl text-amber-600"></i><p class="font-bold text-sm mt-1">Chứng nhận</p></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ========== SATURDAY CONTENT - OLD VERSION (Desktop) ========== -->
-            <div class="max-w-6xl mx-auto space-y-10 old-agenda-content" id="sat-content">
 
                 <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-brand-800 shadow-sm">
                     <div class="flex flex-col md:flex-row gap-6">
@@ -1283,7 +1061,7 @@
                     </span>
                 </div>
 
-                <div class="mt-12 old-agenda-content" id="sun-content">
+                <div class="mt-12" id="sun-content">
                     <div class="bg-gradient-to-r from-brand-900 to-brand-800 text-white p-8 rounded-xl shadow-2xl flex flex-col md:flex-row items-center gap-8">
                         <div class="md:w-1/4 text-center md:text-right border-b md:border-b-0 md:border-r border-white/20 pb-4 md:pb-0 md:pr-8">
                             <div class="text-4xl font-bold text-brand-gold">
@@ -2224,30 +2002,21 @@
         
         // Chuyển đổi giữa ngày Thứ 7 và Chủ nhật
         function showDay(day) {
-            // Accordion version (mobile)
-            const satAccordion = document.getElementById('saturday-content-accordion');
-            const sunAccordion = document.getElementById('sunday-content-accordion');
-            // Old version (desktop)
-            const satOld = document.getElementById('sat-content');
-            const sunOld = document.getElementById('sun-content');
-            
+            const satContent = document.getElementById('saturday-content');
+            const sunContent = document.getElementById('sunday-content');
             const btnSat = document.getElementById('btn-saturday');
             const btnSun = document.getElementById('btn-sunday');
             
             if (day === 'saturday') {
-                if (satAccordion) satAccordion.classList.remove('hidden');
-                if (sunAccordion) sunAccordion.classList.add('hidden');
-                if (satOld) satOld.classList.remove('hidden');
-                if (sunOld) sunOld.classList.add('hidden');
+                satContent.classList.remove('hidden');
+                sunContent.classList.add('hidden');
                 btnSat.classList.add('bg-brand-900', 'text-white');
                 btnSat.classList.remove('bg-white', 'text-brand-800', 'border', 'border-brand-200');
                 btnSun.classList.remove('bg-brand-900', 'text-white');
                 btnSun.classList.add('bg-white', 'text-brand-800', 'border', 'border-brand-200');
             } else {
-                if (satAccordion) satAccordion.classList.add('hidden');
-                if (sunAccordion) sunAccordion.classList.remove('hidden');
-                if (satOld) satOld.classList.add('hidden');
-                if (sunOld) sunOld.classList.remove('hidden');
+                satContent.classList.add('hidden');
+                sunContent.classList.remove('hidden');
                 btnSun.classList.add('bg-brand-900', 'text-white');
                 btnSun.classList.remove('bg-white', 'text-brand-800', 'border', 'border-brand-200');
                 btnSat.classList.remove('bg-brand-900', 'text-white');
@@ -2273,24 +2042,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             const savedLang = localStorage.getItem('preferredLanguage') || 'vi';
             switchLanguage(savedLang);
-            
-            // Auto-open first accordion on page load
-            const firstAccordion = document.querySelector('.accordion-item');
-            if (firstAccordion) {
-                firstAccordion.classList.add('active');
-            }
-            
-            // On desktop, auto-expand all accordions
-            if (window.innerWidth >= 1024) {
-                expandAllAccordions();
-            }
-        });
-        
-        // Handle window resize - expand on desktop, collapse on mobile
-        window.addEventListener('resize', function() {
-            if (window.innerWidth >= 1024) {
-                expandAllAccordions();
-            }
         });
 
         // =====================================================
