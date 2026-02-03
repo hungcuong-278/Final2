@@ -118,22 +118,9 @@
             margin-top: 0.5rem;
         }
         
-        /* Hide old content on mobile, show accordions */
-        @media (max-width: 1023px) {
-            .old-agenda-content {
-                display: none !important;
-            }
-            .accordion-agenda {
-                display: block !important;
-            }
-        }
-        @media (min-width: 1024px) {
-            .accordion-agenda {
-                display: none !important;
-            }
-            .old-agenda-content {
-                display: block !important;
-            }
+        /* Ẩn nội dung cũ, chỉ hiện accordion */
+        .old-agenda-content {
+            display: none !important;
         }
         
         /* Language Switcher Styles */
@@ -465,56 +452,34 @@
                 </button>
             </div>
             
-            <!-- Hướng dẫn sử dụng Accordion trên mobile -->
-            <p class="text-center text-sm text-gray-500 mb-6 md:hidden">
+            <!-- Hướng dẫn sử dụng Accordion -->
+            <p class="text-center text-sm text-gray-500 mb-6">
                 <i class="fas fa-hand-pointer mr-1"></i>
-                <span class="lang-text" data-lang-vi>Nhấn vào từng phiên để xem chi tiết</span>
-                <span class="lang-text" data-lang-en>Tap on each session to view details</span>
+                <span class="lang-text" data-lang-vi>Nhấn vào từng phiên để xem/ẩn chi tiết các bài báo cáo</span>
+                <span class="lang-text" data-lang-en>Tap on each session to show/hide presentation details</span>
             </p>
 
-            <!-- ========== SATURDAY CONTENT - ACCORDION VERSION (Mobile) ========== -->
+            <!-- ========== SATURDAY CONTENT - ACCORDION VERSION ========== -->
             <div class="max-w-4xl mx-auto space-y-3 accordion-agenda" id="saturday-content-accordion">
                 
-                <!-- Đón tiếp đại biểu -->
-                <div class="accordion-item">
-                    <button class="accordion-header gray-theme" onclick="toggleAccordion(this)">
-                        <div>
-                            <div class="font-bold text-lg">
-                                <span class="lang-text" data-lang-vi>🎫 Đón tiếp đại biểu</span>
-                                <span class="lang-text" data-lang-en>🎫 Welcome & Registration</span>
-                            </div>
-                            <div class="session-time">07:30 – 08:00</div>
-                        </div>
-                        <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body bg-gray-50">
-                            <p class="text-gray-700">
-                                <span class="lang-text" data-lang-vi">Đăng ký, nhận tài liệu hội nghị và giao lưu trước giờ khai mạc.</span>
-                                <span class="lang-text" data-lang-en">Registration, receiving conference materials and networking before opening.</span>
-                            </p>
+                <!-- Đón tiếp đại biểu - KHÔNG ACCORDION -->
+                <div class="bg-gray-100 p-4 rounded-lg border-l-4 border-gray-400">
+                    <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+                        <div class="font-bold text-gray-600 text-base md:w-32 flex-shrink-0">07:30 – 08:00</div>
+                        <div class="font-bold text-gray-700 text-lg">
+                            <span class="lang-text" data-lang-vi>🎫 Đón tiếp đại biểu</span>
+                            <span class="lang-text" data-lang-en>🎫 Welcome & Registration</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Khai mạc -->
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <div>
-                            <div class="font-bold text-lg">
-                                <span class="lang-text" data-lang-vi>🎉 Khai mạc Hội nghị</span>
-                                <span class="lang-text" data-lang-en>🎉 Opening Ceremony</span>
-                            </div>
-                            <div class="session-time">08:00 – 08:30</div>
-                        </div>
-                        <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body bg-blue-50">
-                            <p class="text-gray-700">
-                                <span class="lang-text" data-lang-vi">Lễ khai mạc chính thức với sự tham dự của các lãnh đạo Hội và đại biểu quốc tế.</span>
-                                <span class="lang-text" data-lang-en">Official opening ceremony with participation of Association leaders and international delegates.</span>
-                            </p>
+                <!-- Khai mạc - KHÔNG ACCORDION -->
+                <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                    <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+                        <div class="font-bold text-blue-600 text-base md:w-32 flex-shrink-0">08:00 – 08:30</div>
+                        <div class="font-bold text-brand-900 text-lg">
+                            <span class="lang-text" data-lang-vi>🎉 Khai mạc Hội nghị</span>
+                            <span class="lang-text" data-lang-en>🎉 Opening Ceremony</span>
                         </div>
                     </div>
                 </div>
