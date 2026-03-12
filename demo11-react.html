@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hội Nghị Khoa Học VAAE 2026 - React Version</title>
+    
+    <!-- React & ReactDOM via CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] },
+                    colors: {
+                        brand: { 
+                            900: '#0f172a', 
+                            800: '#1e3a8a', 
+                            700: '#1d4ed8', 
+                            gold: '#b45309', 
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .hero-pattern { background-color: #f8fafc; background-image: url("https://www.transparenttextures.com/patterns/cubes.png"); }
+        input[type="file"]::file-selector-button {
+            margin-right: 10px; padding: 8px 16px; border-radius: 4px; border: none;
+            background-color: #1e3a8a; color: white; cursor: pointer;
+        }
+        .custom-checkbox { width: 1.2rem; height: 1.2rem; cursor: pointer; accent-color: #1e3a8a; }
+        .lang-btn.active { background: #1e3a8a; color: white; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        // Component Navigation
+        function Navigation({ language, setLanguage }) {
+            return (
+                <nav className="bg-white/95 backdrop-blur-md shadow-sm fixed w-full z-50 border-b border-gray-100">
+                    <div className="container mx-auto px-4 lg:px-8 py-3 flex justify-between items-center">
+                        <a href="https://hoichongdongkinhvietnam.vn" target="_blank" className="flex items-center gap-3 group">
+                            <img src="logo.png" alt="Logo VAAE" className="w-12 h-12 object-contain group-hover:scale-105 transition" />
+                            <div className="hidden md:block">
+                                <p className="text-[10px] text-gray-500 font-bold tracking-[0.2em] uppercase">
+                                    {language === 'vi' ? 'Hội Chống Động Kinh' : 'Vietnam Association Against'}
+                                </p>
+                                <p className="text-brand-900 font-serif font-bold text-lg leading-none">
+                                    {language === 'vi' ? 'VIỆT NAM (VAAE)' : 'EPILEPSY (VAAE)'}
+                                </p>
+                            </div>
+                        </a>
+                        
+                        <div className="flex items-center gap-4">
+                            {/* Language Switcher */}
+                            <div className="flex items-center gap-2 p-1 bg-white rounded-lg shadow-md">
+                                <button 
+                                    className={`lang-btn flex items-center gap-2 px-3 py-1.5 rounded ${language === 'vi' ? 'active' : ''}`}
+                                    onClick={() => setLanguage('vi')}
+                                >
+                                    <img src="https://flagcdn.com/w40/vn.png" alt="VN" className="w-6 h-4" />
+                                    <span className="hidden sm:inline">VN</span>
+                                </button>
+                                <button 
+                                    className={`lang-btn flex items-center gap-2 px-3 py-1.5 rounded ${language === 'en' ? 'active' : ''}`}
+                                    onClick={() => setLanguage('en')}
+                                >
+                                    <img src="https://flagcdn.com/w40/gb.png" alt="EN" className="w-6 h-4" />
+                                    <span className="hidden sm:inline">EN</span>
+                                </button>
+                            </div>
+                            
+                            <a href="#register" className="bg-brand-800 text-white px-6 py-2.5 rounded shadow-lg hover:bg-brand-900 transition font-bold text-sm">
+                                {language === 'vi' ? 'ĐĂNG KÝ THAM DỰ' : 'REGISTER NOW'}
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            );
+        }
+
+        // Component Hero Section
+        function HeroSection({ language }) {
+            return (
+                <header className="hero-pattern min-h-screen flex items-center pt-28 pb-12">
+                    <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+                        <div className="order-2 lg:order-1">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 border border-brand-gold/50 rounded-full bg-orange-50 animate-pulse">
+                                <i className="fas fa-certificate text-brand-gold"></i>
+                                <span className="text-xs font-bold tracking-widest uppercase text-brand-gold">
+                                    {language === 'vi' ? 'Cấp Chứng Chỉ CME' : 'CME Certificate'}
+                                </span>
+                            </div>
+                            
+                            <h3 className="font-sans font-bold text-sm text-brand-800 uppercase tracking-widest mb-2">
+                                {language === 'vi' 
+                                    ? 'CHƯƠNG TRÌNH HỘI NGHỊ KHOA HỌC THƯỜNG NIÊN'
+                                    : 'ANNUAL SCIENTIFIC CONFERENCE PROGRAM'}
+                            </h3>
+                            
+                            <h2 className="font-sans font-black text-xl text-gray-500 uppercase mb-6 leading-tight">
+                                {language === 'vi' 
+                                    ? 'HỘI CHỐNG ĐỘNG KINH VIỆT NAM, NĂM 2026'
+                                    : 'VIETNAM ASSOCIATION AGAINST EPILEPSY, 2026'}
+                            </h2>
+                            
+                            <h1 className="font-serif font-bold text-3xl lg:text-4xl text-brand-900 leading-snug mb-8">
+                                {language === 'vi' ? (
+                                    <>
+                                        CHỦ ĐỀ: "CẬP NHẬT NHỮNG TIẾN BỘ TRONG <br/>
+                                        <span className="text-brand-800 font-black">CHẨN ĐOÁN & ĐIỀU TRỊ ĐỘNG KINH</span> TẠI VIỆT NAM"
+                                    </>
+                                ) : (
+                                    <>
+                                        THEME: "UPDATES ON ADVANCES IN <br/>
+                                        <span className="text-brand-800 font-black">EPILEPSY DIAGNOSIS & TREATMENT</span> IN VIETNAM"
+                                    </>
+                                )}
+                            </h1>
+                            
+                            <div className="flex flex-col sm:flex-row gap-6 mb-10">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-10 h-10 rounded bg-brand-800 text-white flex items-center justify-center">
+                                        <i className="far fa-calendar-alt"></i>
+                                    </div>
+                                    <div>
+                                        <p className="text-xs text-gray-500 uppercase font-bold">
+                                            {language === 'vi' ? 'Thời gian' : 'Date'}
+                                        </p>
+                                        <p className="font-bold text-brand-900">11-12/04/2026</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-center gap-3">
+                                    <div className="w-10 h-10 rounded bg-brand-gold text-white flex items-center justify-center">
+                                        <i className="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div>
+                                        <p className="text-xs text-gray-500 uppercase font-bold">
+                                            {language === 'vi' ? 'Địa điểm' : 'Venue'}
+                                        </p>
+                                        <p className="font-bold text-brand-900">
+                                            {language === 'vi' ? 'Khách sạn Mường Thanh Cửa Đông' : 'Muong Thanh Cua Dong Hotel'}
+                                        </p>
+                                        <p className="text-xs text-gray-500">
+                                            167 Nguyen Phong Sac, Truong Vinh, Nghe An
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="flex gap-4">
+                                <a href="#agenda" className="inline-flex items-center gap-2 bg-brand-900 text-white px-6 py-3 rounded hover:bg-brand-800 transition font-bold shadow-xl">
+                                    {language === 'vi' ? 'Xem Chi Tiết Lịch Trình' : 'View Detailed Schedule'}
+                                    <i className="fas fa-arrow-down"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        {/* Speaker Cards */}
+                        <div className="relative order-1 lg:order-2 hidden lg:flex flex-col items-center justify-center">
+                            <div className="relative z-10 bg-white rounded-2xl shadow-2xl p-6 max-w-sm">
+                                <div className="flex justify-center gap-4 mb-4">
+                                    <div className="text-center">
+                                        <div className="w-28 h-28 rounded-full overflow-hidden border-4 border-brand-800/20 mx-auto shadow-lg">
+                                            <img src="gs-lim.jpg" className="w-full h-full object-cover" alt="GS Lim Kheng Seang" />
+                                        </div>
+                                        <p className="mt-2 font-bold text-brand-900 text-sm">GS. Lim Kheng Seang</p>
+                                        <p className="text-xs text-gray-500">Malaysia</p>
+                                    </div>
+                                    
+                                    <div className="text-center">
+                                        <div className="w-28 h-28 rounded-full overflow-hidden border-4 border-brand-800/20 mx-auto shadow-lg">
+                                            <img src="gs-cuong.jpg" className="w-full h-full object-cover" alt="GS Lê Quang Cường" />
+                                        </div>
+                                        <p className="mt-2 font-bold text-brand-900 text-sm">GS. Lê Quang Cường</p>
+                                        <p className="text-xs text-gray-500">Việt Nam</p>
+                                    </div>
+                                </div>
+                                
+                                <div className="bg-brand-800 rounded-xl p-4 text-white text-center">
+                                    <div className="flex justify-around">
+                                        <div>
+                                            <p className="font-serif text-2xl font-bold">200+</p>
+                                            <p className="text-xs text-gray-300 uppercase">
+                                                {language === 'vi' ? 'Đại biểu' : 'Delegates'}
+                                            </p>
+                                        </div>
+                                        <div className="border-l border-white/20"></div>
+                                        <div>
+                                            <p className="font-serif text-2xl font-bold">20+</p>
+                                            <p className="text-xs text-gray-300 uppercase">
+                                                {language === 'vi' ? 'Báo cáo' : 'Reports'}
+                                            </p>
+                                        </div>
+                                        <div className="border-l border-white/20"></div>
+                                        <div>
+                                            <p className="font-serif text-2xl font-bold">2</p>
+                                            <p className="text-xs text-gray-300 uppercase">
+                                                {language === 'vi' ? 'Ngày' : 'Days'}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            );
+        }
+
+        // Component Schedule Preview
+        function SchedulePreview({ language }) {
+            return (
+                <section id="agenda" className="py-16 bg-white">
+                    <div className="container mx-auto px-6">
+                        <div className="text-center mb-12">
+                            <h2 className="font-serif text-3xl font-bold text-brand-900 mb-3">
+                                {language === 'vi' ? 'Chương Trình Hội Nghị' : 'Conference Agenda'}
+                            </h2>
+                            <p className="text-gray-600">
+                                {language === 'vi' 
+                                    ? 'Thời gian diễn ra: 11-12 tháng 4 năm 2026'
+                                    : 'Schedule: April 11-12, 2026'}
+                            </p>
+                        </div>
+
+                        <div className="grid md:grid-cols-2 gap-6">
+                            {/* Thứ Bảy */}
+                            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl shadow-lg border border-blue-100">
+                                <div className="flex items-center gap-3 mb-4">
+                                    <div className="w-12 h-12 bg-brand-800 text-white rounded-lg flex items-center justify-center">
+                                        <i className="fas fa-calendar-day text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 className="font-bold text-xl text-brand-900">
+                                            {language === 'vi' ? 'Thứ Bảy' : 'Saturday'}
+                                        </h3>
+                                        <p className="text-sm text-gray-600">11/04/2026</p>
+                                    </div>
+                                </div>
+                                <div className="space-y-2 text-sm text-gray-700">
+                                    <p className="flex justify-between">
+                                        <span className="font-semibold">08:00-09:30</span>
+                                        <span>{language === 'vi' ? 'Đăng ký & Khai mạc' : 'Registration & Opening'}</span>
+                                    </p>
+                                    <p className="flex justify-between">
+                                        <span className="font-semibold">09:30-12:00</span>
+                                        <span>{language === 'vi' ? 'Phiên chính' : 'Main Session'}</span>
+                                    </p>
+                                    <p className="flex justify-between">
+                                        <span className="font-semibold">14:00-17:30</span>
+                                        <span>{language === 'vi' ? 'Phiên chiều' : 'Afternoon Session'}</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Chủ Nhật */}
+                            <div className="bg-gradient-to-r from-brand-900 to-brand-800 text-white p-6 rounded-xl shadow-lg">
+                                <div className="flex items-center gap-3 mb-4">
+                                    <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                                        <i className="fas fa-calendar-day text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 className="font-bold text-xl">
+                                            {language === 'vi' ? 'Chủ Nhật' : 'Sunday'}
+                                        </h3>
+                                        <p className="text-sm text-gray-200">12/04/2026</p>
+                                    </div>
+                                </div>
+                                <div className="bg-white/10 p-4 rounded-lg">
+                                    <p className="text-sm font-semibold mb-2">
+                                        <i className="fas fa-bolt text-brand-gold mr-2"></i>
+                                        {language === 'vi' ? 'Workshop VNS' : 'VNS Workshop'}
+                                    </p>
+                                    <p className="text-sm text-gray-200">
+                                        {language === 'vi' 
+                                            ? 'Kích thích dây thần kinh X trong điều trị động kinh'
+                                            : 'Vagus Nerve Stimulation in Epilepsy Treatment'}
+                                    </p>
+                                    <p className="text-xs mt-2 text-brand-gold">08:00 - 11:00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            );
+        }
+
+        // Component Registration Form
+        function RegistrationForm({ language }) {
+            const [formData, setFormData] = useState({
+                hoTen: '',
+                ngaySinh: '',
+                email: '',
+                dienThoai: '',
+                donVi: '',
+                chuyenKhoa: ''
+            });
+
+            const handleSubmit = (e) => {
+                e.preventDefault();
+                alert(language === 'vi' 
+                    ? 'Đăng ký thành công! (Demo - chưa gửi thực tế)'
+                    : 'Registration successful! (Demo - not actually submitted)');
+                console.log('Form Data:', formData);
+            };
+
+            const handleChange = (e) => {
+                setFormData({
+                    ...formData,
+                    [e.target.name]: e.target.value
+                });
+            };
+
+            return (
+                <section id="register" className="py-16 bg-gradient-to-br from-slate-50 to-blue-50">
+                    <div className="container mx-auto px-6 max-w-2xl">
+                        <div className="text-center mb-8">
+                            <h2 className="font-serif text-3xl font-bold text-brand-900 mb-3">
+                                {language === 'vi' ? 'Đăng Ký Tham Dự' : 'Registration Form'}
+                            </h2>
+                            <p className="text-gray-600">
+                                {language === 'vi' 
+                                    ? 'Vui lòng điền đầy đủ thông tin dưới đây'
+                                    : 'Please fill in the information below'}
+                            </p>
+                        </div>
+
+                        <div className="bg-white rounded-2xl shadow-xl p-8">
+                            <form onSubmit={handleSubmit} className="space-y-6">
+                                <div>
+                                    <label className="block text-sm font-bold text-gray-700 mb-2">
+                                        {language === 'vi' ? 'Họ và Tên' : 'Full Name'} <span className="text-red-500">*</span>
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        name="hoTen"
+                                        value={formData.hoTen}
+                                        onChange={handleChange}
+                                        required
+                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-800 focus:border-transparent"
+                                        placeholder={language === 'vi' ? 'Nhập họ và tên' : 'Enter full name'}
+                                    />
+                                </div>
+
+                                <div>
+                                    <label className="block text-sm font-bold text-gray-700 mb-2">
+                                        {language === 'vi' ? 'Ngày Sinh' : 'Date of Birth'} <span className="text-red-500">*</span>
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        name="ngaySinh"
+                                        value={formData.ngaySinh}
+                                        onChange={handleChange}
+                                        required
+                                        pattern="\d{2}/\d{2}/\d{4}"
+                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-800 focus:border-transparent"
+                                        placeholder="dd/mm/yyyy"
+                                    />
+                                    <p className="text-xs text-gray-500 mt-1">
+                                        {language === 'vi' ? 'Định dạng: ngày/tháng/năm (dd/mm/yyyy)' : 'Format: day/month/year (dd/mm/yyyy)'}
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <label className="block text-sm font-bold text-gray-700 mb-2">
+                                        Email <span className="text-red-500">*</span>
+                                    </label>
+                                    <input 
+                                        type="email" 
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        required
+                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-800 focus:border-transparent"
+                                        placeholder="email@example.com"
+                                    />
+                                </div>
+
+                                <div>
+                                    <label className="block text-sm font-bold text-gray-700 mb-2">
+                                        {language === 'vi' ? 'Điện Thoại' : 'Phone'} <span className="text-red-500">*</span>
+                                    </label>
+                                    <input 
+                                        type="tel" 
+                                        name="dienThoai"
+                                        value={formData.dienThoai}
+                                        onChange={handleChange}
+                                        required
+                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-800 focus:border-transparent"
+                                        placeholder={language === 'vi' ? 'Số điện thoại' : 'Phone number'}
+                                    />
+                                </div>
+
+                                <div>
+                                    <label className="block text-sm font-bold text-gray-700 mb-2">
+                                        {language === 'vi' ? 'Đơn Vị Công Tác' : 'Organization'}
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        name="donVi"
+                                        value={formData.donVi}
+                                        onChange={handleChange}
+                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-800 focus:border-transparent"
+                                        placeholder={language === 'vi' ? 'Tên bệnh viện/đơn vị' : 'Hospital/Organization name'}
+                                    />
+                                </div>
+
+                                <div>
+                                    <label className="block text-sm font-bold text-gray-700 mb-2">
+                                        {language === 'vi' ? 'Chuyên Khoa' : 'Specialty'}
+                                    </label>
+                                    <select 
+                                        name="chuyenKhoa"
+                                        value={formData.chuyenKhoa}
+                                        onChange={handleChange}
+                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-800 focus:border-transparent"
+                                    >
+                                        <option value="">{language === 'vi' ? 'Chọn chuyên khoa' : 'Select specialty'}</option>
+                                        <option value="neurology">{language === 'vi' ? 'Thần kinh' : 'Neurology'}</option>
+                                        <option value="pediatrics">{language === 'vi' ? 'Nhi khoa' : 'Pediatrics'}</option>
+                                        <option value="neurosurgery">{language === 'vi' ? 'Phẫu thuật thần kinh' : 'Neurosurgery'}</option>
+                                        <option value="other">{language === 'vi' ? 'Khác' : 'Other'}</option>
+                                    </select>
+                                </div>
+
+                                <button 
+                                    type="submit"
+                                    className="w-full bg-brand-800 text-white py-4 rounded-lg font-bold text-lg hover:bg-brand-900 transition shadow-xl"
+                                >
+                                    {language === 'vi' ? 'GỬI ĐĂNG KÝ' : 'SUBMIT REGISTRATION'}
+                                </button>
+                            </form>
+                        </div>
+
+                        {/* React Demo Info */}
+                        <div className="mt-6 p-4 bg-blue-50 border-l-4 border-brand-800 rounded">
+                            <p className="text-sm text-gray-700">
+                                <i className="fab fa-react text-brand-800 mr-2"></i>
+                                <strong>React Demo Version</strong> - {language === 'vi' 
+                                    ? 'Đây là phiên bản React được chuyển đổi từ demo11.html. Form sử dụng React Hooks (useState) để quản lý state.'
+                                    : 'This is a React version converted from demo11.html. The form uses React Hooks (useState) for state management.'}
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            );
+        }
+
+        // Main App Component
+        function App() {
+            const [language, setLanguage] = useState('vi');
+
+            return (
+                <div className="bg-slate-50">
+                    <Navigation language={language} setLanguage={setLanguage} />
+                    <HeroSection language={language} />
+                    <SchedulePreview language={language} />
+                    <RegistrationForm language={language} />
+                    
+                    {/* Footer */}
+                    <footer className="bg-brand-900 text-white py-8">
+                        <div className="container mx-auto px-6 text-center">
+                            <p className="text-sm">
+                                © 2026 {language === 'vi' 
+                                    ? 'Hội Chống Động Kinh Việt Nam (VAAE)'
+                                    : 'Vietnam Association Against Epilepsy (VAAE)'}
+                            </p>
+                            <p className="text-xs text-gray-400 mt-2">
+                                <i className="fab fa-react mr-1"></i>
+                                {language === 'vi' 
+                                    ? 'Phiên bản React - Demo Test'
+                                    : 'React Version - Demo Test'}
+                            </p>
+                        </div>
+                    </footer>
+                </div>
+            );
+        }
+
+        // Render App
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>

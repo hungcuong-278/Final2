@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="logo.png" type="image/png">
+    <title>Workshop VNS - 12/04/2026 - VAAE</title>
+    
+    <!-- Preconnect to external resources for faster loading -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] },
+                    colors: {
+                        brand: { 
+                            900: '#0f172a', 
+                            800: '#1e3a8a', 
+                            700: '#1d4ed8', 
+                            gold: '#b45309', 
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-pattern { background-color: #f8fafc; background-image: url("https://www.transparenttextures.com/patterns/cubes.png"); }
+        
+        /* Timeline styling */
+        .timeline-row { border-bottom: 1px solid #e2e8f0; padding-bottom: 1rem; margin-bottom: 1rem; }
+        .timeline-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        
+        /* Performance optimizations */
+        img { content-visibility: auto; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <nav class="bg-white/95 backdrop-blur-md shadow-sm fixed w-full z-50 border-b border-gray-100">
+        <div class="container mx-auto px-4 lg:px-8 py-3 flex justify-between items-center">
+            <a href="https://hoichongdongkinhvietnam.vn" target="_blank" class="flex items-center gap-3 group" title="Về trang chủ Hội">
+                <img src="logo.png" alt="Logo VAAE" class="w-12 h-12 object-contain group-hover:scale-105 transition">
+                <div class="hidden md:block">
+                    <p class="text-[10px] text-gray-500 font-bold tracking-[0.2em] uppercase">
+                        Hội Chống Động Kinh
+                    </p>
+                    <p class="text-brand-900 font-serif font-bold text-lg leading-none group-hover:text-brand-700 transition">
+                        VIỆT NAM (VAAE)
+                    </p>
+                </div>
+            </a>
+            
+            <div class="flex items-center gap-4">
+                <a href="https://hoichongdongkinhvietnam.vn" target="_blank" class="text-brand-gold hover:text-brand-800 border border-brand-gold/30 px-3 py-1 rounded hover:bg-brand-gold/10 transition text-sm font-semibold">
+                    <i class="fas fa-globe mr-1"></i> Web Hội
+                </a>
+                <a href="#agenda" class="bg-brand-800 text-white px-6 py-2.5 rounded shadow-lg hover:bg-brand-900 transition font-bold text-sm tracking-wide uppercase">
+                    Xem Chương Trình
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO WITH SUNDAY STYLE -->
+    <div class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <!-- Main Card - Sunday Style -->
+                <div class="bg-gradient-to-r from-brand-900 to-brand-800 text-white p-8 md:p-12 rounded-xl shadow-2xl mb-8">
+                    <div class="flex flex-col md:flex-row items-center gap-8">
+                        <div class="md:w-1/4 text-center md:text-right border-b md:border-b-0 md:border-r border-white/20 pb-6 md:pb-0 md:pr-8">
+                            <div class="text-5xl md:text-6xl font-bold text-brand-gold mb-2">
+                                CN
+                            </div>
+                            <div class="text-2xl md:text-3xl font-bold">12/04/2026</div>
+                            <div class="text-base md:text-lg opacity-90 mt-2">08:00 - 11:00</div>
+                        </div>
+                        <div class="md:w-3/4 text-center md:text-left">
+                            <h4 class="font-bold text-xl md:text-2xl mb-3 text-brand-gold uppercase tracking-wide">
+                                WORKSHOP CHUYÊN SÂU
+                            </h4>
+                            <p class="text-xl md:text-2xl lg:text-3xl font-medium leading-relaxed">
+                                Chủ đề: "Kỹ thuật VNS trong điều trị bệnh lí động kinh kháng thuốc"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Info Cards -->
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                    <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-brand-800 hover:shadow-lg transition">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-full bg-brand-800 text-white flex items-center justify-center text-2xl flex-shrink-0">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-brand-900 text-lg">VNS Therapy™</h3>
+                                <p class="text-sm text-gray-600">Kích thích thần kinh phế vị</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-brand-gold hover:shadow-lg transition">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-full bg-brand-gold text-white flex items-center justify-center text-2xl flex-shrink-0">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-brand-900 text-lg">Chuyên gia quốc tế</h3>
+                                <p class="text-sm text-gray-600">Dr. Lin, Chun-Fu & Brittany</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-emerald-600 hover:shadow-lg transition">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-full bg-emerald-600 text-white flex items-center justify-center text-2xl flex-shrink-0">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-brand-900 text-lg">Closed-loop VNS</h3>
+                                <p class="text-sm text-gray-600">Hệ thống SenTiva mới</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="text-center">
+                    <a href="#agenda" class="inline-flex items-center gap-3 bg-brand-900 text-white px-8 py-4 rounded-lg hover:bg-brand-800 transition font-bold tracking-wide shadow-xl text-lg">
+                        Xem Chi Tiết Chương Trình
+                        <i class="fas fa-arrow-down"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AGENDA SECTION -->
+    <section id="agenda" class="py-20 bg-white">
+        <div class="container mx-auto px-4 lg:px-6">
+            <div class="text-center mb-16">
+                <h3 class="font-serif text-4xl font-bold text-brand-900 mb-3">
+                    Chương Trình Chi Tiết
+                </h3>
+                <p class="text-gray-500 text-lg">
+                    Workshop VNS - Chủ nhật, 12/04/2026
+                </p>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mt-4"></div>
+            </div>
+
+            <div class="max-w-5xl mx-auto">
+                
+                <!-- Welcome -->
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-xl border-l-4 border-brand-800 mb-6 shadow-md">
+                    <div class="flex flex-col md:flex-row gap-6 items-start md:items-center">
+                        <div class="w-40 font-bold text-brand-800 text-2xl flex-shrink-0">
+                            08:00 – 08:30
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-brand-900 text-2xl mb-2">
+                                <i class="fas fa-handshake text-brand-800 mr-2"></i>
+                                Networking and Welcome
+                            </h4>
+                            <p class="text-gray-600">Đón tiếp và kết nối các đại biểu tham dự</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Introduction -->
+                <div class="bg-white border-2 border-gray-200 p-8 rounded-xl mb-6 shadow-sm hover:shadow-md transition">
+                    <div class="flex flex-col md:flex-row gap-6 items-start md:items-center">
+                        <div class="w-40 font-bold text-gray-700 text-2xl flex-shrink-0">
+                            08:30 – 08:40
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-brand-900 text-2xl">
+                                <i class="fas fa-flag text-brand-gold mr-2"></i>
+                                Introduction
+                            </h4>
+                            <p class="text-gray-600">Giới thiệu chương trình và mục tiêu workshop</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VNS Surgical Implant Procedure -->
+                <div class="bg-gradient-to-r from-blue-50 to-cyan-50 p-8 rounded-xl border-l-4 border-brand-800 mb-6 shadow-md">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="w-40 font-bold text-brand-800 text-2xl flex-shrink-0">
+                            08:40 – 09:10
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-brand-900 text-2xl mb-3">
+                                <i class="fas fa-procedures text-brand-800 mr-2"></i>
+                                VNS Surgical Implant Procedure
+                            </h4>
+                            <p class="text-lg text-gray-700 mb-3">Quy trình phẫu thuật cấy thiết bị VNS</p>
+                            <div class="bg-white rounded-lg p-4 border-l-4 border-brand-gold">
+                                <p class="font-bold text-brand-800 text-lg">
+                                    <i class="fas fa-user-md mr-2"></i>Dr. Lin, Chun-Fu
+                                </p>
+                                <p class="text-sm text-gray-600 italic">Chuyên gia VNS quốc tế</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VNS Therapy Dosing -->
+                <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-8 rounded-xl border-l-4 border-purple-600 mb-6 shadow-md">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="w-40 font-bold text-purple-700 text-2xl flex-shrink-0">
+                            09:10 – 09:30
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-brand-900 text-2xl mb-3">
+                                <i class="fas fa-pills text-purple-600 mr-2"></i>
+                                VNS Therapy™ Dosing
+                            </h4>
+                            <p class="text-lg text-gray-700 mb-3">Liều lượng và điều chỉnh thông số VNS Therapy™</p>
+                            <div class="bg-white rounded-lg p-4 border-l-4 border-purple-400">
+                                <p class="font-bold text-purple-700 text-lg">
+                                    <i class="fas fa-user-nurse mr-2"></i>Brittany
+                                </p>
+                                <p class="text-sm text-gray-600 italic">Chuyên gia kỹ thuật VNS</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Closed-loop VNS Therapy & SenTiva -->
+                <div class="bg-gradient-to-r from-emerald-50 to-teal-50 p-8 rounded-xl border-l-4 border-emerald-600 mb-6 shadow-md">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="w-40 font-bold text-emerald-700 text-2xl flex-shrink-0">
+                            09:30 – 09:50
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-brand-900 text-2xl mb-3">
+                                <i class="fas fa-sync-alt text-emerald-600 mr-2"></i>
+                                Closed-loop VNS Therapy™ & SenTiva
+                            </h4>
+                            <p class="text-lg text-gray-700 mb-3">Công nghệ vòng kín tiên tiến và hệ thống SenTiva</p>
+                            <div class="bg-white rounded-lg p-4 border-l-4 border-brand-gold">
+                                <p class="font-bold text-brand-800 text-lg">
+                                    <i class="fas fa-user-md mr-2"></i>Dr. Lin, Chun-Fu
+                                </p>
+                                <p class="text-sm text-gray-600 italic">Chuyên gia VNS quốc tế</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tea Break -->
+                <div class="flex justify-center my-8">
+                    <div class="bg-gradient-to-r from-orange-100 to-amber-100 px-10 py-4 rounded-full shadow-lg border-2 border-orange-300">
+                        <p class="text-orange-800 font-bold text-lg uppercase tracking-wide">
+                            <i class="fas fa-coffee mr-2"></i>
+                            09:50 - 10:10: Tea Break
+                            <i class="fas fa-cookie-bite ml-2"></i>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CORE-VNS -->
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-8 rounded-xl border-l-4 border-amber-600 mb-6 shadow-md">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="w-40 font-bold text-amber-700 text-2xl flex-shrink-0">
+                            10:10 – 10:30
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-brand-900 text-2xl mb-3">
+                                <i class="fas fa-chart-line text-amber-600 mr-2"></i>
+                                CORE-VNS: Comprehensive Outcomes from Real-World Evidence for VNS Therapy™
+                            </h4>
+                            <p class="text-lg text-gray-700 mb-3">Kết quả toàn diện từ bằng chứng thực tiễn về VNS Therapy™</p>
+                            <div class="bg-white rounded-lg p-4 border-l-4 border-purple-400">
+                                <p class="font-bold text-purple-700 text-lg">
+                                    <i class="fas fa-user-nurse mr-2"></i>Brittany
+                                </p>
+                                <p class="text-sm text-gray-600 italic">Chuyên gia kỹ thuật VNS</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Patient Education -->
+                <div class="bg-gradient-to-r from-rose-50 to-red-50 p-8 rounded-xl border-l-4 border-rose-600 mb-6 shadow-md">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="w-40 font-bold text-rose-700 text-2xl flex-shrink-0">
+                            10:30 – 10:45
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-brand-900 text-2xl mb-3">
+                                <i class="fas fa-chalkboard-teacher text-rose-600 mr-2"></i>
+                                Patient Education
+                            </h4>
+                            <p class="text-lg text-gray-700 mb-3">Giáo dục và hướng dẫn bệnh nhân về VNS</p>
+                            <div class="bg-white rounded-lg p-4 border-l-4 border-brand-gold">
+                                <p class="font-bold text-brand-800 text-lg">
+                                    <i class="fas fa-user-md mr-2"></i>Dr. Lin, Chun-Fu
+                                </p>
+                                <p class="text-sm text-gray-600 italic">Chuyên gia VNS quốc tế</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Summary and Q&A -->
+                <div class="bg-gradient-to-r from-indigo-50 to-blue-50 p-8 rounded-xl border-l-4 border-indigo-600 mb-6 shadow-md">
+                    <div class="flex flex-col md:flex-row gap-6 items-start md:items-center">
+                        <div class="w-40 font-bold text-indigo-700 text-2xl flex-shrink-0">
+                            10:45 – 11:00
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-brand-900 text-2xl mb-2">
+                                <i class="fas fa-comments text-indigo-600 mr-2"></i>
+                                Summary and Q&A
+                            </h4>
+                            <p class="text-gray-600">Tổng kết và phiên hỏi đáp</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Adjourn -->
+                <div class="bg-brand-900 text-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="text-3xl font-bold mb-2">
+                        <i class="fas fa-flag-checkered mr-3"></i>
+                        11:00
+                    </div>
+                    <h4 class="text-2xl font-serif font-bold">
+                        Adjourn
+                    </h4>
+                    <p class="mt-2 text-gray-300">Kết thúc workshop</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-900 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-6">
+                <img src="logo.png" alt="VAAE Logo" class="w-16 h-16 mx-auto mb-4 opacity-80">
+                <h3 class="font-serif text-xl font-bold mb-2">Hội Chống Động Kinh Việt Nam</h3>
+                <p class="text-gray-400 text-sm">Vietnam Association Against Epilepsy (VAAE)</p>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-6">
+                <p class="text-gray-400 text-sm mb-2">
+                    <i class="fas fa-map-marker-alt mr-2"></i>
+                    Khách sạn Mường Thanh Cửa Đông - Số 167, Nguyễn Phong Sắc, Trường Vinh, Nghệ An
+                </p>
+                <p class="text-gray-400 text-sm mb-4">
+                    <i class="fas fa-envelope mr-2"></i>
+                    Email: info@hoichongdongkinhvietnam.vn
+                </p>
+                <p class="text-gray-500 text-xs">
+                    © 2026 VAAE. All rights reserved. | Workshop VNS - 12/04/2026
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
