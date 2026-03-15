@@ -101,7 +101,7 @@
     <nav class="bg-white/95 backdrop-blur-md shadow-sm fixed w-full z-50 border-b border-gray-100">
         <div class="container mx-auto px-4 lg:px-8 py-3 flex justify-between items-center">
             <a href="https://hoichongdongkinhvietnam.vn" target="_blank" class="flex items-center gap-3 group" title="Về trang chủ Hội">
-                <img src="logo.png" alt="Logo VAAE" class="w-12 h-12 object-contain group-hover:scale-105 transition">
+                <img src="logo.png" alt="Logo VNAAE" class="w-12 h-12 object-contain group-hover:scale-105 transition">
                 <div class="hidden md:block">
                     <p class="text-[10px] text-gray-500 font-bold tracking-[0.2em] uppercase">
                         <span class="lang-text" data-lang-vi>Hội Chống Động Kinh</span>
@@ -578,7 +578,7 @@
                                 <span class="lang-text" data-lang-en>VIP3 HALL: EPILEPSY SURGERY</span>
                             </h5>
                             <p class="text-xs text-gray-500 mt-1">
-                                <span class="lang-text" data-lang-vi>Chủ tọa: PGS.TS.BS Nguyễn Đình Toàn, TS.BS Nguyễn Anh Tuấn, TS.BS Hoàng Kim Tuấn</span>
+                                <span class="lang-text" data-lang-vi>Chủ tọa: PGS.TS.BS Đồng Văn Hệ,PGS.TS.BS Nguyễn Đình Toàn, TS.BS Nguyễn Anh Tuấn, TS.BS Hoàng Kim Tuấn</span>
                                 <span class="lang-text" data-lang-en>Chairs: Assoc. Prof. Nguyen Dinh Toan, Dr. Nguyen Anh Tuan, Dr. Hoang Kim Tuan</span>
                             </p>
                         </div>
@@ -1343,6 +1343,20 @@
                             <span class="lang-text" data-lang-en>Professional Advisor</span>
                         </p>
                     </div>
+                    <!-- PGS Đồng Văn Hệ -->
+                    <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group border-2 border-brand-800/30">
+                        <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-brand-800">
+                            <img src="pgs-he.jpg" class="w-full h-full object-cover object-top" alt="PGS Đồng Văn Hệ">
+                        </div>
+                        <h5 class="font-bold text-brand-900 text-sm mb-1">
+                            <span class="lang-text" data-lang-vi>PGS.TS.BS Đồng Văn Hệ</span>
+                            <span class="lang-text" data-lang-en>Assoc. Prof. Dong Van He</span>
+                        </h5>
+                        <p class="text-[10px] text-gray-500">
+                            <span class="lang-text" data-lang-vi>Chủ tịch hội phẫu thuật thần kinh Việt Nam</span>
+                            <span class="lang-text" data-lang-en>President of the Vietnamese Society of Neurosurgery</span>
+                        </p>
+                    </div>
                     <!-- PGS Dương Đình Chỉnh -->
                     <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group border-2 border-brand-800/30">
                         <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-brand-800">
@@ -1353,7 +1367,8 @@
                             <span class="lang-text" data-lang-en>Assoc. Prof. Duong Dinh Chinh</span>
                         </h5>
                     </div>
-                    <!-- TS Lê Văn Tuấn -->
+                   
+                     <!-- TS Lê Văn Tuấn -->
                     <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-lg transition text-center group border-2 border-brand-800/30">
                         <div class="w-32 h-32 mx-auto rounded-lg overflow-hidden mb-4 border-2 border-brand-800">
                             <img src="ts-tuan.jpg" class="w-full h-full object-cover object-top" alt="TS Lê Văn Tuấn" onerror="this.src='https://ui-avatars.com/api/?name=L+V+Tuan&background=1e3a5f&color=fff&size=150'">
@@ -1927,7 +1942,7 @@
         <div class="container mx-auto px-6 text-center">
             <a href="https://hoichongdongkinhvietnam.vn" target="_blank" class="inline-block group">
                 <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-full p-2 flex items-center justify-center opacity-80 group-hover:opacity-100 transition duration-300 transform group-hover:scale-110">
-                    <img src="logo.png" alt="Logo VAAE" class="w-full h-full object-contain">
+                    <img src="logo.png" alt="Logo VNAAE" class="w-full h-full object-contain">
                 </div>
                 <p class="font-serif font-bold text-xl mb-2 group-hover:text-brand-gold transition">
                     <span class="lang-text" data-lang-vi>HỘI CHỐNG ĐỘNG KINH VIỆT NAM</span>
@@ -1957,9 +1972,9 @@
             
             // Update page title
             if (lang === 'en') {
-                document.title = 'Annual Scientific Conference 2026 - VAAE';
+                document.title = 'Annual Scientific Conference 2026 - VNAAE';
             } else {
-                document.title = 'Hội Nghị Khoa Học Thường Niên 2026 - VAAE';
+                document.title = 'Hội Nghị Khoa Học Thường Niên 2026 - VNAAE';
             }
         }
         
@@ -1974,6 +1989,54 @@
                 if (!img.closest('nav')) {
                     img.setAttribute('loading', 'lazy');
                 }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Make speaker photos clickable to open each speaker profile page.
+            const speakerProfileLinks = {
+               
+                'PGS Phan Việt Nga': 'https://hoithankinhhocvietnam.com.vn/vi/post/pho-giao-su-tien-si-bac-si-phan-viet-nga-252.htm',
+                'PGS.TS.BS Phan Việt Nga': 'https://hoithankinhhocvietnam.com.vn/vi/post/pho-giao-su-tien-si-bac-si-phan-viet-nga-252.htm',
+                'Assoc. Prof. Phan Viet Nga': 'https://hoithankinhhocvietnam.com.vn/vi/post/pho-giao-su-tien-si-bac-si-phan-viet-nga-252.htm'
+            };
+            const speakerImageSelector = [
+                '#speakers img[alt]',
+                'header img[alt="GS Lim Kheng Seang"]',
+                'header img[alt="GS Lê Quang Cường"]'
+            ].join(',');
+
+            const normalizeSpeakerName = (name) => {
+                if (!name) return '';
+                return name
+                    .replace(/^\s*(GS\.?|PGS\.?|TS\.?|BS\.?|BSCK2\.?|ThS\.?|Prof\.?|Dr\.?)\s*/i, '')
+                    .replace(/\s+/g, ' ')
+                    .trim();
+            };
+
+            const resolveSpeakerLink = (name) => {
+                if (speakerProfileLinks[name]) return speakerProfileLinks[name];
+                const query = normalizeSpeakerName(name) || name;
+                return `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+            };
+
+            document.querySelectorAll(speakerImageSelector).forEach((img) => {
+                const speakerName = img.getAttribute('alt') || '';
+                const targetUrl = resolveSpeakerLink(speakerName);
+
+                img.classList.add('cursor-pointer');
+                img.setAttribute('role', 'link');
+                img.setAttribute('tabindex', '0');
+                img.setAttribute('title', 'Mở hồ sơ đại biểu');
+
+                const openProfile = () => window.open(targetUrl, '_blank', 'noopener');
+                img.addEventListener('click', openProfile);
+                img.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        openProfile();
+                    }
+                });
             });
         });
 
@@ -2056,4 +2119,9 @@
     </script>
 </body>
 </html>
+
+
+
+
+
 
