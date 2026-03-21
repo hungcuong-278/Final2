@@ -90,6 +90,72 @@
         html[lang="en"] .lang-text[data-lang-en] { display: inline !important; }
         html[lang="vi"] .lang-text[data-lang-vi] { display: inline !important; }
         html[lang="vi"] .lang-text[data-lang-en] { display: none !important; }
+
+        .countdown-shell {
+            position: relative;
+            margin-top: 1.75rem;
+            padding: 1.1rem;
+            border-radius: 1rem;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #2563eb 100%);
+            box-shadow: 0 20px 40px -24px rgba(15, 23, 42, 0.95);
+            overflow: hidden;
+        }
+        .countdown-shell::before {
+            content: "";
+            position: absolute;
+            inset: -30% auto auto -10%;
+            width: 220px;
+            height: 220px;
+            border-radius: 999px;
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.35), rgba(251, 191, 36, 0));
+            pointer-events: none;
+        }
+        .countdown-grid {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.65rem;
+        }
+        .countdown-card {
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 0.75rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+            text-align: center;
+            padding: 0.75rem 0.4rem;
+        }
+        .countdown-value {
+            display: block;
+            font-size: clamp(1.4rem, 3.5vw, 2rem);
+            line-height: 1;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 0.03em;
+        }
+        .countdown-label {
+            display: block;
+            margin-top: 0.35rem;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.82);
+        }
+        .countdown-status {
+            position: relative;
+            margin-top: 0.8rem;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #f8fafc;
+        }
+        @media (max-width: 640px) {
+            .countdown-shell {
+                padding: 0.95rem;
+            }
+            .countdown-grid {
+                gap: 0.45rem;
+            }
+        }
         
         /* Performance optimizations */
         img { content-visibility: auto; }
@@ -214,6 +280,47 @@
                         <span class="lang-text" data-lang-en>View Detailed Schedule</span>
                         <i class="fas fa-arrow-down"></i>
                     </a>
+                </div>
+
+                <div class="countdown-shell" aria-live="polite">
+                    <p class="text-[11px] font-bold tracking-[0.18em] uppercase text-amber-200 mb-3">
+                        <span class="lang-text" data-lang-vi>HỘI NGHỊ SẼ CHÍNH THỨC KHAI MẠC SAU</span>
+                        <span class="lang-text" data-lang-en>Countdown to Opening</span>
+                    </p>
+                    <div class="countdown-grid">
+                        <div class="countdown-card">
+                            <span id="countdown-days" class="countdown-value">00</span>
+                            <span class="countdown-label">
+                                <span class="lang-text" data-lang-vi>Ngày</span>
+                                <span class="lang-text" data-lang-en>Days</span>
+                            </span>
+                        </div>
+                        <div class="countdown-card">
+                            <span id="countdown-hours" class="countdown-value">00</span>
+                            <span class="countdown-label">
+                                <span class="lang-text" data-lang-vi>Giờ</span>
+                                <span class="lang-text" data-lang-en>Hours</span>
+                            </span>
+                        </div>
+                        <div class="countdown-card">
+                            <span id="countdown-minutes" class="countdown-value">00</span>
+                            <span class="countdown-label">
+                                <span class="lang-text" data-lang-vi>Phút</span>
+                                <span class="lang-text" data-lang-en>Minutes</span>
+                            </span>
+                        </div>
+                        <div class="countdown-card">
+                            <span id="countdown-seconds" class="countdown-value">00</span>
+                            <span class="countdown-label">
+                                <span class="lang-text" data-lang-vi>Giây</span>
+                                <span class="lang-text" data-lang-en>Seconds</span>
+                            </span>
+                        </div>
+                    </div>
+                    <p id="countdown-status" class="countdown-status">
+                        <span class="lang-text" data-lang-vi>Khai mạc: 07:30, 11/04/2026 (GMT+7)</span>
+                        <span class="lang-text" data-lang-en>Opening: 07:30, 11 Apr 2026 (GMT+7)</span>
+                    </p>
                 </div>
             </div>
 
@@ -2058,6 +2165,54 @@
                     img.setAttribute('loading', 'lazy');
                 }
             });
+
+            const countdownElements = {
+                days: document.getElementById('countdown-days'),
+                hours: document.getElementById('countdown-hours'),
+                minutes: document.getElementById('countdown-minutes'),
+                seconds: document.getElementById('countdown-seconds'),
+                status: document.getElementById('countdown-status')
+            };
+
+            const eventStartTime = new Date('2026-04-11T07:30:00+07:00').getTime();
+            const formatUnit = (value) => String(value).padStart(2, '0');
+
+            const updateCountdown = () => {
+                if (!countdownElements.days || !countdownElements.hours || !countdownElements.minutes || !countdownElements.seconds) {
+                    return;
+                }
+
+                const now = Date.now();
+                const distance = eventStartTime - now;
+
+                if (distance <= 0) {
+                    countdownElements.days.textContent = '00';
+                    countdownElements.hours.textContent = '00';
+                    countdownElements.minutes.textContent = '00';
+                    countdownElements.seconds.textContent = '00';
+
+                    if (countdownElements.status) {
+                        countdownElements.status.innerHTML = document.documentElement.lang === 'en'
+                            ? '<span class="lang-text" data-lang-en style="display:inline !important;">The event is now live.</span>'
+                            : '<span class="lang-text" data-lang-vi style="display:inline !important;">Sự kiện đang diễn ra.</span>';
+                    }
+                    return;
+                }
+
+                const totalSeconds = Math.floor(distance / 1000);
+                const days = Math.floor(totalSeconds / 86400);
+                const hours = Math.floor((totalSeconds % 86400) / 3600);
+                const minutes = Math.floor((totalSeconds % 3600) / 60);
+                const seconds = totalSeconds % 60;
+
+                countdownElements.days.textContent = formatUnit(days);
+                countdownElements.hours.textContent = formatUnit(hours);
+                countdownElements.minutes.textContent = formatUnit(minutes);
+                countdownElements.seconds.textContent = formatUnit(seconds);
+            };
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
         });
 
         document.addEventListener('DOMContentLoaded', function() {
